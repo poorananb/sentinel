@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'orgs_controller/index'
+
+  get 'orgs_controller/new'
+
+  get 'orgs_controller/create'
+
+  get 'orgs_controller/show'
+
+  get 'orgs_controller/edit'
+
+  get 'orgs_controller/update'
+
+  get 'orgs_controller/destroy'
+
   get 'signup', to: 'admin/users#new', as: 'signup'
   get 'login', to: 'sessions#index', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
