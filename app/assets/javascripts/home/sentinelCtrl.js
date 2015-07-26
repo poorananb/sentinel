@@ -1,6 +1,6 @@
 angular.module('Sentinel')
 .controller('SentinelCtrl', ['$scope',
-	function($scope){		
+	function($scope){
 		$scope.template = {
 			"brand": "home/_brand.html",
 			"notifications": "home/_notifications.html",

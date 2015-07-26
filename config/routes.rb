@@ -1,18 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'orgs_controller/index'
-
-  get 'orgs_controller/new'
-
-  get 'orgs_controller/create'
-
-  get 'orgs_controller/show'
-
-  get 'orgs_controller/edit'
-
-  get 'orgs_controller/update'
-
-  get 'orgs_controller/destroy'
+  post 'orgs' => 'orgs#create'
+  delete 'orgs' => 'orgs#destroy'
 
   get 'signup', to: 'admin/users#new', as: 'signup'
   get 'login', to: 'sessions#index', as: 'login'
@@ -23,11 +12,12 @@ Rails.application.routes.draw do
   #get 'contact' => 'static_pages#contact'
   
   resources :users
+  resources :orgs
   resources :sessions
   
   namespace :admin do
-	get '', to: 'dashboard#index', as: '/'
-	resources :users
+  	get '', to: 'dashboard#index', as: '/'
+  	resources :users
   end
 
   resources :widgets

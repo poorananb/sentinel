@@ -70,3 +70,7 @@ gem 'settingslogic'
 gem 'slim'
 
 gem 'bcrypt',               '3.1.9'
+
+gem 'responders', '~> 2.0'
+
+gem 'angular_rails_csrf'

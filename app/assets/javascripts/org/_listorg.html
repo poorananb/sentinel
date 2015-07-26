@@ -1,0 +1,10 @@
+<div>
+    <div ng-repeat="org in orgs">
+        Name: {{org.name}} - Code: {{org.code}} &nbsp;
+        <a href="#/orgs/{{org.id}}">Show</a>    &nbsp;
+        <a href="#/orgs/{{org.id}}/edit">Edit</a>    &nbsp;
+        <a href="" ng-click="deleteOrg(org.id)" ng-confirm-click="Are you sure?">Delete</a>
+    </div>
+</div>
+<a href="#/createneworg">Create New</a>
+<!--ng-controller="OrganizationCtrl" data-ng-init="getOrgs()"-->
