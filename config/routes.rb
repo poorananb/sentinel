@@ -2,48 +2,7 @@ Rails.application.routes.draw do
 
   post 'orgs' => 'orgs#create'
   delete 'orgs' => 'orgs#destroy'
-
-  get 'realms_controller/index'
-
-  get 'realms_controller/new'
-
-  get 'realms_controller/create'
-
-  get 'realms_controller/show'
-
-  get 'realms_controller/edit'
-
-  get 'realms_controller/update'
-
-  get 'realms_controller/destroy'
-
-  get 'clients_controller/index'
-
-  get 'clients_controller/new'
-
-  get 'clients_controller/create'
-
-  get 'clients_controller/show'
-
-  get 'clients_controller/edit'
-
-  get 'clients_controller/update'
-
-  get 'clients_controller/destroy'
-
-  get 'orgs_controller/index'
-
-  get 'orgs_controller/new'
-
-  get 'orgs_controller/create'
-
-  get 'orgs_controller/show'
-
-  get 'orgs_controller/edit'
-
-  get 'orgs_controller/update'
-
-  get 'orgs_controller/destroy'
+  put 'orgs' => 'orgs#update'
 
   get 'signup', to: 'admin/users#new', as: 'signup'
   get 'login', to: 'sessions#index', as: 'login'

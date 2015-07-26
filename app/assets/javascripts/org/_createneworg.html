@@ -10,13 +10,13 @@
             
             <div class="help-block" ng-messages="orgForm.name.$error" ng-show="orgForm.name.$touched">
                 <!-- show an error if name is too short -->
-                <p ng-show="minlength">Name is too short.</p>
+                <p ng-message="minlength">Name is too short.</p>
             
                 <!-- show an error if name is too long -->
-                <p ng-show="maxlength">Name is too long.</p>
+                <p ng-message="maxlength">Name is too long.</p>
             
                 <!-- show an error if this isn't filled in -->
-                <p ng-show="required">Your name is required.</p>
+                <p ng-message="required">Your name is required.</p>
             </div>
         </div>
         <div class="form-group" ng-class="{ 'has-error': orgForm.code.$touched && orgForm.code.$invalid }">
@@ -28,13 +28,13 @@
             required/>
             <div class="help-block" ng-messages="orgForm.code.$error" ng-show="orgForm.code.$touched">
                 <!-- show an error if name is too short -->
-                <p ng-show="minlength">Code is too short.</p>
+                <p ng-message="minlength">Code is too short.</p>
             
                 <!-- show an error if username is too long -->
-                <p ng-show="maxlength">Code is too long.</p>
+                <p ng-message="maxlength">Code is too long.</p>
             
                 <!-- show an error if this isn't filled in -->
-                <p ng-show="required">Your code is required.</p>
+                <p ng-message="required">Your code is required.</p>
             </div>
         </div>
         <div>

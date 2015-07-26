@@ -19,6 +19,18 @@ angular.module('Sentinel')
             o.orgs.push(data);
         });
     };
+    
+    o.update = function(org, id) {
+        $http.put('/orgs/' + id + '.json', org).then(function(data){
+            angular.copy(data.data, o.message);
+           
+            /*if(o.message.status == 'ok'){
+                o.getAll();
+            }*/
+        });
+        
+        return o;
+    };
 
     o.destroy = function(id) {
         $http.delete('/orgs/' + id + '.json').then(function(data){
@@ -28,8 +40,6 @@ angular.module('Sentinel')
                 o.getAll();
             }
         });
-        
-        
         
         return o;
     };

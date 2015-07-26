@@ -13,13 +13,21 @@ angular.module('Sentinel')
 			$scope.code = '';
 		}
 		
-		var scope = $scope;
 		$scope.deleteOrg = function(id){
 			var message = orgs.destroy(id);
-			
-			console.log(message)
 			$scope.message = message;
-			//scope.changeRoute('#/listorg');
+		}
+		
+		$scope.updateOrg = function(){
+			if(!$scope.org.name || $scope.org.name === '') { return; }
+  			if(!$scope.org.code || $scope.org.code === '') { return; }
+  			
+  			var message = orgs.update({
+							name: $scope.org.name,
+							code: $scope.org.code,
+						  }, $scope.org.id);
+			
+			$scope.message = message;
 		}
 		
 		$scope.orgs = orgs.orgs;

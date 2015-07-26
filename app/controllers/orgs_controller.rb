@@ -21,14 +21,23 @@ class OrgsController < ApplicationController
   end
 
   def update
+    @org = Org.find(params[:id])
     respond_to do |format|
-      if org.update(org_params)
-        format.html { redirect_to @player, notice: 'Organization was successfully updated.' }
-        format.json { head :no_content }
+      if @org.update(org_params)
+        format.json do
+          render :json => { 
+             :status => :ok, 
+             :message => "Organization was successfully updated.!"
+          }.to_json
+        end  
       else
-        format.html { render action: 'edit' }
-        format.json { render json: @player.errors, status: :unprocessable_entity }
-      end
+        format.json do 
+          render :json => {
+            :message => @org.errors, 
+            :status => :error #unprocessable_entity 
+          }.to_json
+        end
+      end 
     end
   end
 

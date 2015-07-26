@@ -1,13 +1,28 @@
+<div ng-show="message.message.message != null">
+    <div ng-show="message.message.status == 'ok'">
+        <div class="success">{{message.message.message}}</div>
+    </div>
+    <div ng-show="message.message.status == 'error'">
+        <div class="error">{{message.message.message}}</div>
+    </div>
+</div>
+
 <div>
     <form ng-submit="updateOrg()">
+        <input type="hidden" name="id" ng-model="org.id"/>
         <div>
-            <input type="text" ng-model="org.name"/>
+            <input type="text" 
+            ng-model="org.name" 
+            name="name"/>
         </div>
         <div>
-            <input type="text" ng-model="org.code"/>
+            <input type="text" 
+            ng-model="org.code" 
+            name="code"/>
         </div>
         <div>
             <button type="submit">Update Org</button>
         </div>
     </form>
 </div>
+<a href="#/listorg">Back To List</a>
