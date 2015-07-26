@@ -15,8 +15,10 @@ angular.module('Sentinel')
 		
 		var scope = $scope;
 		$scope.deleteOrg = function(id){
-			var msg = orgs.destroy(id);
-			console.log(msg);
+			var message = orgs.destroy(id);
+			
+			console.log(message)
+			$scope.message = message;
 			//scope.changeRoute('#/listorg');
 		}
 		

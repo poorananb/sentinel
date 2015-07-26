@@ -1,3 +1,12 @@
+<div ng-show="message.message.message != null">
+    <div ng-show="message.message.status == 'ok'">
+        <div class="success">{{message.message.message}}</div>
+    </div>
+    <div ng-show="message.message.status == 'error'">
+        <div class="error">{{message.message.message}}</div>
+    </div>
+</div>
+
 <div>
     <div ng-repeat="org in orgs">
         Name: {{org.name}} - Code: {{org.code}} &nbsp;

@@ -2,7 +2,8 @@ angular.module('Sentinel')
 .factory('orgs', ['$http', function($http){
     var o = {
         orgs : [],
-        org : {}
+        org : {},
+        message : {}
     };
     
     o.getAll = function() {
@@ -20,9 +21,17 @@ angular.module('Sentinel')
     };
 
     o.destroy = function(id) {
-        return $http.delete('/orgs/' + id + '.json').then(function(data){
-            console.log(data)
+        $http.delete('/orgs/' + id + '.json').then(function(data){
+            angular.copy(data.data, o.message);
+            
+            if(o.message.status == 'ok'){
+                o.getAll();
+            }
         });
+        
+        
+        
+        return o;
     };
     
     o.get = function(id) {

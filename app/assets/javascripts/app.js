@@ -1,5 +1,5 @@
-var app = angular.module('Sentinel', ['ui.router', 'templates']);
-app.config(['$stateProvider', '$urlRouterProvider',
+var app = angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages']);
+app.config(['$stateProvider', '$urlRouterProvider', 
 function($stateProvider, $urlRouterProvider) {
 	$stateProvider
 	.state('home', {

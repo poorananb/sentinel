@@ -36,11 +36,19 @@ class OrgsController < ApplicationController
     @org = Org.find(params[:id])
     respond_to do |format|
       if @org.destroy
-        format.html { redirect_to @org, notice: 'Organization was successfully deleted.' }
-        format.json { head :no_content }
+        format.json do
+          render :json => { 
+             :status => :ok, 
+             :message => "Organization was successfully deleted.!"
+          }.to_json
+        end  
       else
-        format.html { render action: '#/listorg' }
-        format.json { render json: @org.errors, status: :unprocessable_entity }
+        format.json do 
+          render :json => {
+            :message => @org.errors, 
+            :status => :error #unprocessable_entity 
+          }.to_json
+        end
       end 
     end
   end
