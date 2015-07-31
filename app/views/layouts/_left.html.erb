@@ -1,136 +1,23 @@
-<nav style="" class="navbar-default navbar-static-side" role="navigation">
-	<div class="sidebar-collapse">
-		<ul class="nav" id="side-menu">
-			<li class="nav-header">
-				<div class="dropdown profile-element"> <span>
-					<%= link_to root_url do %>
-						<img alt="image" src="<%= asset_path('sentinel-logo.png') %>" style="width:100px;">
-					<% end %>
-					</span>
-				</div>
-				<div class="logo-element">
-					<img alt="image" src="<%= asset_path('sentinel-logo.png') %>" style="width:40px;">
-				</div>
-			</li>
-			<li class="active">
-				<a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
-				<ul class="nav nav-second-level collapse in">
-					<li class="active"><a href="#">Dashboard v.1</a></li>
-					<li><a href="#">Dashboard v.2</a></li>
-					<li><a href="#">Dashboard v.3</a></li>
-					<li><a href="#">Dashboard v.4</a></li>
+        <nav style="" class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element"> <span>
+                            <img alt="image" src="<%= asset_path('sentinel-logo.png') %>" style="width:100px;">
+                             </span>
+                        </div>
+                        <div class="logo-element">
+                            <img alt="image" src="sentinel/sentinel-logo.png" style="width:40px;">
+                        </div>
+                    </li>
+                    <li class="active"><a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a></li>
+					<li><a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Brand</span></a></li>
+					<li><a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Realm</span></a></li>
+					<li><a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Jobs</span></a></li>
+					<li><a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Javascript</span></a></li>
+					<li><a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Stylesheet</span></a></li>
+					<li><a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Images</span></a></li>
 				</ul>
-			</li>
-			<li>
-				<a href="sentinel.htm"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span> <span class="label label-primary pull-right">NEW</span></a>
-			</li>
-			<li>
-				<a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span><span class="fa arrow"></span></a>
-				<ul class="nav nav-second-level collapse">
-					<li><a href="#">Charts</a></li>
-					<li><a href="#">Charts</a></li>
-					<li><a href="#">Charts</a></li>
-					<li><a href="#">Charts</a></li>
-					<li><a href="#">Charts</a></li>
-					<li><a href="#">Charts</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="sentinel.htm"><i class="fa fa-envelope"></i> <span class="nav-label">Mailbox </span></a>
-				<ul class="nav nav-second-level collapse">
-					<li><a href="#">Inbox</a></li>
-					<li><a href="#">Email view</a></li>
-					<li><a href="#">Compose email</a></li>
-					<li><a href="#">Email templates</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="sentinel.htm"><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span> </a>
-			</li>
-			<li>
-				<a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Forms</span><span class="fa arrow"></span></a>
-				<ul class="nav nav-second-level collapse">
-					<li><a href="#">Basic form</a></li>
-					<li><a href="#">Advanced Plugins</a></li>
-					<li><a href="#">Wizard</a></li>
-					<li><a href="#">File Upload</a></li>
-					<li><a href="#">Text Editor</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">App Views</span></a>
-				<ul class="nav nav-second-level collapse">
-					<li><a href="#">Contacts</a></li>
-					<li><a href="#">Profile</a></li>
-					<li><a href="#">Projects</a></li>
-					<li><a href="#">Project detail</a></li>
-					<li><a href="#">Teams board</a></li>
-					<li><a href="#">Clients</a></li>
-					<li><a href="#">Outlook view</a></li>
-					<li><a href="#">File manager</a></li>
-					<li><a href="#">Calendar</a></li>
-					<li><a href="#">Issue tracker</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span><span class="fa arrow"></span></a>
-				<ul class="nav nav-second-level collapse">
-					<li><a href="#">Search results</a></li>
-					<li><a href="#">Lockscreen</a></li>
-					<li><a href="#">Invoice</a></li>
-					<li><a href="#">Login</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#"><i class="fa fa-globe"></i> <span class="nav-label">Miscellaneous</span><span class="label label-info pull-right">NEW</span></a>
-				<ul class="nav nav-second-level collapse">
-					<li><a href="#">Notification</a></li>
-					<li><a href="#">Nestable list</a></li>
-					<li><a href="#">Agile board</a></li>
-					<li><a href="#">Timeline v.2</a></li>
-					<li><a href="#">Diff</a></li>
-					<li><a href="#">Idle timer</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#"><i class="fa fa-flask"></i> <span class="nav-label">UI Elements</span><span class="fa arrow"></span></a>
-				<ul class="nav nav-second-level collapse">
-					<li><a href="#">Typography</a></li>
-					<li><a href="#">Icons</a></li>
-					<li><a href="#">Draggable Panels</a></li>
-					<li><a href="#">Buttons</a></li>
-					<li><a href="#">Video</a></li>
-					<li><a href="#">Tabs &amp; Panels</a></li>
-					<li><a href="#">Notifications &amp; Tooltips</a></li>
-					<li><a href="#">Badges, Labels, Progress</a></li>
-				</ul>
-			</li>
-
-			<li>
-				<a href="sentinel.html"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a>
-			</li>
-			<li>
-				<a href="#"><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa arrow"></span></a>
-				<ul class="nav nav-second-level collapse">
-					<li><a href="#">Static Tables</a></li>
-					<li><a href="#">Data Tables</a></li>
-					<li><a href="#">jqGrid</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#"><i class="fa fa-table"></i> <span class="nav-label">Organization</span><span class="fa arrow"></span></a>
-				<ul class="nav nav-second-level collapse">
-					<li><a href="#listorg">List Organization</a></li>
-					<li><a href="#createneworg">Create New</a></li>
-				</ul>
-			</li>
-			<li class="landing_link">
-				<a target="_blank" href="sentinel.htm"><i class="fa fa-star"></i> <span class="nav-label">Landing Page</span> <span class="label label-warning pull-right">NEW</span></a>
-			</li>
-			<li class="special_link">
-				<a href="sentinel.html"><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>
-			</li>
-		</ul>
-
-	</div>
-</nav>
+            </div>
+        </nav>
+        
