@@ -61,7 +61,6 @@ a:hover,a:focus{text-decoration:none;}
 .wrapper-content{padding:20px 10px 40px;}
 #page-wrapper{padding:0 15px;position:relative !important;}
 .gray-bg{background-color:#f7f7f7;}
-
 @media (min-width:768px){
  #page-wrapper{position:inherit;margin:0 0 0 220px;min-height:1200px;}
  .navbar-static-side{z-index:2001;position:absolute;width:220px;}
