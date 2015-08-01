@@ -1,6 +1,6 @@
 angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'ngResource', 'Sentinel.orgsController', 'Sentinel.orgs']);
-angular.module('Sentinel').config(['$stateProvider', '$urlRouterProvider', 
-function($stateProvider, $urlRouterProvider) {
+angular.module('Sentinel').config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
+function($stateProvider, $urlRouterProvider, $locationProvider) {
 	$stateProvider
 	.state('home', {
 		url: '/home',
@@ -28,7 +28,7 @@ function($stateProvider, $urlRouterProvider) {
 		controller: 'OrgCreateController'
 	})
 	.state('showOrg', {
-		url: '/orgs/:id/show',
+		url: '/orgs/:id',
 		templateUrl: 'org/_show.html',
 		controller: 'OrgViewController'
 	})
@@ -37,8 +37,10 @@ function($stateProvider, $urlRouterProvider) {
 		templateUrl: 'org/_edit.html',
 		controller: 'OrgEditController'
 	});
-	
+
 	$urlRouterProvider.otherwise('home');
+	
+	$locationProvider.html5Mode(true);
 }])
 .directive('ngConfirmClick', [
   function(){

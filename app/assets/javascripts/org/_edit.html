@@ -1,9 +1,9 @@
-<div ng-show="message.message.message != null">
-    <div ng-show="message.message.status == 'ok'">
-        <div class="success">{{message.message.message}}</div>
+<div ng-show="message.message != null">
+    <div ng-show="message.status == 'ok'">
+        <div class="success">{{message.message}}</div>
     </div>
-    <div ng-show="message.message.status == 'error'">
-        <div class="error">{{message.message.message}}</div>
+    <div ng-show="message.status == 'error'">
+        <div class="error">{{message.message}}</div>
     </div>
 </div>
 
@@ -25,4 +25,4 @@
         </div>
     </form>
 </div>
-<a href="#/listorg">Back To List</a>
+<a href="/orgs">Back To List</a>

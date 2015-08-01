@@ -1,9 +1,9 @@
-<div ng-show="message.message.message != null">
-    <div ng-show="message.message.status == 'ok'">
-        <div class="success">{{message.message.message}}</div>
+<div ng-show="message.message != null">
+    <div ng-show="message.status == 'ok'">
+        <div class="success">{{message.message}}</div>
     </div>
-    <div ng-show="message.message.status == 'error'">
-        <div class="error">{{message.message.message}}</div>
+    <div ng-show="message.status == 'error'">
+        <div class="error">{{message.message}}</div>
     </div>
 </div>
 
@@ -11,9 +11,9 @@
     <div ng-repeat="org in orgs">
         Name: {{org.name}} - Code: {{org.code}} &nbsp;
         <a ui-sref="showOrg({id:org.id})">Show</a>    &nbsp;
-        <a href="#/orgs/{{org.id}}/edit">Edit</a>    &nbsp;
+        <a href="/orgs/{{org.id}}/edit">Edit</a>    &nbsp;
         <a href="" ng-click="deleteOrg(org)" ng-confirm-click="Are you sure?">Delete</a>
     </div>
 </div>
-<a href="#/createOrg">Create New</a>
+<a href="/createOrg">Create New</a>
 <!--ng-controller="OrganizationCtrl" data-ng-init="getOrgs()"-->

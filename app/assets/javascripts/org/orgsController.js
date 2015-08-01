@@ -3,8 +3,12 @@ angular.module('Sentinel.orgsController', [])
 		$scope.orgs = Org.query(); //fetch all orgs. Issues a GET to /api/orgs
 		
 		$scope.deleteOrg = function(org) { // Delete a org. Issues a DELETE to /api/org/:id
-			org.$delete(function() {
-				$state.go('orgs'); //redirect to home
+			org.$delete(function(response) {
+				$scope.message = response;
+				
+				if(response.status == 'ok'){
+					$state.go('orgs'); //redirect to home
+				}
 			});
 		};
 	}]
@@ -18,15 +22,23 @@ angular.module('Sentinel.orgsController', [])
 	
     $scope.addOrg=function(){
         $scope.org.$save(function(response){
-            $state.go('orgs');
+            $scope.message = response;
+        	
+            if(response.status == 'ok'){
+				$state.go('orgs'); //redirect to home
+			}
         });
     }
 
 }]).controller('OrgEditController',['$scope', '$state', '$stateParams', 'Org', function($scope,$state,$stateParams,Org){
 
     $scope.updateOrg=function(){
-        $scope.org.$update(function(){
-            $state.go('orgs');
+        $scope.org.$update(function(response){
+        	$scope.message = response;
+        	
+            if(response.status == 'ok'){
+				$state.go('orgs'); //redirect to home
+			}
         });
     };
 
