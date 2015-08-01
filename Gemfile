@@ -53,7 +53,7 @@ gem 'tzinfo-data'
 gem 'tzinfo'
 
 #In this step you’ll learn how to propagate a local change to the application through to Heroku. As an example, you’ll modify the application to add an additional dependency and the code to use it.
-gem 'cowsay'
+#gem 'cowsay'
 
 gem 'angularjs-rails', '~> 1.3.15'
 gem 'angular-rails-templates'

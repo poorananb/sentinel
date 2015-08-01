@@ -1,15 +1,32 @@
 class OrgsController < ApplicationController
-  respond_to :json
+  respond_to :json, :html
   
   def index
-    respond_with Org.all
+    @orgs = Org.all
+    respond_with @orgs
   end
 
   def new
   end
 
-  def create
-    respond_with Org.create(org_params)
+  def create 
+    respond_to do |format|
+      if Org.create(org_params)
+        format.json do
+          render :json => { 
+             :status => :ok, 
+             :message => "Organization was successfully updated.!"
+          }.to_json
+        end  
+      else
+        format.json do 
+          render :json => {
+            :message => @org.errors, 
+            :status => :error #unprocessable_entity 
+          }.to_json
+        end
+      end 
+    end
   end
 
   def show
@@ -64,6 +81,6 @@ class OrgsController < ApplicationController
   
   private
   def org_params
-    params.require(:org).permit(:name, :code)
+    params.require(:org).permit(:name, :code) if params[:org]
   end
 end

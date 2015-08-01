@@ -1,5 +1,5 @@
-var app = angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages']);
-app.config(['$stateProvider', '$urlRouterProvider', 
+angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'ngResource', 'Sentinel.orgsController', 'Sentinel.orgs']);
+angular.module('Sentinel').config(['$stateProvider', '$urlRouterProvider', 
 function($stateProvider, $urlRouterProvider) {
 	$stateProvider
 	.state('home', {
@@ -17,46 +17,30 @@ function($stateProvider, $urlRouterProvider) {
 		templateUrl: 'home/_jobs.html',
 		controller: 'SentinelCtrl'
 	})
-	.state('createneworg', {
-		url: '/createneworg',
-		templateUrl: 'org/_createneworg.html',
+	.state('orgs', {
+		url: '/orgs',
+		templateUrl: 'org/_orgs.html',
 		controller: 'OrganizationCtrl'
 	})
-	.state('listorg', {
-		url: '/listorg',
-		templateUrl: 'org/_listorg.html',
-		controller: 'OrganizationCtrl',
-		resolve: {
-        	postPromise: ['orgs', function(orgs){
-            	return orgs.getAll();
-            }]
-        }
+	.state('createOrg', {
+		url: '/createOrg',
+		templateUrl: 'org/_createOrg.html',
+		controller: 'OrgCreateController'
 	})
-	.state('orgs', {
-		url: '/orgs/{id}',
+	.state('showOrg', {
+		url: '/orgs/:id/show',
 		templateUrl: 'org/_show.html',
-		controller: 'OrganizationCtrl',
-		resolve: {
-			post: ['$stateParams', 'orgs', function($stateParams, orgs) {
-				return orgs.get($stateParams.id);
-			}]
-		}
+		controller: 'OrgViewController'
 	})
-	.state('editorg', {
+	.state('editOrg', {
 		url: '/orgs/{id}/edit',
 		templateUrl: 'org/_edit.html',
-		controller: 'OrganizationCtrl',
-		resolve: {
-			post: ['$stateParams', 'orgs', function($stateParams, orgs) {
-				return orgs.get($stateParams.id);
-			}]
-		}
+		controller: 'OrgEditController'
 	});
 	
 	$urlRouterProvider.otherwise('home');
-}]);
-
-app.directive('ngConfirmClick', [
+}])
+.directive('ngConfirmClick', [
   function(){
     return {
       priority: 100,
