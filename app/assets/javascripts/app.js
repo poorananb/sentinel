@@ -8,19 +8,19 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
 		controller: 'SentinelCtrl'
 	})
 	.state('realm', {
-		url: '/home',
+		url: '/realm',
 		templateUrl: 'home/_realm.html',
-		controller: 'SentinelCtrl'
+		controller: 'RealmController'
 	})
 	.state('jobs', {
-		url: '/home',
+		url: '/jobs',
 		templateUrl: 'home/_jobs.html',
-		controller: 'SentinelCtrl'
+		controller: 'JobsController'
 	})
 	.state('orgs', {
 		url: '/orgs',
 		templateUrl: 'org/_orgs.html',
-		controller: 'OrganizationCtrl'
+		controller: 'OrgController'
 	})
 	.state('createOrg', {
 		url: '/createOrg',

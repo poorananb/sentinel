@@ -1,5 +1,5 @@
 angular.module('Sentinel.orgsController', [])
-.controller('OrganizationCtrl', ['$scope', '$state', '$window', 'Org', function($scope, $state, $window, Org){		
+.controller('OrgController', ['$scope', '$state', '$window', 'Org', function($scope, $state, $window, Org){		
 		$scope.orgs = Org.query(); //fetch all orgs. Issues a GET to /api/orgs
 		
 		$scope.deleteOrg = function(org) { // Delete a org. Issues a DELETE to /api/org/:id

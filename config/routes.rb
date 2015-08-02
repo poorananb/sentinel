@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  get 'home' => 'home#index'
+  get 'brand' => 'orgs#orgs'
+  get 'realm' => 'orgs#orgs'
+  get 'jobs' => 'orgs#orgs'
+  
   post 'orgs' => 'orgs#create'
   delete 'orgs' => 'orgs#destroy'
   put 'orgs' => 'orgs#update'
