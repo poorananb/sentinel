@@ -1,4 +1,4 @@
-class RealmsControllerController < ApplicationController
+class RealmsController < ApplicationController
   def index
   end
 
