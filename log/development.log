@@ -22133,3 +22133,45 @@ Started GET "/api/orgs" for 121.6.203.51 at 2015-08-08 04:53:57 +0000
 Processing by OrgsController#index as JSON
   [1m[35mOrg Load (0.3ms)[0m  SELECT "orgs".* FROM "orgs"
 Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCommunications (20150808054511)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "communications" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "org_code" varchar(20), "client_code" varchar(20), "primary_email" varchar, "secondary_email" varchar, "primary_phone" varchar, "secondary_phone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150808054511"]]
+  [1m[36m (21.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateProsesses (20150808055200)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "prosesses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150808055200"]]
+  [1m[36m (11.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateStages (20150808055327)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "stages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar(20), "name" varchar, "critical" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150808055327"]]
+  [1m[36m (9.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreatePraxis (20150808060357)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "praxis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "praxis_code" varchar, "org_code" varchar, "client_code" varchar, "realm_code" varchar, "prosess_code" varchar, "stage_code" varchar, "sequence" integer, "sla" integer, "tolerance_percentage" integer, "critical" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150808060357"]]
+  [1m[36m (12.5ms)[0m  [1mcommit transaction[0m
+Migrating to AddTimeZoneAndLocaleToOrgs (20150808061138)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "orgs" ADD "timezone" varchar[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "orgs" ADD "locale" varchar
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150808061138"]]
+  [1m[35m (11.1ms)[0m  commit transaction
+Migrating to AddTimeZoneAndLocaleToClients (20150808061244)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "clients" ADD "timezone" varchar
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "clients" ADD "locale" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150808061244"]]
+  [1m[36m (19.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
