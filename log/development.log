@@ -21179,3 +21179,957 @@ Started GET "/api/orgs" for 101.127.226.73 at 2015-08-04 01:54:57 +0000
 Processing by OrgsController#index as JSON
   [1m[35mOrg Load (183.9ms)[0m  SELECT `orgs`.* FROM `orgs`
 Completed 200 OK in 191ms (Views: 3.0ms | ActiveRecord: 183.9ms)
+
+
+Started GET "/orgs" for 121.6.203.51 at 2015-08-08 03:18:57 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by OrgsController#index as HTML
+  Rendered orgs/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_left.html.erb (6.2ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 2398ms (Views: 2380.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/app.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/angular-animate.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/angular-rails-templates.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/angular.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/angular-resource.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/admin/dashboard.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/animate.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/chart.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/clients_controller.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/home.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/home/_brand.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/home/_graph.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/home/_home.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/home/_jobs.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/home/_notifications.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/home/_project.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/home/_realm.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/home/sentinelCtrl.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/org/_createOrg.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/org/_edit.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/org/_form.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/org/_orgs.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/org/_show.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/org/orgs.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/org/orgsController.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/orgs_controller.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/realms_controller.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/sessions.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/users.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/welcome.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/widgets.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/application.js?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/application.css?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/font-awesome.css?body=1" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/assets/sentinel-logo.png" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+
+Started GET "/api/orgs" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+Processing by OrgsController#index as JSON
+  [1m[35mOrg Load (0.4ms)[0m  SELECT "orgs".* FROM "orgs"
+Completed 200 OK in 8ms (Views: 1.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/skin-config.html" for 121.6.203.51 at 2015-08-08 03:19:00 +0000
+
+ActionController::RoutingError (No route matches [GET] "/skin-config.html"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (2.12.1) lib/puma/server.rb:539:in `handle_request'
+  puma (2.12.1) lib/puma/server.rb:386:in `process_client'
+  puma (2.12.1) lib/puma/server.rb:269:in `block in run'
+  puma (2.12.1) lib/puma/thread_pool.rb:106:in `call'
+  puma (2.12.1) lib/puma/thread_pool.rb:106:in `block in spawn_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (15.0ms)
+
+
+Started GET "/" for 121.6.203.51 at 2015-08-08 04:43:23 +0000
+Processing by HomeController#index as HTML
+  Rendered layouts/_left.html.erb (1.4ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/application.html.erb within layouts/application (416.4ms)
+  Rendered layouts/_left.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 646ms (Views: 631.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/angular-rails-templates.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:26 +0000
+
+
+Started GET "/assets/angular-resource.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:26 +0000
+
+
+Started GET "/assets/angular-animate.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:26 +0000
+
+
+Started GET "/assets/angular.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:28 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:35 +0000
+
+
+Started GET "/assets/app.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:35 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:35 +0000
+
+
+Started GET "/assets/admin/dashboard.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:38 +0000
+
+
+Started GET "/assets/animate.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:38 +0000
+
+
+Started GET "/assets/chart.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:38 +0000
+
+
+Started GET "/assets/clients_controller.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:39 +0000
+
+
+Started GET "/assets/home.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:39 +0000
+
+
+Started GET "/assets/home/_brand.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:39 +0000
+
+
+Started GET "/assets/home/_graph.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:39 +0000
+
+
+Started GET "/assets/home/_home.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:39 +0000
+
+
+Started GET "/assets/home/_jobs.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:39 +0000
+
+
+Started GET "/assets/home/_notifications.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:39 +0000
+
+
+Started GET "/assets/home/_project.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:39 +0000
+
+
+Started GET "/assets/home/_realm.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:39 +0000
+
+
+Started GET "/assets/home/sentinelCtrl.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:40 +0000
+
+
+Started GET "/assets/org/_createOrg.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:40 +0000
+
+
+Started GET "/assets/org/_edit.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:40 +0000
+
+
+Started GET "/assets/org/_form.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:40 +0000
+
+
+Started GET "/assets/org/_orgs.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:40 +0000
+
+
+Started GET "/assets/org/_show.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:40 +0000
+
+
+Started GET "/assets/org/orgs.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:40 +0000
+
+
+Started GET "/assets/org/orgsController.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:40 +0000
+
+
+Started GET "/assets/orgs_controller.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:40 +0000
+
+
+Started GET "/assets/realms_controller.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:40 +0000
+
+
+Started GET "/assets/sessions.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:40 +0000
+
+
+Started GET "/assets/users.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:41 +0000
+
+
+Started GET "/assets/widgets.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:41 +0000
+
+
+Started GET "/assets/welcome.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:41 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:41 +0000
+
+
+Started GET "/assets/application.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:41 +0000
+
+
+Started GET "/assets/application.css?body=1" for 121.6.203.51 at 2015-08-08 04:43:41 +0000
+
+
+Started GET "/assets/font-awesome.css?body=1" for 121.6.203.51 at 2015-08-08 04:43:41 +0000
+
+
+Started GET "/orgs" for 121.6.203.51 at 2015-08-08 04:43:44 +0000
+Processing by OrgsController#index as HTML
+  Rendered orgs/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_left.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+Completed 200 OK in 242ms (Views: 237.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 121.6.203.51 at 2015-08-08 04:43:45 +0000
+
+
+Started GET "/assets/angular.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:45 +0000
+
+
+Started GET "/assets/angular-resource.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:51 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:51 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:54 +0000
+
+
+Started GET "/assets/angular-animate.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:54 +0000
+
+
+Started GET "/assets/font-awesome.css?body=1" for 121.6.203.51 at 2015-08-08 04:43:54 +0000
+
+
+Started GET "/" for 121.6.203.51 at 2015-08-08 04:43:55 +0000
+Processing by HomeController#index as HTML
+  Rendered layouts/_left.html.erb (0.8ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/application.html.erb within layouts/application (286.9ms)
+  Rendered layouts/_left.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 555ms (Views: 553.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 121.6.203.51 at 2015-08-08 04:43:55 +0000
+Processing by HomeController#index as HTML
+  Rendered layouts/_left.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/application.html.erb within layouts/application (254.9ms)
+  Rendered layouts/_left.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 473ms (Views: 471.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/angular-rails-templates.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:56 +0000
+
+
+Started GET "/assets/app.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:56 +0000
+
+
+Started GET "/assets/admin/dashboard.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:56 +0000
+
+
+Started GET "/assets/animate.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:56 +0000
+
+
+Started GET "/assets/chart.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:56 +0000
+
+
+Started GET "/assets/clients_controller.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:56 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 121.6.203.51 at 2015-08-08 04:43:56 +0000
+
+
+Started GET "/assets/angular-resource.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:00 +0000
+
+
+Started GET "/assets/angular.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:00 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/angular-animate.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/angular-rails-templates.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/home.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/home/_brand.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/home/_graph.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/home/_home.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/home/_jobs.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/home/_notifications.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/app.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/admin/dashboard.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/animate.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/clients_controller.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/chart.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/home/_project.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/home.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/home/_brand.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/home/sentinelCtrl.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/home/_realm.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/org/_createOrg.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/org/_edit.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/org/_form.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/home/_home.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/home/_graph.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/home/_jobs.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/home/_notifications.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/home/_project.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/org/_orgs.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/org/_show.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/org/orgs.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/org/orgsController.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/orgs_controller.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:09 +0000
+
+
+Started GET "/assets/home/_realm.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/realms_controller.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/home/sentinelCtrl.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/org/_createOrg.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/org/_form.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/org/_edit.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/sessions.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/users.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/welcome.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/widgets.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/org/_orgs.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/org/_show.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/org/orgsController.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/org/orgs.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/orgs_controller.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/application.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/chart.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/realms_controller.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/sessions.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/users.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/welcome.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/widgets.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/application.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/application.css?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/font-awesome.css?body=1" for 121.6.203.51 at 2015-08-08 04:44:10 +0000
+
+
+Started GET "/assets/angular.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:11 +0000
+
+
+Started GET "/assets/patterns/header-profile.png" for 121.6.203.51 at 2015-08-08 04:44:22 +0000
+
+ActionController::RoutingError (No route matches [GET] "/assets/patterns/header-profile.png"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (2.12.1) lib/puma/server.rb:539:in `handle_request'
+  puma (2.12.1) lib/puma/server.rb:386:in `process_client'
+  puma (2.12.1) lib/puma/server.rb:269:in `block in run'
+  puma (2.12.1) lib/puma/thread_pool.rb:106:in `call'
+  puma (2.12.1) lib/puma/thread_pool.rb:106:in `block in spawn_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (59.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (10.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (182.4ms)
+
+
+Started GET "/assets/sentinel-logo.png" for 121.6.203.51 at 2015-08-08 04:44:22 +0000
+
+
+Started GET "/skin-config.html" for 121.6.203.51 at 2015-08-08 04:44:22 +0000
+
+ActionController::RoutingError (No route matches [GET] "/skin-config.html"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (2.12.1) lib/puma/server.rb:539:in `handle_request'
+  puma (2.12.1) lib/puma/server.rb:386:in `process_client'
+  puma (2.12.1) lib/puma/server.rb:269:in `block in run'
+  puma (2.12.1) lib/puma/thread_pool.rb:106:in `call'
+  puma (2.12.1) lib/puma/thread_pool.rb:106:in `block in spawn_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (18.5ms)
+
+
+Started GET "/assets/fontawesome-webfont.woff?v=4.2.0" for 121.6.203.51 at 2015-08-08 04:44:22 +0000
+
+
+Started GET "/assets/angular-animate.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:28 +0000
+
+
+Started GET "/assets/angular-resource.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:29 +0000
+
+
+Started GET "/assets/angular-rails-templates.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:30 +0000
+
+
+Started GET "/assets/app.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:30 +0000
+
+
+Started GET "/assets/admin/dashboard.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:30 +0000
+
+
+Started GET "/assets/animate.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:30 +0000
+
+
+Started GET "/assets/clients_controller.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:30 +0000
+
+
+Started GET "/assets/home.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:30 +0000
+
+
+Started GET "/assets/home/_brand.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:30 +0000
+
+
+Started GET "/assets/home/_graph.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:31 +0000
+
+
+Started GET "/assets/home/_home.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:31 +0000
+
+
+Started GET "/assets/home/_jobs.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:31 +0000
+
+
+Started GET "/assets/home/_notifications.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:31 +0000
+
+
+Started GET "/assets/home/_project.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:31 +0000
+
+
+Started GET "/assets/home/_realm.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:31 +0000
+
+
+Started GET "/assets/home/sentinelCtrl.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:31 +0000
+
+
+Started GET "/assets/org/_createOrg.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:31 +0000
+
+
+Started GET "/assets/org/_edit.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:31 +0000
+
+
+Started GET "/assets/org/_form.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:32 +0000
+
+
+Started GET "/assets/org/_orgs.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:32 +0000
+
+
+Started GET "/assets/org/_show.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:32 +0000
+
+
+Started GET "/assets/org/orgs.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:32 +0000
+
+
+Started GET "/assets/org/orgsController.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:32 +0000
+
+
+Started GET "/assets/orgs_controller.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:32 +0000
+
+
+Started GET "/assets/realms_controller.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:32 +0000
+
+
+Started GET "/assets/sessions.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:32 +0000
+
+
+Started GET "/assets/users.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:32 +0000
+
+
+Started GET "/assets/welcome.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:33 +0000
+
+
+Started GET "/assets/widgets.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:33 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:33 +0000
+
+
+Started GET "/assets/application.js?body=1" for 121.6.203.51 at 2015-08-08 04:44:33 +0000
+
+
+Started GET "/assets/application.css?body=1" for 121.6.203.51 at 2015-08-08 04:44:33 +0000
+
+
+Started GET "/assets/font-awesome.css?body=1" for 121.6.203.51 at 2015-08-08 04:44:33 +0000
+
+
+Started GET "/assets/patterns/header-profile.png" for 121.6.203.51 at 2015-08-08 04:44:37 +0000
+
+ActionController::RoutingError (No route matches [GET] "/assets/patterns/header-profile.png"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (2.12.1) lib/puma/server.rb:539:in `handle_request'
+  puma (2.12.1) lib/puma/server.rb:386:in `process_client'
+  puma (2.12.1) lib/puma/server.rb:269:in `block in run'
+  puma (2.12.1) lib/puma/thread_pool.rb:106:in `call'
+  puma (2.12.1) lib/puma/thread_pool.rb:106:in `block in spawn_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (78.0ms)
+
+
+Started GET "/skin-config.html" for 121.6.203.51 at 2015-08-08 04:44:38 +0000
+
+ActionController::RoutingError (No route matches [GET] "/skin-config.html"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (2.12.1) lib/puma/server.rb:539:in `handle_request'
+  puma (2.12.1) lib/puma/server.rb:386:in `process_client'
+  puma (2.12.1) lib/puma/server.rb:269:in `block in run'
+  puma (2.12.1) lib/puma/thread_pool.rb:106:in `call'
+  puma (2.12.1) lib/puma/thread_pool.rb:106:in `block in spawn_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (14.2ms)
+
+
+Started GET "/assets/sentinel-logo.png" for 121.6.203.51 at 2015-08-08 04:44:38 +0000
+
+
+Started GET "/assets/fontawesome-webfont.woff?v=4.2.0" for 121.6.203.51 at 2015-08-08 04:44:38 +0000
+
+
+Started GET "/api/orgs" for 121.6.203.51 at 2015-08-08 04:44:38 +0000
+Processing by OrgsController#index as JSON
+  [1m[36mOrg Load (0.5ms)[0m  [1mSELECT "orgs".* FROM "orgs"[0m
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/home" for 121.6.203.51 at 2015-08-08 04:53:53 +0000
+Processing by HomeController#index as HTML
+  Rendered layouts/_left.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/application.html.erb within layouts/application (589.7ms)
+  Rendered layouts/_left.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 854ms (Views: 853.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/angular-rails-templates.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/app.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/angular-animate.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/angular.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/angular-resource.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/admin/dashboard.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/animate.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/chart.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/clients_controller.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/home.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/home/_brand.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/home/_graph.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/home/_home.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/home/_jobs.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/home/_notifications.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/home/_project.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/home/_realm.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/home/sentinelCtrl.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/org/_createOrg.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/org/_edit.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/org/_form.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/org/_orgs.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/org/_show.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/org/orgs.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/org/orgsController.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/orgs_controller.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/realms_controller.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/sessions.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/users.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/welcome.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/widgets.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/application.js?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/application.css?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/font-awesome.css?body=1" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/assets/sentinel-logo.png" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+
+Started GET "/skin-config.html" for 121.6.203.51 at 2015-08-08 04:53:54 +0000
+
+ActionController::RoutingError (No route matches [GET] "/skin-config.html"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (2.12.1) lib/puma/server.rb:539:in `handle_request'
+  puma (2.12.1) lib/puma/server.rb:386:in `process_client'
+  puma (2.12.1) lib/puma/server.rb:269:in `block in run'
+  puma (2.12.1) lib/puma/thread_pool.rb:106:in `call'
+  puma (2.12.1) lib/puma/thread_pool.rb:106:in `block in spawn_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (11.8ms)
+
+
+Started GET "/api/orgs" for 121.6.203.51 at 2015-08-08 04:53:57 +0000
+Processing by OrgsController#index as JSON
+  [1m[35mOrg Load (0.3ms)[0m  SELECT "orgs".* FROM "orgs"
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.3ms)
