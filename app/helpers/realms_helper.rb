@@ -1,2 +1,2 @@
-module RealmsControllerHelper
+module RealmsHelper
 end
