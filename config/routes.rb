@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'client/index'
+
   get 'home' => 'home#index'
   get 'brand' => 'orgs#orgs'
   get 'realm' => 'orgs#orgs'
