@@ -1,0 +1,2 @@
+class PraxisController < ApplicationController
+end

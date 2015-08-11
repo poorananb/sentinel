@@ -1,0 +1,2 @@
+class ProsessesController < ApplicationController
+end
