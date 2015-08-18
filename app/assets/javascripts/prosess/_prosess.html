@@ -1,0 +1,18 @@
+<div ng-show="message.message != null">
+    <div ng-show="message.status == 'ok'">
+        <div class="success">{{message.message}}</div>
+    </div>
+    <div ng-show="message.status == 'error'">
+        <div class="error">{{message.message}}</div>
+    </div>
+</div>
+
+<div>
+    <div ng-repeat="prosess in prosesses">
+        Name: {{prosess.name}} - Code: {{prosess.code}} &nbsp;
+        <a ui-sref="showProsess({id:prosess.id})">Show</a>    &nbsp;
+        <a href="/prosesses/{{prosess.id}}/edit">Edit</a>    &nbsp;
+        <a href="" ng-click="deleteProsess(prosess)" ng-confirm-click="Are you sure?">Delete</a>
+    </div>
+</div>
+<a href="/createProsess">Create New</a>

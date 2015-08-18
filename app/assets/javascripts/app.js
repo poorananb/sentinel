@@ -1,4 +1,4 @@
-angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'ngResource', 'Sentinel.orgsController', 'Sentinel.orgs']);
+angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'ngResource', 'Sentinel.orgsController', 'Sentinel.orgs', 'Sentinel.prosessesController', 'Sentinel.prosesses',, 'Sentinel.communicationsController', 'Sentinel.communications']);
 angular.module('Sentinel').config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
 function($stateProvider, $urlRouterProvider, $locationProvider) {
 	$stateProvider
@@ -36,8 +36,47 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
 		url: '/orgs/{id}/edit',
 		templateUrl: 'org/_edit.html',
 		controller: 'OrgEditController'
+	})
+	.state('process', {
+		url: '/prosesses',
+		templateUrl: 'prosess/_prosess.html',
+		controller: 'ProsessController'
+	})
+	.state('createProsess', {
+		url: '/createProsess',
+		templateUrl: 'prosess/_createProsess.html',
+		controller: 'ProsessCreateController'
+	})
+	.state('showProsess', {
+		url: '/prosesses/:id',
+		templateUrl: 'prosess/_show.html',
+		controller: 'ProsessViewController'
+	})
+	.state('editProsess', {
+		url: '/prosesses/{id}/edit',
+		templateUrl: 'prosess/_edit.html',
+		controller: 'ProsessEditController'
+	})
+	.state('communications', {
+		url: '/communications',
+		templateUrl: 'communication/_communications.html',
+		controller: 'CommunicationController'
+	})
+	.state('createCommunication', {
+		url: '/createCommunication',
+		templateUrl: 'communication/_createCommunication.html',
+		controller: 'CommunicationCreateController'
+	})
+	.state('showCommunication', {
+		url: '/communications/:id',
+		templateUrl: 'communication/_show.html',
+		controller: 'CommunicationViewController'
+	})
+	.state('editCommunication', {
+		url: '/communications/{id}/edit',
+		templateUrl: 'communication/_edit.html',
+		controller: 'CommunicationEditController'
 	});
-
 	$urlRouterProvider.otherwise('home');
 	
 	$locationProvider.html5Mode(true);

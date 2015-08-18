@@ -1,0 +1,11 @@
+<div ng-show="message.message != null">
+    <div ng-show="message.status == 'error'">
+        <div class="error">{{message.message}}</div>
+    </div>
+</div>
+<div>
+    <form ng-submit="addCommunication()" name="communicationForm" novalidate>
+        <div ng-include="'communication/_form.html'"></div>
+    </form>
+</div>
+<a href="/communications">Back To List</a>

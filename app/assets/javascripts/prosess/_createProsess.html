@@ -1,0 +1,11 @@
+<div ng-show="message.message != null">
+    <div ng-show="message.status == 'error'">
+        <div class="error">{{message.message}}</div>
+    </div>
+</div>
+<div>
+    <form ng-submit="addProsess()" name="prosessForm" novalidate>
+        <div ng-include="'prosess/_form.html'"></div>
+    </form>
+</div>
+<a href="/prosesses">Back To List</a>

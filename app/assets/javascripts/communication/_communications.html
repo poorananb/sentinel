@@ -1,0 +1,20 @@
+<div ng-show="message.message != null">
+    <div ng-show="message.status == 'ok'">
+        <div class="success">{{message.message}}</div>
+    </div>
+    <div ng-show="message.status == 'error'">
+        <div class="error">{{message.message}}</div>
+    </div>
+</div>
+
+<div>
+    <div ng-repeat="communication in communications">
+        Org Code: {{communication.org_code}} - Client Code: {{communication.client_code}} - Primary Email: {{communication.primary_email}}- Secondary Email: {{communication.secondary_email
+}}- Primary Phone: {{communication.primary_phone}}- Secondary Phone: {{communication.secondary_phone}}&nbsp;
+        <a ui-sref="showCommunication({id:communication.id})">Show</a>    &nbsp;
+        <a href="/communications/{{communication.id}}/edit">Edit</a>    &nbsp;
+        <a href="" ng-click="deleteCommunication(communication)" ng-confirm-click="Are you sure?">Delete</a>
+    </div>
+</div>
+<a href="/createCommunication">Create New</a>
+<!--ng-controller="OrganizationCtrl" data-ng-init="getOrgs()"-->

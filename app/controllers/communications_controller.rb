@@ -1,9 +1,9 @@
-class ProsessesController < ApplicationController
+class CommunicationsController < ApplicationController
   respond_to :json, :html
   
   def index
-    @prosesses = Prosess.all
-    respond_with @prosesses
+    @communications = Communication.all
+    respond_with @communications
   end
 
   def new
@@ -11,17 +11,17 @@ class ProsessesController < ApplicationController
 
   def create 
     respond_to do |format|
-      if Prosess.create(prosess_params)
+      if Communication.create(communication_params)
         format.json do
           render :json => { 
              :status => :ok, 
-             :message => "Process was successfully updated.!"
+             :message => "Communication was successfully updated.!"
           }.to_json
         end  
       else
         format.json do 
           render :json => {
-            :message => @prosess.errors, 
+            :message => @communication.errors, 
             :status => :error #unprocessable_entity 
           }.to_json
         end
@@ -30,27 +30,27 @@ class ProsessesController < ApplicationController
   end
 
   def show
-    respond_with Prosess.find(params[:id])
+    respond_with Communication.find(params[:id])
   end
 
   def edit
-    respond_with Prosess.find(params[:id])
+    respond_with Communication.find(params[:id])
   end
 
   def update
-    @prosess = Prosess.find(params[:id])
+    @communication = Communication.find(params[:id])
     respond_to do |format|
-      if @prosess.update(prosess_params)
+      if @communication.update(communication_params)
         format.json do
           render :json => { 
              :status => :ok, 
-             :message => "Process was successfully updated.!"
+             :message => "communication was successfully updated.!"
           }.to_json
         end  
       else
         format.json do 
           render :json => {
-            :message => @prosess.errors, 
+            :message => @communication.errors, 
             :status => :error #unprocessable_entity 
           }.to_json
         end
@@ -59,19 +59,19 @@ class ProsessesController < ApplicationController
   end
 
   def destroy
-    @prosess = Prosess.find(params[:id])
+    @communication = Communication.find(params[:id])
     respond_to do |format|
-      if @prosess.destroy
+      if @communication.destroy
         format.json do
           render :json => { 
              :status => :ok, 
-             :message => "Process was successfully deleted.!"
+             :message => "communication was successfully deleted.!"
           }.to_json
         end  
       else
         format.json do 
           render :json => {
-            :message => @prosess.errors, 
+            :message => @communication.errors, 
             :status => :error #unprocessable_entity 
           }.to_json
         end
@@ -80,7 +80,7 @@ class ProsessesController < ApplicationController
   end
   
   private
-  def prosess_params
-    params.require(:prosess).permit(:name, :code) if params[:prosess]
+  def communication_params
+    params.require(:communication).permit(:org_code, :client_code, :primary_email, :secondary_email, :primary_phone, :secondary_phone) if params[:communication]
   end
 end

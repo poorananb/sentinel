@@ -1,0 +1,48 @@
+<div ng-show="message.message != null">
+    <div ng-show="message.status == 'ok'">
+        <div class="success">{{message.message}}</div>
+    </div>
+    <div ng-show="message.status == 'error'">
+        <div class="error">{{message.message}}</div>
+    </div>
+</div>
+
+<div>
+    <form ng-submit="updateCommunication()">
+        <input type="hidden" name="id" ng-model="communication.id"/>
+        <div>
+            <input type="text" 
+            ng-model="communication.org_code" 
+            name="org code"/>
+        </div>
+        <div>
+            <input type="text" 
+            ng-model="communication.client_code" 
+            name="client code"/>
+        </div>
+         <div>
+            <input type="text" 
+            ng-model="communication.primary_email" 
+            name="primary email"/>
+        </div>
+         <div>
+            <input type="text" 
+            ng-model="communication.secondary_email" 
+            name="secondary email"/>
+        </div>
+           <div>
+            <input type="text" 
+            ng-model="communication.primary_phone" 
+            name="primary phone"/>
+        </div>
+          <div>
+            <input type="text" 
+            ng-model="communication.secondary_phone" 
+            name="secondary phone"/>
+        </div>
+        <div>
+            <button type="submit">Update Org</button>
+        </div>
+    </form>
+</div>
+<a href="/communications">Back To List</a>

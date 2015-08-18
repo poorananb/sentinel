@@ -1,0 +1,28 @@
+<div ng-show="message.message != null">
+    <div ng-show="message.status == 'ok'">
+        <div class="success">{{message.message}}</div>
+    </div>
+    <div ng-show="message.status == 'error'">
+        <div class="error">{{message.message}}</div>
+    </div>
+</div>
+
+<div>
+    <form ng-submit="updateProsess()">
+        <input type="hidden" name="id" ng-model="prosess.id"/>
+        <div>
+            <input type="text" 
+            ng-model="prosess.name" 
+            name="name"/>
+        </div>
+        <div>
+            <input type="text" 
+            ng-model="prosess.code" 
+            name="code"/>
+        </div>
+        <div>
+            <button type="submit">Update Process</button>
+        </div>
+    </form>
+</div>
+<a href="/prosesses">Back To List</a>

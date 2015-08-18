@@ -10,6 +10,16 @@ Rails.application.routes.draw do
   post 'orgs' => 'orgs#create'
   delete 'orgs' => 'orgs#destroy'
   put 'orgs' => 'orgs#update'
+ 
+  get 'prosesses' => 'prosesses#index'
+  post 'prosesses' => 'prosesses#create'
+  delete 'prosesses' => 'prosesses#destroy'
+  put 'prosesses' => 'prosesses#update'
+  
+    get 'communications' => 'communications#index'
+  post 'communications' => 'communications#create'
+  delete 'communications' => 'communications#destroy'
+  put 'communications' => 'communications#update'
 
   get 'signup', to: 'admin/users#new', as: 'signup'
   get 'login', to: 'sessions#index', as: 'login'
@@ -22,10 +32,19 @@ Rails.application.routes.draw do
   scope :api do
     resources :orgs, defaults: {format: 'json'}
   end
+  
+  scope :api do
+      resources :prosesses, defaults: {format: 'json'}
+  end
+  scope :api do
+      resources :communications, defaults: {format: 'json'}
+  end
    
   resources :users
   resources :orgs
   resources :sessions
+  resources :prosesses
+  resources :communications
   
   namespace :admin do
   	get '', to: 'dashboard#index', as: '/'
