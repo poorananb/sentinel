@@ -12,8 +12,8 @@
     <div class="container">
         <div class="row">
             <div id="contentTable">
-                <form ng-submit="updateOrg()">
-                    <input type="hidden" name="id" ng-model="org.id"/>
+                <form ng-submit="updateClient()">
+                    <input type="hidden" name="id" ng-model="client.id"/>
             		<table class="col-sm-12 table-bordered table-striped table-condensed cf">
             				<thead class="cf">
             					<tr>
@@ -23,11 +23,11 @@
             				</thead>
         					<tbody>
         					    <tr>
-        							<td data-title="Name"><input type="text" ng-model="org.name" name="name"/></td>
-        							<td data-title="Code"><input type="text" ng-model="org.code" name="code"/></td>
+        							<td data-title="Name"><input type="text" ng-model="client.name" name="name"/></td>
+        							<td data-title="Code"><input type="text" ng-model="client.code" name="code"/></td>
         						</tr>
         						<tr>
-        						    <td colspan="2"><button type="submit" class="btn-lg">Update Org</button></td> 
+        						    <td colspan="2"><button type="submit" class="btn-lg">Update Client</button></td> 
         						</tr>
         					</tbody>
             		</table>
@@ -39,5 +39,5 @@
 
 
 <div class="formWrapper">
-    <a href="/orgs" class="btn-lg">Back To List</a>        
+    <a href="/clients" class="btn-lg">Back To List</a>        
 </div>

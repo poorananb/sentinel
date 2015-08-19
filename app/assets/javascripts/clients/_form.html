@@ -1,14 +1,14 @@
 <div class="formWrapper">
-    <div class="form-group" ng-class="{ 'has-error': orgForm.name.$touched && orgForm.name.$invalid }">
+    <div class="form-group" ng-class="{ 'has-error': clientForm.name.$touched && clientForm.name.$invalid }">
         Name: <input type="text" 
         name="name" 
         id="name"
-        ng-model="org.name" 
+        ng-model="client.name" 
         ng-minlength="3" 
         ng-maxlength="8" 
         required/>
         
-        <div class="help-block" ng-messages="orgForm.name.$error" ng-show="orgForm.name.$touched">
+        <div class="help-block" ng-messages="clientForm.name.$error" ng-show="clientForm.name.$touched">
             <!-- show an error if name is too short -->
             <p ng-message="minlength">Name is too short.</p>
         
@@ -19,15 +19,15 @@
             <p ng-message="required">Your name is required.</p>
         </div>
     </div>
-    <div class="form-group" ng-class="{ 'has-error': orgForm.code.$touched && orgForm.code.$invalid }">
+    <div class="form-group" ng-class="{ 'has-error': clientForm.code.$touched && clientForm.code.$invalid }">
         Code: <input type="text" 
         name="code"
         id="code"
-        ng-model="org.code"
+        ng-model="client.code"
         ng-minlength="3" 
         ng-maxlength="8" 
         required/>
-        <div class="help-block" ng-messages="orgForm.code.$error" ng-show="orgForm.code.$touched">
+        <div class="help-block" ng-messages="clientForm.code.$error" ng-show="clientForm.code.$touched">
             <!-- show an error if name is too short -->
             <p ng-message="minlength">Code is too short.</p>
         
@@ -41,7 +41,7 @@
 </div>
 <div class="formWrapper">
     <div>
-        <button type="submit" class="btn-lg">Add Org</button>
-        <a href="/orgs" class="btn-lg">Back To List</a>
+        <button type="submit" class="btn-lg">Add Client</button>
+        <a href="/clients" class="btn-lg">Back To List</a>
     </div>
 </div>

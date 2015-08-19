@@ -6,10 +6,15 @@ Rails.application.routes.draw do
   get 'brand' => 'orgs#orgs'
   get 'realm' => 'orgs#orgs'
   get 'jobs' => 'orgs#orgs'
+  get 'clients' => 'clients#index'
   
   post 'orgs' => 'orgs#create'
   delete 'orgs' => 'orgs#destroy'
   put 'orgs' => 'orgs#update'
+ 
+ post 'clients' => 'clients#create'
+  delete 'clients' => 'clients#destroy'
+  put 'clients' => 'clients#update'
  
   get 'prosesses' => 'prosesses#index'
   post 'prosesses' => 'prosesses#create'
@@ -39,12 +44,17 @@ Rails.application.routes.draw do
   scope :api do
       resources :communications, defaults: {format: 'json'}
   end
+  
+  scope :api do
+      resources :clients, defaults: {format: 'json'}
+  end
    
   resources :users
   resources :orgs
   resources :sessions
   resources :prosesses
   resources :communications
+   resources :clients
   
   namespace :admin do
   	get '', to: 'dashboard#index', as: '/'

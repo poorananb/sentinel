@@ -7,22 +7,31 @@
     </div>
 </div>
 
-<div>
-    <form ng-submit="updateProsess()">
-        <input type="hidden" name="id" ng-model="prosess.id"/>
-        <div>
-            <input type="text" 
-            ng-model="prosess.name" 
-            name="name"/>
+<div class="formWrapper">
+    <div class="container">
+        <div class="row">
+            <div id="contentTable">
+                <form ng-submit="updateProsess()">
+                    <input type="hidden" name="id" ng-model="prosess.id"/>
+                    <div>
+                        <input type="text" 
+                        ng-model="prosess.name" 
+                        name="name"/>
+                    </div>
+                    <div>
+                        <input type="text" 
+                        ng-model="prosess.code" 
+                        name="code"/>
+                    </div>
+                    <div>
+                        <button type="submit"  class="btn-lg">Update Process</button>
+                    </div>
+                </form>
+        	</div>	
         </div>
-        <div>
-            <input type="text" 
-            ng-model="prosess.code" 
-            name="code"/>
-        </div>
-        <div>
-            <button type="submit">Update Process</button>
-        </div>
-    </form>
+    </div>
 </div>
-<a href="/prosesses">Back To List</a>
+
+<div class="formWrapper">
+    <a href="/prosesses" class="btn-lg">Back To List</a>        
+</div>

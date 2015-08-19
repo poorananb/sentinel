@@ -1,3 +1,9 @@
+<div class="row  border-bottom white-bg dashboard-header">
+	<div class="modTitle"><span>COMMUNICATIONS</span></div>
+	<div class="createBtn"><a href="/createCommunication" class="btnLg">Create New</a>  </div>
+</div>
+
+
 <div ng-show="message.message != null">
     <div ng-show="message.status == 'ok'">
         <div class="success">{{message.message}}</div>
@@ -7,14 +13,66 @@
     </div>
 </div>
 
-<div>
-    <div ng-repeat="communication in communications">
-        Org Code: {{communication.org_code}} - Client Code: {{communication.client_code}} - Primary Email: {{communication.primary_email}}- Secondary Email: {{communication.secondary_email
-}}- Primary Phone: {{communication.primary_phone}}- Secondary Phone: {{communication.secondary_phone}}&nbsp;
-        <a ui-sref="showCommunication({id:communication.id})">Show</a>    &nbsp;
-        <a href="/communications/{{communication.id}}/edit">Edit</a>    &nbsp;
-        <a href="" ng-click="deleteCommunication(communication)" ng-confirm-click="Are you sure?">Delete</a>
+<div class="container">
+    <div class="row">
+    	<div id="contentTable">
+    		<table class="col-sm-12 table-bordered table-striped table-condensed cf">
+    				<thead class="cf">
+    					<tr>
+    						<th>Org Code</th>
+    						<th>Client Code</th>
+    						<th>Primary Email</th>
+    						<th>Secondary Email</th>
+    						<th>Primary Phone</th>
+    						<th>Secondary Phone</th>
+    						<th>&nbsp;</th>    						
+    					</tr>
+    				</thead>
+    				<tbody ng-repeat="communication in communications">
+    				    <tr>
+    						<td data-title="Org Code">{{communication.org_code}}</td>
+    						<td data-title="Client Code">{{communication.client_code}}</td>
+    						<td data-title="Primary Email">{{communication.primary_email}}</td>
+    						<td data-title="Secondary Email">{{communication.secondary_email}}</td>
+    						<td data-title="Primary Phone">{{communication.primary_phone}}</td>
+    						<td data-title="Secondary Phone">{{communication.secondary_phone}}</td>
+    						<td data-title="      " class="actionsBtn">
+                			    <a ui-sref="showCommunication({id:communication.id})" title="Show">
+                                    <svg class="icon icon-search"><use xlink:href="#icon-search"></use>
+                                    	<defs>
+                                            <symbol id="icon-search" viewBox="0 0 1024 1024">
+                                            	<title>search</title>
+                                            	<path class="path1" d="M992.262 871.396l-242.552-206.294c-25.074-22.566-51.89-32.926-73.552-31.926 57.256-67.068 91.842-154.078 91.842-249.176 0-212.078-171.922-384-384-384-212.076 0-384 171.922-384 384s171.922 384 384 384c95.098 0 182.108-34.586 249.176-91.844-1 21.662 9.36 48.478 31.926 73.552l206.294 242.552c35.322 39.246 93.022 42.554 128.22 7.356s31.892-92.898-7.354-128.22zM384 640c-141.384 0-256-114.616-256-256s114.616-256 256-256 256 114.616 256 256-114.614 256-256 256z"></path>
+                                            </symbol>
+                                        </defs>
+                                    </svg>    							        
+                			     </a> 
+                			    <a href="/communications/{{communication.id}}/edit" title="Edit">
+                                    <svg class="icon icon-pencil"><use xlink:href="#icon-pencil"></use>
+                                    	<defs>
+                                            <symbol id="icon-pencil" viewBox="0 0 1024 1024">
+                                            	<title>pencil</title>
+                                            	<path class="path1" d="M864 0c88.364 0 160 71.634 160 160 0 36.020-11.91 69.258-32 96l-64 64-224-224 64-64c26.742-20.090 59.978-32 96-32zM64 736l-64 288 288-64 592-592-224-224-592 592zM715.578 363.578l-448 448-55.156-55.156 448-448 55.156 55.156z"></path>
+                                            </symbol>
+                                        </defs>
+                                    </svg>    
+                			     </a> 
+                			    <a href="" ng-click="deleteCommunication(communication)" ng-confirm-click="Are you sure?" title="Delete">
+                                    <svg class="icon icon-bin"><use xlink:href="#icon-bin"></use>
+                                    	<defs>
+                                            <symbol id="icon-bin" viewBox="0 0 1024 1024">
+                                            	<title>bin</title>
+                                            	<path class="path1" d="M128 320v640c0 35.2 28.8 64 64 64h576c35.2 0 64-28.8 64-64v-640h-704zM320 896h-64v-448h64v448zM448 896h-64v-448h64v448zM576 896h-64v-448h64v448zM704 896h-64v-448h64v448z"></path>
+                                            	<path class="path2" d="M848 128h-208v-80c0-26.4-21.6-48-48-48h-224c-26.4 0-48 21.6-48 48v80h-208c-26.4 0-48 21.6-48 48v80h832v-80c0-26.4-21.6-48-48-48zM576 128h-192v-63.198h192v63.198z"></path>
+                                            </symbol>
+                                        </defs>
+                                    </svg>     							        
+                			     </a>     						    
+    						</td>    						
+    					</tr>
+							
+    				</tbody>
+    		</table>
+    	</div>
     </div>
 </div>
-<a href="/createCommunication">Create New</a>
-<!--ng-controller="OrganizationCtrl" data-ng-init="getOrgs()"-->
