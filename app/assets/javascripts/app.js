@@ -1,4 +1,4 @@
-angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'ngResource', 'Sentinel.orgsController', 'Sentinel.orgs', 'Sentinel.prosessesController', 'Sentinel.prosesses',, 'Sentinel.communicationsController', 'Sentinel.communications']);
+angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'ngResource', 'Sentinel.orgsController', 'Sentinel.orgs','Sentinel.prosessesController', 'Sentinel.prosesses','Sentinel.communicationsController', 'Sentinel.communications','Sentinel.realmsController','Sentinel.realms']);
 angular.module('Sentinel').config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
 function($stateProvider, $urlRouterProvider, $locationProvider) {
 	$stateProvider
@@ -6,11 +6,6 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
 		url: '/home',
 		templateUrl: 'home/_home.html',
 		controller: 'SentinelCtrl'
-	})
-	.state('realm', {
-		url: '/realm',
-		templateUrl: 'home/_realm.html',
-		controller: 'RealmController'
 	})
 	.state('jobs', {
 		url: '/jobs',
@@ -37,7 +32,7 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
 		templateUrl: 'org/_edit.html',
 		controller: 'OrgEditController'
 	})
-	.state('process', {
+	.state('prosesses', {
 		url: '/prosesses',
 		templateUrl: 'prosess/_prosess.html',
 		controller: 'ProsessController'
@@ -76,6 +71,26 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
 		url: '/communications/{id}/edit',
 		templateUrl: 'communication/_edit.html',
 		controller: 'CommunicationEditController'
+	})
+		.state('realms', {
+		url: '/realms',
+		templateUrl: 'realm/_realms.html',
+		controller: 'RealmController'
+	})
+	.state('createRealm', {
+		url: '/createRealm',
+		templateUrl: 'realm/_createRealm.html',
+		controller: 'RealmCreateController'
+	})
+	.state('showRealm', {
+		url: '/realms/:id',
+		templateUrl: 'realm/_show.html',
+		controller: 'RealmViewController'
+	})
+	.state('editRealm', {
+		url: '/realms/{id}/edit',
+		templateUrl: 'realm/_edit.html',
+		controller: 'RealmEditController'
 	});
 	$urlRouterProvider.otherwise('home');
 	

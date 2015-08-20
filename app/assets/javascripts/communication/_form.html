@@ -43,7 +43,7 @@
     id="primary_email"
     ng-model="communication.primary_email"
     ng-minlength="3" 
-    ng-maxlength="8" 
+    ng-maxlength="30" 
     required/>
     <div class="help-block" ng-messages="communicationForm.primary_email.$error" ng-show="communicationForm.primary_email.$touched">
         <!-- show an error if name is too short -->
@@ -63,7 +63,7 @@
     id="secondary_email"
     ng-model="communication.secondary_email"
     ng-minlength="3" 
-    ng-maxlength="8" 
+    ng-maxlength="30" 
     />
     <div class="help-block" ng-messages="communicationForm.secondary_email.$error" ng-show="communicationForm.secondary_email.$touched">
         <!-- show an error if name is too short -->

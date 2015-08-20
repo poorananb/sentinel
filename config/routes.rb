@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   get 'home' => 'home#index'
   get 'brand' => 'orgs#orgs'
-  get 'realm' => 'orgs#orgs'
   get 'jobs' => 'orgs#orgs'
   
+
   post 'orgs' => 'orgs#create'
   delete 'orgs' => 'orgs#destroy'
   put 'orgs' => 'orgs#update'
@@ -16,10 +16,15 @@ Rails.application.routes.draw do
   delete 'prosesses' => 'prosesses#destroy'
   put 'prosesses' => 'prosesses#update'
   
-    get 'communications' => 'communications#index'
+  get 'communications' => 'communications#index'
   post 'communications' => 'communications#create'
   delete 'communications' => 'communications#destroy'
   put 'communications' => 'communications#update'
+  
+ get 'realms' => 'realms#index'
+  post 'realms' => 'realms#create'
+  delete 'realms' => 'realms#destroy'
+  put 'realms' => 'realms#update'
 
   get 'signup', to: 'admin/users#new', as: 'signup'
   get 'login', to: 'sessions#index', as: 'login'
@@ -32,19 +37,24 @@ Rails.application.routes.draw do
   scope :api do
     resources :orgs, defaults: {format: 'json'}
   end
-  
   scope :api do
       resources :prosesses, defaults: {format: 'json'}
   end
   scope :api do
       resources :communications, defaults: {format: 'json'}
   end
-   
+ scope :api do
+      resources :realms, defaults: {format: 'json'}
+end
+  
+  
   resources :users
   resources :orgs
   resources :sessions
   resources :prosesses
   resources :communications
+  resources :realms
+
   
   namespace :admin do
   	get '', to: 'dashboard#index', as: '/'

@@ -1,8 +1,8 @@
 angular.module('Sentinel.communicationsController', [])
 .controller('CommunicationController', ['$scope', '$state', '$window', 'Communication', function($scope, $state, $window, Communication){		
-		$scope.communications = Communication.query(); //fetch all Communication. Issues a GET to /api/orgs
+		$scope.communications = Communication.query(); 
 		
-		$scope.deleteCommunication = function(communication) { // Delete a org. Issues a DELETE to /api/org/:id
+		$scope.deleteCommunication = function(communication) { 
 			communication.$delete(function(response) {
 				$scope.message = response;
 				
