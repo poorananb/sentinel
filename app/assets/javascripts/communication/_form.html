@@ -1,122 +1,127 @@
-<div class="form-group" ng-class="{ 'has-error': communicationForm.org_code.$touched && communicationForm.org_code.$invalid }">
-    Org Code: <input type="text" 
-    name="org_code" 
-    id="org_code"
-    ng-model="communication.org_code" 
-    ng-minlength="3" 
-    ng-maxlength="8" 
-    required/>
-    
-    <div class="help-block" ng-messages="communicationForm.org_code.$error" ng-show="communicationForm.org_code.$touched">
-        <!-- show an error if name is too short -->
-        <p ng-message="minlength">org code is too short.</p>
-    
-        <!-- show an error if name is too long -->
-        <p ng-message="maxlength">org code is too long.</p>
-    
-        <!-- show an error if this isn't filled in -->
-        <p ng-message="required">Your org code is required.</p>
-    </div>
-</div>
-<div class="form-group" ng-class="{ 'has-error': communicationForm.client_code.$touched && communicationForm.client_code.$invalid }">
-    Client Code: <input type="text" 
-    name="client_code"
-    id="client_code"
-    ng-model="communication.client_code"
-    ng-minlength="3" 
-    ng-maxlength="8" 
-    required/>
-    <div class="help-block" ng-messages="communicationForm.client_code.$error" ng-show="communicationForm.client_code.$touched">
-        <!-- show an error if name is too short -->
-        <p ng-message="minlength">client code is too short.</p>
-    
-        <!-- show an error if username is too long -->
-        <p ng-message="maxlength">client code is too long.</p>
-    
-        <!-- show an error if this isn't filled in -->
-        <p ng-message="required">Your client code is required.</p>
-    </div>
-</div>
-<div class="form-group" ng-class="{ 'has-error': communicationForm.primary_email.$touched && communicationForm.primary_email.$invalid }">
-    Primary Email: <input type="email" 
-    name="primary_email"
-    id="primary_email"
-    ng-model="communication.primary_email"
-    ng-minlength="3" 
-    ng-maxlength="8" 
-    required/>
-    <div class="help-block" ng-messages="communicationForm.primary_email.$error" ng-show="communicationForm.primary_email.$touched">
-        <!-- show an error if name is too short -->
-        <p ng-message="minlength">primary email is too short.</p>
-    
-        <!-- show an error if username is too long -->
-        <p ng-message="maxlength">primary email is too long.</p>
-    
-        <!-- show an error if this isn't filled in -->
-        <p ng-message="required">Your primary email is required.</p>
-         <p ng-message="email"> You did not enter your email address correctly...</p>
-    </div>
-</div>
-<div class="form-group" ng-class="{ 'has-error': communicationForm.secondary_email.$touched && communicationForm.secondary_email.$invalid }">
-    Secondary Email: <input type="email" 
-    name="secondary_email"
-    id="secondary_email"
-    ng-model="communication.secondary_email"
-    ng-minlength="3" 
-    ng-maxlength="8" 
-    />
-    <div class="help-block" ng-messages="communicationForm.secondary_email.$error" ng-show="communicationForm.secondary_email.$touched">
-        <!-- show an error if name is too short -->
-        <p ng-message="minlength">secondary email is too short.</p>
-    
-        <!-- show an error if username is too long -->
-        <p ng-message="maxlength">secondary email is too long.</p>
-    
-        <!-- show an error if this isn't filled in -->
+<div class="form-container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <span class="form-title">Communication</span>        
+        </div>   
+        <div class="row wrap">
+            <div ng-class="{ 'has-error': communicationForm.org_code.$touched && communicationForm.org_code.$invalid }">
+                <div class="col-xs-12 col-sm-6">
+                    <span class="form-label">Org Code:</span>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <input type="text" name="org_code" id="org_code" ng-model="communication.org_code"  ng-minlength="3" ng-maxlength="8" required/>
+                    <div class="help-block" ng-messages="communicationForm.org_code.$error" ng-show="communicationForm.org_code.$touched">
+                        <!-- show an error if name is too short -->
+                        <p ng-message="minlength">org code is too short.</p>
+                    
+                        <!-- show an error if name is too long -->
+                        <p ng-message="maxlength">org code is too long.</p>
+                    
+                        <!-- show an error if this isn't filled in -->
+                        <p ng-message="required">Your org code is required.</p>
+                    </div>                    
+                </div>  
+            </div>
+            <div ng-class="{ 'has-error': communicationForm.client_code.$touched && communicationForm.client_code.$invalid }">
+                <div class="col-xs-12 col-sm-6">
+                    <span class="form-label">Client Code:</span>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <input type="text" name="client_code" id="client_code" ng-model="communication.client_code" ng-minlength="3" ng-maxlength="8" required/>
+                    <div class="help-block" ng-messages="communicationForm.client_code.$error" ng-show="communicationForm.client_code.$touched">
+                        <!-- show an error if name is too short -->
+                        <p ng-message="minlength">client code is too short.</p>
+                    
+                        <!-- show an error if username is too long -->
+                        <p ng-message="maxlength">client code is too long.</p>
+                    
+                        <!-- show an error if this isn't filled in -->
+                        <p ng-message="required">Your client code is required.</p>
+                    </div>                    
+                </div>
+            </div>
+            
+            <div ng-class="{ 'has-error': communicationForm.primary_email.$touched && communicationForm.primary_email.$invalid }">
+                <div class="col-xs-12 col-sm-6">
+                    <span class="form-label">Primary Email:</span>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <input type="email" name="primary_email" id="primary_email" ng-model="communication.primary_email" ng-minlength="3" ng-maxlength="8" required/>
+                    <div class="help-block" ng-messages="communicationForm.primary_email.$error" ng-show="communicationForm.primary_email.$touched">
+                        <!-- show an error if name is too short -->
+                        <p ng-message="minlength">primary email is too short.</p>
+                    
+                        <!-- show an error if username is too long -->
+                        <p ng-message="maxlength">primary email is too long.</p>
+                    
+                        <!-- show an error if this isn't filled in -->
+                        <p ng-message="required">Your primary email is required.</p>
+                         <p ng-message="email"> You did not enter your email address correctly...</p>
+                    </div>                    
+                </div>
+            </div>
 
-         <p ng-message="required"> You did not enter your secondary email address correctly...</p>
+            <div ng-class="{ 'has-error': communicationForm.secondary_email.$touched && communicationForm.secondary_email.$invalid }">
+                <div class="col-xs-12 col-sm-6">
+                    <span class="form-label">Secondary Email:</span>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <input type="email" name="secondary_email" id="secondary_email" ng-model="communication.secondary_email" ng-minlength="3" ng-maxlength="8"/>
+                    <div class="help-block" ng-messages="communicationForm.secondary_email.$error" ng-show="communicationForm.secondary_email.$touched">
+                        <!-- show an error if name is too short -->
+                        <p ng-message="minlength">secondary email is too short.</p>
+                    
+                        <!-- show an error if username is too long -->
+                        <p ng-message="maxlength">secondary email is too long.</p>
+                    
+                        <!-- show an error if this isn't filled in -->
+                    
+                         <p ng-message="required"> You did not enter your secondary email address correctly...</p>
+                    </div>                     
+                </div> 
+            </div>
+            
+            <div ng-class="{ 'has-error': communicationForm.primary_phone.$touched && communicationForm.primary_phone.$invalid }">
+                <div class="col-xs-12 col-sm-6">
+                    <span class="form-label">Primary Phone:</span>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                     <input type="text" name="primary_phone" id="primary_phone" ng-model="communication.primary_phone" ng-minlength="3" ng-maxlength="8" required/>
+                    <div class="help-block" ng-messages="communicationForm.primary_phone.$error" ng-show="communicationForm.primary_phone.$touched">
+                        <!-- show an error if name is too short -->
+                        <p ng-message="minlength">primary phone is too short.</p>
+                    
+                        <!-- show an error if username is too long -->
+                        <p ng-message="maxlength">primary phone is too long.</p>
+                    
+                        <!-- show an error if this isn't filled in -->
+                
+                         <p ng-message="required"> You did not enter your primary phone correctly...</p>
+                    </div>                     
+                </div>
+            </div>
+            
+            <div ng-class="{ 'has-error': communicationForm.secondary_phone.$touched && communicationForm.secondary_phone.$invalid }">
+                <div class="col-xs-12 col-sm-6">
+                    <span class="form-label">Secondary Phone:</span>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                     <input type="text" name="secondary_phone" id="secondary_phone" ng-model="communication.secondary_phone" ng-minlength="3" ng-maxlength="8"/>
+                    <div class="help-block" ng-messages="communicationForm.secondary_phone.$error" ng-show="communicationForm.secondary_phone.$touched">
+                        <!-- show an error if name is too short -->
+                        <p ng-message="minlength">secondary phone is too short.</p>
+                    
+                        <!-- show an error if username is too long -->
+                        <p ng-message="maxlength">secondary phone is too long.</p>
+                    
+                        <!-- show an error if this isn't filled in -->
+                    </div>                     
+                </div>               
+            </div>
+        </div>
+    </div>
+    <div class="cols-xs-12 button-pull-right">
+        <button type="submit" class="button">Add Communication</button> <a href="/communications"  class="button">Back To List</a>
     </div>
 </div>
-<div class="form-group" ng-class="{ 'has-error': communicationForm.primary_phone.$touched && communicationForm.primary_phone.$invalid }">
-    Primary Phone: <input type="text" 
-    name="primary_phone"
-    id="primary_phone"
-    ng-model="communication.primary_phone"
-    ng-minlength="3" 
-    ng-maxlength="8" 
-    required/>
-    <div class="help-block" ng-messages="communicationForm.primary_phone.$error" ng-show="communicationForm.primary_phone.$touched">
-        <!-- show an error if name is too short -->
-        <p ng-message="minlength">primary phone is too short.</p>
-    
-        <!-- show an error if username is too long -->
-        <p ng-message="maxlength">primary phone is too long.</p>
-    
-        <!-- show an error if this isn't filled in -->
 
-         <p ng-message="required"> You did not enter your primary phone correctly...</p>
-    </div>
-</div>
-<div class="form-group" ng-class="{ 'has-error': communicationForm.secondary_phone.$touched && communicationForm.secondary_phone.$invalid }">
-    Secondary Phone: <input type="text" 
-    name="secondary_phone"
-    id="secondary_phone"
-    ng-model="communication.secondary_phone"
-    ng-minlength="3" 
-    ng-maxlength="8" 
-    />
-    <div class="help-block" ng-messages="communicationForm.secondary_phone.$error" ng-show="communicationForm.secondary_phone.$touched">
-        <!-- show an error if name is too short -->
-        <p ng-message="minlength">secondary phone is too short.</p>
-    
-        <!-- show an error if username is too long -->
-        <p ng-message="maxlength">secondary phone is too long.</p>
-    
-        <!-- show an error if this isn't filled in -->
-
-        
-    </div>
-</div>
-<div>
-    <button type="submit">Add Communication</button>
-</div>
