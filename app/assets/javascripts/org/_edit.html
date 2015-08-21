@@ -7,22 +7,37 @@
     </div>
 </div>
 
-<div>
-    <form ng-submit="updateOrg()">
-        <input type="hidden" name="id" ng-model="org.id"/>
-        <div>
-            <input type="text" 
-            ng-model="org.name" 
-            name="name"/>
+
+<div class="formWrapper">
+    <div class="container">
+        <div class="row">
+            <div id="contentTable">
+                <form ng-submit="updateOrg()">
+                    <input type="hidden" name="id" ng-model="org.id"/>
+            		<table class="col-sm-12 table-bordered table-striped table-condensed cf">
+            				<thead class="cf">
+            					<tr>
+            						<th>Name</th>
+            						<th>Code</th>
+            					</tr>
+            				</thead>
+        					<tbody>
+        					    <tr>
+        							<td data-title="Name"><input type="text" ng-model="org.name" name="name"/></td>
+        							<td data-title="Code"><input type="text" ng-model="org.code" name="code"/></td>
+        						</tr>
+        						<tr>
+        						    <td colspan="2"><button type="submit" class="btn-lg">Update Org</button></td> 
+        						</tr>
+        					</tbody>
+            		</table>
+            	</form>
+        	</div>	
         </div>
-        <div>
-            <input type="text" 
-            ng-model="org.code" 
-            name="code"/>
-        </div>
-        <div>
-            <button type="submit">Update Org</button>
-        </div>
-    </form>
+    </div>
 </div>
-<a href="/orgs">Back To List</a>
+
+
+<div class="formWrapper">
+    <a href="/orgs" class="btn-lg">Back To List</a>        
+</div>

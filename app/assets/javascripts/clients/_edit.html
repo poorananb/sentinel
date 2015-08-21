@@ -1,0 +1,43 @@
+<div ng-show="message.message != null">
+    <div ng-show="message.status == 'ok'">
+        <div class="success">{{message.message}}</div>
+    </div>
+    <div ng-show="message.status == 'error'">
+        <div class="error">{{message.message}}</div>
+    </div>
+</div>
+
+
+<div class="formWrapper">
+    <div class="container">
+        <div class="row">
+            <div id="contentTable">
+                <form ng-submit="updateClient()">
+                    <input type="hidden" name="id" ng-model="client.id"/>
+            		<table class="col-sm-12 table-bordered table-striped table-condensed cf">
+            				<thead class="cf">
+            					<tr>
+            						<th>Name</th>
+            						<th>Code</th>
+            					</tr>
+            				</thead>
+        					<tbody>
+        					    <tr>
+        							<td data-title="Name"><input type="text" ng-model="client.name" name="name"/></td>
+        							<td data-title="Code"><input type="text" ng-model="client.code" name="code"/></td>
+        						</tr>
+        						<tr>
+        						    <td colspan="2"><button type="submit" class="btn-lg">Update Client</button></td> 
+        						</tr>
+        					</tbody>
+            		</table>
+            	</form>
+        	</div>	
+        </div>
+    </div>
+</div>
+
+
+<div class="formWrapper">
+    <a href="/clients" class="btn-lg">Back To List</a>        
+</div>
