@@ -48,31 +48,23 @@ Rails.application.routes.draw do
   scope :api do
       resources :communications, defaults: {format: 'json'}
   end
-<<<<<<< HEAD
  scope :api do
       resources :realms, defaults: {format: 'json'}
 end
-  
-  
-=======
+
   
   scope :api do
       resources :clients, defaults: {format: 'json'}
   end
    
->>>>>>> 1fbc2f62e3962e7d585c2afc8ba86bde066bbd7e
   resources :users
   resources :orgs
   resources :sessions
   resources :prosesses
   resources :communications
-<<<<<<< HEAD
   resources :realms
-
-=======
    resources :clients
->>>>>>> 1fbc2f62e3962e7d585c2afc8ba86bde066bbd7e
-  
+
   namespace :admin do
   	get '', to: 'dashboard#index', as: '/'
   	resources :users
