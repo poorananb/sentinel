@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   delete 'communications' => 'communications#destroy'
   put 'communications' => 'communications#update'
   
- get 'realms' => 'realms#index'
+  get 'realms' => 'realms#index'
   post 'realms' => 'realms#create'
   delete 'realms' => 'realms#destroy'
   put 'realms' => 'realms#update'
@@ -48,11 +48,9 @@ Rails.application.routes.draw do
   scope :api do
       resources :communications, defaults: {format: 'json'}
   end
- scope :api do
+  scope :api do
       resources :realms, defaults: {format: 'json'}
-end
-
-  
+  end
   scope :api do
       resources :clients, defaults: {format: 'json'}
   end
