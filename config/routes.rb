@@ -30,6 +30,11 @@ Rails.application.routes.draw do
   post 'realms' => 'realms#create'
   delete 'realms' => 'realms#destroy'
   put 'realms' => 'realms#update'
+  
+  get 'praxys' => 'praxys#index'
+  post 'praxys' => 'praxys#create'
+  delete 'praxys' => 'praxys#destroy'
+  put 'praxys' => 'praxys#update'
 
   get 'signup', to: 'admin/users#new', as: 'signup'
   get 'login', to: 'sessions#index', as: 'login'
@@ -42,26 +47,35 @@ Rails.application.routes.draw do
   scope :api do
     resources :orgs, defaults: {format: 'json'}
   end
+  
   scope :api do
       resources :prosesses, defaults: {format: 'json'}
   end
+  
   scope :api do
       resources :communications, defaults: {format: 'json'}
   end
+  
   scope :api do
       resources :realms, defaults: {format: 'json'}
   end
+  
   scope :api do
       resources :clients, defaults: {format: 'json'}
   end
    
+  scope :api do
+      resources :praxys, defaults: {format: 'json'}
+  end
+  
   resources :users
   resources :orgs
   resources :sessions
   resources :prosesses
   resources :communications
   resources :realms
-   resources :clients
+  resources :clients
+  resources :praxys
 
   namespace :admin do
   	get '', to: 'dashboard#index', as: '/'
