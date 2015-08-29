@@ -1,0 +1,10 @@
+<div ng-show="message.message != null">
+    <div ng-show="message.status == 'error'">
+        <div class="error">{{message.message}}</div>
+    </div>
+</div>
+<div>
+    <form ng-submit="addOrg()" name="orgForm" novalidate>
+        <div ng-include="'org/_form.html'"></div>
+    </form>
+</div>

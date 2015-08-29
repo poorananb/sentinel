@@ -11,8 +11,13 @@ Rails.application.routes.draw do
   post 'orgs' => 'orgs#create'
   delete 'orgs' => 'orgs#destroy'
   put 'orgs' => 'orgs#update'
- 
- post 'clients' => 'clients#create'
+  
+  get 'stages' => 'stages#index'
+  post 'stages' => 'stages#create'
+  delete 'stages' => 'stages#destroy'
+  put 'stages' => 'stages#update'
+  
+  post 'clients' => 'clients#create'
   delete 'clients' => 'clients#destroy'
   put 'clients' => 'clients#update'
  
@@ -63,7 +68,9 @@ Rails.application.routes.draw do
   scope :api do
       resources :clients, defaults: {format: 'json'}
   end
-   
+  scope :api do
+      resources :stages, defaults: {format: 'json'}
+  end
   scope :api do
       resources :praxys, defaults: {format: 'json'}
   end
@@ -75,6 +82,7 @@ Rails.application.routes.draw do
   resources :communications
   resources :realms
   resources :clients
+  resources :stages
   resources :praxys
 
   namespace :admin do

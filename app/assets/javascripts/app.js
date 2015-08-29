@@ -1,4 +1,4 @@
-angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'ngResource', 'Sentinel.orgsController', 'Sentinel.orgs','Sentinel.prosessesController', 'Sentinel.prosesses','Sentinel.communicationsController', 'Sentinel.communications','Sentinel.realmsController','Sentinel.realms', 'Sentinel.clientsController', 'Sentinel.clients']);
+angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'ngResource', 'Sentinel.orgsController', 'Sentinel.orgs','Sentinel.prosessesController', 'Sentinel.prosesses','Sentinel.communicationsController', 'Sentinel.communications','Sentinel.realmsController','Sentinel.realms','Sentinel.stages','Sentinel.stagesController','Sentinel.clientsController', 'Sentinel.clients']);
 angular.module('Sentinel').config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
 function($stateProvider, $urlRouterProvider, $locationProvider) {
 	$stateProvider
@@ -20,6 +20,10 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
 	.state('createRealm', {url: '/createRealm',templateUrl: 'realm/_createRealm.html',controller: 'RealmCreateController'})
 	.state('showRealm', {url: '/realms/:id',templateUrl: 'realm/_show.html',controller: 'RealmViewController'})
 	.state('editRealm', {url: '/realms/{id}/edit',templateUrl: 'realm/_edit.html',controller: 'RealmEditController'})
+	.state('stages', {url: '/stages',templateUrl: 'stage/_stages.html',controller: 'stageController'})
+	.state('createStage', {url: '/createStage',templateUrl: 'stage/_createStage.html',controller: 'StageCreateController'})
+	.state('showStage', {url: '/stages/:id',templateUrl: 'stage/_show.html',controller: 'StageViewController'})
+	.state('editStage', {url: '/stages/{id}/edit',templateUrl: 'stage/_edit.html',controller: 'StageEditController'})
 	.state('clients', {url: '/clients',templateUrl: 'clients/_clients.html',controller: 'clientsController'})
 	.state('createClient', {url: '/createClient',templateUrl: 'clients/_createClient.html',controller: 'ClientCreateController'})
 	.state('showClient', {url: '/clients/:id',templateUrl: 'client/_show.html',controller: 'ClientViewController'})
