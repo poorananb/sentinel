@@ -1,10 +1,21 @@
-<div>
-    <div>
-        Name: {{prosess.name}}
+<div class="form-container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <span class="form-title">Process preview</span>        
+        </div>   
+        <div class="row wrap">
+            <div>
+                <div class="col-xs-12 col-sm-6"><span class="form-label">Process Name:</span></div>
+                <div class="col-xs-12 col-sm-6"><span class="form-value">{{prosess.name}}</span></div>  
+            </div>
+            <div>
+                <div class="col-xs-12 col-sm-6"><span class="form-label">Process Code:</span></div>
+                <div class="col-xs-12 col-sm-6"><span class="form-value">{{prosess.code}}</span></div>  
+            </div>
+        </div>
     </div>
-    <div>
-        Code: {{prosess.code}}
+    <div class="cols-xs-12 button-pull-right">
+        <a href="/prosesses" class="button">Back To List</a>
     </div>
-    
-    <a href="/prosesses">Back to list</a>
 </div>
+

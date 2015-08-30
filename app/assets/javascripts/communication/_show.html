@@ -1,21 +1,37 @@
-<div>
-    <div>
-        Org Code: {{communication.org_code}}
+<div class="form-container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <span class="form-title">Organization preview</span>        
+        </div>   
+        <div class="row wrap">
+            <div>
+                <div class="col-xs-12 col-sm-6"><span class="form-label">Org Code:</span></div>
+                <div class="col-xs-12 col-sm-6"><span class="form-value">{{communication.org_code}}</span></div>  
+            </div>
+            <div>
+                <div class="col-xs-12 col-sm-6"><span class="form-label">Client Code:</span></div>
+                <div class="col-xs-12 col-sm-6"><span class="form-value">{{communication.client_code}}</span></div>  
+            </div>
+            <div>
+                <div class="col-xs-12 col-sm-6"><span class="form-label">Primary Email:</span></div>
+                <div class="col-xs-12 col-sm-6"><span class="form-value">{{communication.primary_email}}</span></div>  
+            </div>
+            <div>
+                <div class="col-xs-12 col-sm-6"><span class="form-label">Secondary Email:</span></div>
+                <div class="col-xs-12 col-sm-6"><span class="form-value">{{communication.secondary_email}}</span></div>  
+            </div>
+            <div>
+                <div class="col-xs-12 col-sm-6"><span class="form-label">Primary Phone:</span></div>
+                <div class="col-xs-12 col-sm-6"><span class="form-value">{{communication.primary_phone}}</span></div>  
+            </div>
+            <div>
+                <div class="col-xs-12 col-sm-6"><span class="form-label">Secondry Phone:</span></div>
+                <div class="col-xs-12 col-sm-6"><span class="form-value">{{communication.secondary_phone}}</span></div>  
+            </div>            
+        </div>
     </div>
-    <div>
-        Client Code: {{communication.client_code}}
+    <div class="cols-xs-12 button-pull-right">
+        <a href="/communications" class="button">Back To List</a>
     </div>
-    <div>
-           Name: {{communication.primary_email}}
-    </div>
-    <div>
-        Secondary Email: {{communication.secondary_email}}
-    </div>
-    <div>
-           Primary Phone: {{communication.primary_phone}}
-    </div>
-    <div>
-        Secondry Phone: {{communication.secondary_phone}}
-    </div>
-    <a href="/communications">Back to list</a>
 </div>
+
