@@ -1,0 +1,42 @@
+<div class="form-group" ng-class="{ 'has-error': realmForm.name.$touched && realmForm.name.$invalid }">
+    Name: <input type="text" 
+    name="name" 
+    id="name"
+    ng-model="realm.name" 
+    ng-minlength="3" 
+    ng-maxlength="8" 
+    required/>
+    
+    <div class="help-block" ng-messages="realmForm.name.$error" ng-show="realmForm.name.$touched">
+        <!-- show an error if name is too short -->
+        <p ng-message="minlength">Name is too short.</p>
+    
+        <!-- show an error if name is too long -->
+        <p ng-message="maxlength">Name is too long.</p>
+    
+        <!-- show an error if this isn't filled in -->
+        <p ng-message="required">Your name is required.</p>
+    </div>
+</div>
+<div class="form-group" ng-class="{ 'has-error': realmForm.code.$touched && realmForm.code.$invalid }">
+    Code: <input type="text" 
+    name="code"
+    id="code"
+    ng-model="realm.code"
+    ng-minlength="3" 
+    ng-maxlength="8" 
+    required/>
+    <div class="help-block" ng-messages="realmForm.code.$error" ng-show="realmForm.code.$touched">
+        <!-- show an error if name is too short -->
+        <p ng-message="minlength">Code is too short.</p>
+    
+        <!-- show an error if username is too long -->
+        <p ng-message="maxlength">Code is too long.</p>
+    
+        <!-- show an error if this isn't filled in -->
+        <p ng-message="required">Your code is required.</p>
+    </div>
+</div>
+<div>
+    <button type="submit">Add Realm</button>
+</div>

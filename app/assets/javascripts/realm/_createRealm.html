@@ -1,0 +1,11 @@
+<div ng-show="message.message != null">
+    <div ng-show="message.status == 'error'">
+        <div class="error">{{message.message}}</div>
+    </div>
+</div>
+<div>
+    <form ng-submit="addRealm()" name="realmForm" novalidate>
+        <div ng-include="'realm/_form.html'"></div>
+    </form>
+</div>
+<a href="/realms">Back To List</a>

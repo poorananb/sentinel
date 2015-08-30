@@ -1,0 +1,18 @@
+<div ng-show="message.message != null">
+    <div ng-show="message.status == 'ok'">
+        <div class="success">{{message.message}}</div>
+    </div>
+    <div ng-show="message.status == 'error'">
+        <div class="error">{{message.message}}</div>
+    </div>
+</div>
+
+<div>
+    <div ng-repeat="realm in realms">
+        Name: {{realm.name}} - Code: {{realm.code}} &nbsp;
+        <a ui-sref="showRealm({id:realm.id})">Show</a>    &nbsp;
+        <a href="/realms/{{realm.id}}/edit">Edit</a>    &nbsp;
+        <a href="" ng-click="deleteRealm(realm)" ng-confirm-click="Are you sure?">Delete</a>
+    </div>
+</div>
+<a href="/createRealm">Create New</a>

@@ -1,0 +1,28 @@
+<div ng-show="message.message != null">
+    <div ng-show="message.status == 'ok'">
+        <div class="success">{{message.message}}</div>
+    </div>
+    <div ng-show="message.status == 'error'">
+        <div class="error">{{message.message}}</div>
+    </div>
+</div>
+
+<div>
+    <form ng-submit="updateRealm()">
+        <input type="hidden" name="id" ng-model="realm.id"/>
+        <div>
+            <input type="text" 
+            ng-model="realm.name" 
+            name="name"/>
+        </div>
+        <div>
+            <input type="text" 
+            ng-model="realm.code" 
+            name="code"/>
+        </div>
+        <div>
+            <button type="submit">Update Realm</button>
+        </div>
+    </form>
+</div>
+<a href="/realms">Back To List</a>
