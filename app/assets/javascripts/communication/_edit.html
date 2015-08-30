@@ -7,42 +7,42 @@
     </div>
 </div>
 
-<div>
+<div class="form-container">
     <form ng-submit="updateCommunication()">
-        <input type="hidden" name="id" ng-model="communication.id"/>
-        <div>
-            <input type="text" 
-            ng-model="communication.org_code" 
-            name="org code"/>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <span class="form-title">Edit Communication</span>        
+            </div>   
+            <div class="row wrap">
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Org Code:</span></div>
+                    <div class="col-xs-12 col-sm-6"><input type="text" ng-model="communication.org_code" name="org code"/></div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Client Code:</span></div>
+                    <div class="col-xs-12 col-sm-6"><input type="text" ng-model="communication.client_code" name="client code"/></div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Primary Email:</span></div>
+                    <div class="col-xs-12 col-sm-6"><input type="text" ng-model="communication.primary_email" name="primary email"/></div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Secondary Email:</span></div>
+                    <div class="col-xs-12 col-sm-6"><input type="text" ng-model="communication.secondary_email" name="secondary email"/></div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Primary Phone:</span></div>
+                    <div class="col-xs-12 col-sm-6"><input type="text" ng-model="communication.primary_phone" name="primary phone"/></div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Secondry Phone:</span></div>
+                    <div class="col-xs-12 col-sm-6"><input type="text" ng-model="communication.secondary_phone" name="secondary phone"/></div>  
+                </div>            
+            </div>
         </div>
-        <div>
-            <input type="text" 
-            ng-model="communication.client_code" 
-            name="client code"/>
-        </div>
-         <div>
-            <input type="text" 
-            ng-model="communication.primary_email" 
-            name="primary email"/>
-        </div>
-         <div>
-            <input type="text" 
-            ng-model="communication.secondary_email" 
-            name="secondary email"/>
-        </div>
-           <div>
-            <input type="text" 
-            ng-model="communication.primary_phone" 
-            name="primary phone"/>
-        </div>
-          <div>
-            <input type="text" 
-            ng-model="communication.secondary_phone" 
-            name="secondary phone"/>
-        </div>
-        <div>
-            <button type="submit">Update Communication</button>
+        <div class="cols-xs-12 button-pull-right">
+            <button type="submit" class="button">Update Communication</button> <a href="/communications" class="button">Back To List</a>
         </div>
     </form>
 </div>
-<a href="/communications">Back To List</a>
+

@@ -7,22 +7,26 @@
     </div>
 </div>
 
-<div>
+<div class="form-container">
     <form ng-submit="updateRealm()">
         <input type="hidden" name="id" ng-model="realm.id"/>
-        <div>
-            <input type="text" 
-            ng-model="realm.name" 
-            name="name"/>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <span class="form-title">Edit Realm</span>        
+            </div>   
+            <div class="row wrap">
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Realm Name:</span></div>
+                    <div class="col-xs-12 col-sm-6"><input type="text" ng-model="realm.name" name="name"/></div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Realm Code:</span></div>
+                    <div class="col-xs-12 col-sm-6"><input type="text" ng-model="realm.code" name="code"/></div>  
+                </div>
+            </div>
         </div>
-        <div>
-            <input type="text" 
-            ng-model="realm.code" 
-            name="code"/>
-        </div>
-        <div>
-            <button type="submit">Update Realm</button>
+        <div class="cols-xs-12 button-pull-right">
+            <button type="submit" class="button">Update Realm</button> <a href="/realms" class="button">Back To List</a>
         </div>
     </form>
 </div>
-<a href="/realms">Back To List</a>
