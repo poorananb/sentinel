@@ -1,47 +1,49 @@
-<div class="formWrapper">
-    <div class="form-group" ng-class="{ 'has-error': clientForm.name.$touched && clientForm.name.$invalid }">
-        Name: <input type="text" 
-        name="name" 
-        id="name"
-        ng-model="client.name" 
-        ng-minlength="3" 
-        ng-maxlength="8" 
-        required/>
-        
-        <div class="help-block" ng-messages="clientForm.name.$error" ng-show="clientForm.name.$touched">
-            <!-- show an error if name is too short -->
-            <p ng-message="minlength">Name is too short.</p>
-        
-            <!-- show an error if name is too long -->
-            <p ng-message="maxlength">Name is too long.</p>
-        
-            <!-- show an error if this isn't filled in -->
-            <p ng-message="required">Your name is required.</p>
+<div class="form-container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <span class="form-title">Clients</span>        
+        </div>   
+        <div class="row wrap">
+            <div ng-class="{ 'has-error': clientForm.name.$touched && clientForm.name.$invalid }">
+                <div class="col-xs-12 col-sm-6">
+                    <span class="form-label">Client Name:</span>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <input type="text" name="name" id="name" ng-model="client.name"  ng-minlength="3" ng-maxlength="8" required/>
+                    <div class="help-block" ng-messages="clientForm.name.$error" ng-show="clientForm.name.$touched">
+                        <!-- show an error if name is too short -->
+                        <p ng-message="minlength">Name is too short.</p>
+                    
+                        <!-- show an error if name is too long -->
+                        <p ng-message="maxlength">Name is too long.</p>
+                    
+                        <!-- show an error if this isn't filled in -->
+                        <p ng-message="required">Your name is required.</p>
+                    </div>                    
+                </div>  
+            </div>
+            <div ng-class="{ 'has-error': clientForm.code.$touched && clientForm.code.$invalid }">
+                <div class="col-xs-12 col-sm-6">
+                    <span class="form-label">Client Code:</span>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <input type="text" name="code" id="code" ng-model="client.code"  ng-minlength="3" ng-maxlength="8" required/>
+                    <div class="help-block" ng-messages="clientForm.code.$error" ng-show="clientForm.code.$touched">
+                        <!-- show an error if name is too short -->
+                        <p ng-message="minlength">Code is too short.</p>
+                    
+                        <!-- show an error if name is too long -->
+                        <p ng-message="maxlength">Code is too long.</p>
+                    
+                        <!-- show an error if this isn't filled in -->
+                        <p ng-message="required">Your code is required.</p>
+                    </div>                    
+                </div>  
+            </div>
         </div>
     </div>
-    <div class="form-group" ng-class="{ 'has-error': clientForm.code.$touched && clientForm.code.$invalid }">
-        Code: <input type="text" 
-        name="code"
-        id="code"
-        ng-model="client.code"
-        ng-minlength="3" 
-        ng-maxlength="8" 
-        required/>
-        <div class="help-block" ng-messages="clientForm.code.$error" ng-show="clientForm.code.$touched">
-            <!-- show an error if name is too short -->
-            <p ng-message="minlength">Code is too short.</p>
-        
-            <!-- show an error if username is too long -->
-            <p ng-message="maxlength">Code is too long.</p>
-        
-            <!-- show an error if this isn't filled in -->
-            <p ng-message="required">Your code is required.</p>
-        </div>
+    <div class="cols-xs-12 button-pull-right">
+        <button type="submit" class="button">Add Client</button> <a href="/clients"  class="button">Back To List</a>
     </div>
 </div>
-<div class="formWrapper">
-    <div>
-        <button type="submit" class="btn-lg">Add Client</button>
-        <a href="/clients" class="btn-lg">Back To List</a>
-    </div>
-</div>
+
