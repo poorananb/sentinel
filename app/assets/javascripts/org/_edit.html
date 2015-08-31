@@ -8,36 +8,26 @@
 </div>
 
 
-<div class="formWrapper">
-    <div class="container">
+<div class="form-container">
+    <form ng-submit="updateOrg()">
+        <input type="hidden" name="id" ng-model="org.id"/>
         <div class="row">
-            <div id="contentTable">
-                <form ng-submit="updateOrg()">
-                    <input type="hidden" name="id" ng-model="org.id"/>
-            		<table class="col-sm-12 table-bordered table-striped table-condensed cf">
-            				<thead class="cf">
-            					<tr>
-            						<th>Name</th>
-            						<th>Code</th>
-            					</tr>
-            				</thead>
-        					<tbody>
-        					    <tr>
-        							<td data-title="Name"><input type="text" ng-model="org.name" name="name"/></td>
-        							<td data-title="Code"><input type="text" ng-model="org.code" name="code"/></td>
-        						</tr>
-        						<tr>
-        						    <td colspan="2"><button type="submit" class="btn-lg">Update Org</button></td> 
-        						</tr>
-        					</tbody>
-            		</table>
-            	</form>
-        	</div>	
+            <div class="col-xs-12 col-sm-12">
+                <span class="form-title">Edit Organization</span>        
+            </div>   
+            <div class="row wrap">
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Organization Name:</span></div>
+                    <div class="col-xs-12 col-sm-6"><input type="text" ng-model="org.name" name="name"/></div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Organization Code:</span></div>
+                    <div class="col-xs-12 col-sm-6"><input type="text" ng-model="org.code" name="code"/></div>  
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-
-<div class="formWrapper">
-    <a href="/orgs" class="btn-lg">Back To List</a>        
+        <div class="cols-xs-12 button-pull-right">
+            <button type="submit" class="button">Update Organization</button> <a href="/orgs" class="button">Back To List</a>
+        </div>
+    </form>
 </div>

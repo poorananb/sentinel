@@ -1,10 +1,21 @@
-<div>
-    <div>
-        Name: {{client.name}}
+<div class="form-container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <span class="form-title">Client preview</span>        
+        </div>   
+        <div class="row wrap">
+            <div>
+                <div class="col-xs-12 col-sm-6"><span class="form-label">Client Name:</span></div>
+                <div class="col-xs-12 col-sm-6"><span class="form-value">{{client.name}}</span></div>  
+            </div>
+            <div>
+                <div class="col-xs-12 col-sm-6"><span class="form-label">Client Code:</span></div>
+                <div class="col-xs-12 col-sm-6"><span class="form-value">{{client.code}}</span></div>  
+            </div>
+        </div>
     </div>
-    <div>
-        Code: {{client.code}}
+    <div class="cols-xs-12 button-pull-right">
+        <a href="/clients" class="button">Back To List</a>
     </div>
-    
-    <a href="/clients">Back to list</a>
 </div>
+
