@@ -36,10 +36,10 @@ Rails.application.routes.draw do
   delete 'realms' => 'realms#destroy'
   put 'realms' => 'realms#update'
   
-  get 'praxys' => 'praxys#index'
-  post 'praxys' => 'praxys#create'
-  delete 'praxys' => 'praxys#destroy'
-  put 'praxys' => 'praxys#update'
+  get 'praxis' => 'praxis#index'
+  post 'praxis' => 'praxis#create'
+  delete 'praxis' => 'praxis#destroy'
+  put 'praxis' => 'praxis#update'
 
   get 'signup', to: 'admin/users#new', as: 'signup'
   get 'login', to: 'sessions#index', as: 'login'
@@ -72,7 +72,7 @@ Rails.application.routes.draw do
       resources :stages, defaults: {format: 'json'}
   end
   scope :api do
-      resources :praxys, defaults: {format: 'json'}
+      resources :praxis, defaults: {format: 'json'}
   end
   
   resources :users
@@ -83,7 +83,7 @@ Rails.application.routes.draw do
   resources :realms
   resources :clients
   resources :stages
-  resources :praxys
+  resources :praxis
 
   namespace :admin do
   	get '', to: 'dashboard#index', as: '/'

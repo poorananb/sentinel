@@ -2,8 +2,8 @@ class PraxisController < ApplicationController
     respond_to :json, :html
   
   def index
-    @praxys = Praxy.all
-    respond_with @praxys
+    @praxis = Praxi.all
+    respond_with @praxis
   end
 
   def new
@@ -11,7 +11,7 @@ class PraxisController < ApplicationController
 
   def create 
     respond_to do |format|
-      if Praxy.create(praxy_params)
+      if Praxi.create(praxi_params)
         format.json do
           render :json => { 
              :status => :ok, 
@@ -21,7 +21,7 @@ class PraxisController < ApplicationController
       else
         format.json do 
           render :json => {
-            :message => @praxy.errors, 
+            :message => @praxi.errors, 
             :status => :error #unprocessable_entity 
           }.to_json
         end
@@ -30,27 +30,27 @@ class PraxisController < ApplicationController
   end
 
   def show
-    respond_with Praxy.find(params[:id])
+    respond_with Praxi.find(params[:id])
   end
 
   def edit
-    respond_with Praxy.find(params[:id])
+    respond_with Praxi.find(params[:id])
   end
 
   def update
-    @praxy = Praxy.find(params[:id])
+    @praxi = Praxi.find(params[:id])
     respond_to do |format|
-      if @praxy.update(org_params)
+      if @praxi.update(org_params)
         format.json do
           render :json => { 
              :status => :ok, 
-             :message => "Praxy was successfully updated.!"
+             :message => "Praxi was successfully updated.!"
           }.to_json
         end  
       else
         format.json do 
           render :json => {
-            :message => @praxy.errors, 
+            :message => @praxi.errors, 
             :status => :error #unprocessable_entity 
           }.to_json
         end
@@ -59,19 +59,19 @@ class PraxisController < ApplicationController
   end
 
   def destroy
-    @praxy = Praxy.find(params[:id])
+    @praxi = Praxi.find(params[:id])
     respond_to do |format|
-      if @praxy.destroy
+      if @praxi.destroy
         format.json do
           render :json => { 
              :status => :ok, 
-             :message => "Praxy was successfully deleted.!"
+             :message => "Praxi was successfully deleted.!"
           }.to_json
         end  
       else
         format.json do 
           render :json => {
-            :message => @praxy.errors, 
+            :message => @praxi.errors, 
             :status => :error #unprocessable_entity 
           }.to_json
         end
@@ -80,7 +80,7 @@ class PraxisController < ApplicationController
   end
   
   private
-  def praxy_params
-    params.require(:praxy).permit(:org_code, :client_code, :realm_code, :prosess_code, :stage_code, :sequence, :sla, :tolerance_percentage, :critical) if params[:praxy]
+  def praxi_params
+    params.require(:praxi).permit(:org_code, :client_code, :realm_code, :prosess_code, :stage_code, :sequence, :sla, :tolerance_percentage, :critical) if params[:praxy]
   end
 end

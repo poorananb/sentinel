@@ -1,6 +1,6 @@
 <div class="row  border-bottom white-bg dashboard-header">
-	<div class="modTitle"><span>ORGANIZATIONS</span></div>
-	<div class="createBtn"><a href="/createPraxy" class="btnLg">Create New</a>  </div>
+	<div class="modTitle"><span>PRAXIS</span></div>
+	<div class="createBtn"><a href="/createPraxi" class="btnLg">Create New</a>  </div>
 </div>
 
 <div ng-show="message.message != null">
@@ -20,11 +20,11 @@
         <div>&nbsp;</div>
     </div>
     
-    <div class="main-content" ng-repeat="praxy in praxys">
-            <div data-title="Name">{{praxy.name}}</div>
-            <div data-title="Code">{{praxy.code}}</div>
+    <div class="main-content" ng-repeat="praxi in praxis">
+            <div data-title="Name">{{praxi.name}}</div>
+            <div data-title="Code">{{praxi.code}}</div>
             <div>
-			    <a ui-sref="showPraxy({id:praxy.id})" title="Show">
+			    <a ui-sref="showPraxi({id:praxi.id})" title="Show">
                     <svg class="icon icon-search"><use xlink:href="#icon-search"></use>
                     	<defs>
                             <symbol id="icon-search" viewBox="0 0 1024 1024">
@@ -34,7 +34,7 @@
                         </defs>
                     </svg>    							        
 			     </a> 
-			    <a href="/praxys/{{praxy.id}}/edit" title="Edit">
+			    <a href="/praxis/{{praxi.id}}/edit" title="Edit">
                     <svg class="icon icon-pencil"><use xlink:href="#icon-pencil"></use>
                     	<defs>
                             <symbol id="icon-pencil" viewBox="0 0 1024 1024">
@@ -44,7 +44,7 @@
                         </defs>
                     </svg>    
 			     </a> 
-			    <a href="" ng-click="deletePraxy(org)" ng-confirm-click="Are you sure?" title="Delete">
+			    <a href="" ng-click="deletePraxi(org)" ng-confirm-click="Are you sure?" title="Delete">
                     <svg class="icon icon-bin"><use xlink:href="#icon-bin"></use>
                     	<defs>
                             <symbol id="icon-bin" viewBox="0 0 1024 1024">

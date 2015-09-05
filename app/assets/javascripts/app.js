@@ -1,4 +1,4 @@
-angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'ngResource', 'Sentinel.orgsController', 'Sentinel.orgs','Sentinel.prosessesController', 'Sentinel.prosesses','Sentinel.communicationsController', 'Sentinel.communications','Sentinel.realmsController','Sentinel.realms','Sentinel.stages','Sentinel.stagesController','Sentinel.clientsController', 'Sentinel.clients']);
+angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'ngResource', 'Sentinel.orgsController', 'Sentinel.orgs','Sentinel.prosessesController', 'Sentinel.prosesses','Sentinel.communicationsController', 'Sentinel.communications','Sentinel.realmsController','Sentinel.realms','Sentinel.stages','Sentinel.stagesController','Sentinel.clientsController', 'Sentinel.clients', 'Sentinel.praxis', 'Sentinel.praxisController']);
 angular.module('Sentinel').config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
 function($stateProvider, $urlRouterProvider, $locationProvider) {
 	$stateProvider
@@ -28,9 +28,10 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
 	.state('createClient', {url: '/createClient',templateUrl: 'clients/_createClient.html',controller: 'ClientCreateController'})
 	.state('showClient', {url: '/clients/:id',templateUrl: 'client/_show.html',controller: 'ClientViewController'})
 	.state('editClient', {url: '/clients/{id}/edit',templateUrl: 'client/_edit.html',controller: 'ClientEditController'})
-	.state('createPraxy', {url: '/createPraxy',templateUrl: 'praxy/_createPraxy.html',controller: 'PraxyCreateController'})
-	.state('showPraxy', {url: '/praxys/:id',templateUrl: 'praxy/_show.html',controller: 'PraxyViewController'})
-	.state('editPraxy', {url: '/praxys/{id}/edit',templateUrl: 'praxy/_edit.html',controller: 'PraxyEditController'});
+	.state('praxis', {url: '/praxis',templateUrl: 'praxi/_praxis.html',controller: 'PraxiController'})
+	.state('createPraxi', {url: '/createPraxi',templateUrl: 'praxi/_createPraxi.html',controller: 'PraxiCreateController'})
+	.state('showPraxi', {url: '/praxis/:id',templateUrl: 'praxi/_show.html',controller: 'PraxiViewController'})
+	.state('editPraxi', {url: '/praxis/{id}/edit',templateUrl: 'praxi/_edit.html',controller: 'PraxiEditController'});
 	
 	$urlRouterProvider.otherwise('home');
 	
