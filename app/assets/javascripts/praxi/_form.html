@@ -1,181 +1,128 @@
-<div class="formWrapper">
-    <div class="form-group" ng-class="{ 'has-error': praxiForm.org_code.$touched && praxiForm.org_code.$invalid }">
-        Org Code: 
-        <input type="text" 
-        name="org_code" 
-        id="org_code"
-        ng-model="praxi.org_code" 
-        ng-minlength="3" 
-        ng-maxlength="8" 
-        required/>
-        
-        <div class="help-block" ng-messages="praxiForm.org_code.$error" ng-show="praxiForm.org_code.$touched">
-            <!-- show an error if name is too short -->
-            <p ng-message="minlength">Name is too short.</p>
-        
-            <!-- show an error if name is too long -->
-            <p ng-message="maxlength">Name is too long.</p>
-        
-            <!-- show an error if this isn't filled in -->
-            <p ng-message="required">Your org code is required.</p>
+<div class="form-container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <span class="form-title">Praxis</span>        
+        </div> 
+        <div class="row wrap">
+            <div class="form-group" ng-class="{ 'has-error': praxiForm.org_code.$touched && praxiForm.org_code.$invalid }">
+                Org Code: 
+                <select 
+                name="org_code" 
+                ng-model="praxi.org_code"
+                id="org_code"
+                required
+                >
+                    <option ng-repeat="org in orgs" value="{{org.code}}">{{org.name}}</option>
+                </select>
+                
+                <div class="help-block" ng-messages="praxiForm.org_code.$error" ng-show="praxiForm.org_code.$touched">
+                    <!-- show an error if this isn't filled in -->
+                    <p ng-message="required">Organization code is required.</p>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error': praxiForm.client_code.$touched && praxiForm.client_code.$invalid }">
+                Client Code: 
+                <select 
+                name="client_code" 
+                id="client_code"
+                ng-model="praxi.client_code"
+                required
+                >
+                    <option ng-repeat="client in clients" value="{{client.code}}">{{client.name}}</option>
+                </select>
+                <div class="help-block" ng-messages="praxiForm.client_code.$error" ng-show="praxiForm.client_code.$touched">
+                    <!-- show an error if this isn't filled in -->
+                    <p ng-message="required">Client code is required.</p>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error': praxiForm.realm_code.$touched && praxiForm.realm_code.$invalid }">
+                Realm Code: 
+                <select 
+                name="realm_code" 
+                id="realm_code"
+                ng-model="praxi.realm_code"
+                required
+                >
+                    <option ng-repeat="realm in realms" value="{{realm.code}}">{{realm.name}}</option>
+                </select>
+                <div class="help-block" ng-messages="praxiForm.realm_code.$error" ng-show="praxiForm.realm_code.$touched">
+                    <!-- show an error if this isn't filled in -->
+                    <p ng-message="required">Realm code is required.</p>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error': praxiForm.prosess_code.$touched && praxiForm.prosess_code.$invalid }">
+                Process Code: 
+                <select 
+                name="prosess_code" 
+                id="prosess_code"
+                ng-model="praxi.prosess_code"
+                required
+                >
+                    <option ng-repeat="prosess in prosesses" value="{{prosess.code}}">{{prosess.name}}</option>
+                </select>
+                <div class="help-block" ng-messages="praxiForm.prosess_code.$error" ng-show="praxiForm.prosess_code.$touched">
+                    <!-- show an error if this isn't filled in -->
+                    <p ng-message="required">Process code is required.</p>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error': praxiForm.stage_code.$touched && praxiForm.stage_code.$invalid }">
+                Stage Code: 
+                <select 
+                name="stage_code" 
+                id="stage_code"
+                ng-model="praxi.stage_code"
+                required
+                >
+                    <option ng-repeat="stage in stages" value="{{stage.code}}">{{stage.name}}</option>
+                </select>
+                <div class="help-block" ng-messages="praxiForm.stage_code.$error" ng-show="praxiForm.stage_code.$touched">
+                    <!-- show an error if this isn't filled in -->
+                    <p ng-message="required">Stage code is required.</p>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error': praxiForm.sequence.$touched && praxiForm.sequence.$invalid }">
+                Sequence: <input type="text" 
+                name="sequence"
+                id="sequence"
+                ng-model="praxi.sequence"
+                required/>
+                <div class="help-block" ng-messages="praxiForm.sequence.$error" ng-show="praxiForm.sequence.$touched">
+                    <!-- show an error if this isn't filled in -->
+                    <p ng-message="required">Sequence is required.</p>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error': praxiForm.sla.$touched && praxiForm.sla.$invalid }">
+                SLA: <input type="text" 
+                name="sla"
+                id="sla"
+                ng-model="praxi.sla"
+                required/>
+                <div class="help-block" ng-messages="praxiForm.sla.$error" ng-show="praxiForm.sla.$touched">
+                    <!-- show an error if this isn't filled in -->
+                    <p ng-message="required">SLA is required.</p>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error': praxiForm.tolerance_percentage.$touched && praxiForm.tolerance_percentage.$invalid }">
+                Tolerance Percentage: <input type="text" 
+                name="tolerance_percentage"
+                id="tolerance_percentage"
+                ng-model="praxi.tolerance_percentage"
+                required/>
+                <div class="help-block" ng-messages="praxiForm.tolerance_percentage.$error" ng-show="praxiForm.tolerance_percentage.$touched">
+                    <!-- show an error if this isn't filled in -->
+                    <p ng-message="required">Tolerance percentage is required.</p>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error': praxiForm.critical.$touched && praxiForm.critical.$invalid }">
+                Critical: <input type="checkbox" 
+                name="critical"
+                id="critical"
+                ng-model="praxi.critical"
+                value="1"/>
+            </div>
         </div>
     </div>
-    <div class="form-group" ng-class="{ 'has-error': praxiForm.client_code.$touched && praxiForm.client_code.$invalid }">
-        Client Code: <input type="text" 
-        name="client_code"
-        id="client_code"
-        ng-model="praxi.client_code"
-        ng-minlength="3" 
-        ng-maxlength="8" 
-        required/>
-        <div class="help-block" ng-messages="pracyForm.client_code.$error" ng-show="praxiForm.client_code.$touched">
-            <!-- show an error if name is too short -->
-            <p ng-message="minlength">Code is too short.</p>
-        
-            <!-- show an error if username is too long -->
-            <p ng-message="maxlength">Code is too long.</p>
-        
-            <!-- show an error if this isn't filled in -->
-            <p ng-message="required">Your client code is required.</p>
-        </div>
-    </div>
-    <div class="form-group" ng-class="{ 'has-error': praxiForm.realm_code.$touched && praxiForm.realm_code.$invalid }">
-        Realm Code: <input type="text" 
-        name="realm_code"
-        id="realm_code"
-        ng-model="praxi.realm_code"
-        ng-minlength="3" 
-        ng-maxlength="8" 
-        required/>
-        <div class="help-block" ng-messages="pracyForm.realm_code.$error" ng-show="praxiForm.realm_code.$touched">
-            <!-- show an error if name is too short -->
-            <p ng-message="minlength">Code is too short.</p>
-        
-            <!-- show an error if username is too long -->
-            <p ng-message="maxlength">Code is too long.</p>
-        
-            <!-- show an error if this isn't filled in -->
-            <p ng-message="required">Your realm code is required.</p>
-        </div>
-    </div>
-    <div class="form-group" ng-class="{ 'has-error': praxiForm.prosess_code.$touched && praxiForm.prosess_code.$invalid }">
-        Process Code: <input type="text" 
-        name="prosess_code"
-        id="prosess_code"
-        ng-model="praxi.prosess_code"
-        ng-minlength="3" 
-        ng-maxlength="8" 
-        required/>
-        <div class="help-block" ng-messages="pracyForm.prosess_code.$error" ng-show="praxiForm.prosess_code.$touched">
-            <!-- show an error if name is too short -->
-            <p ng-message="minlength">Code is too short.</p>
-        
-            <!-- show an error if username is too long -->
-            <p ng-message="maxlength">Code is too long.</p>
-        
-            <!-- show an error if this isn't filled in -->
-            <p ng-message="required">Your prosess code is required.</p>
-        </div>
-    </div>
-    <div class="form-group" ng-class="{ 'has-error': praxiForm.stage_code.$touched && praxiForm.stage_code.$invalid }">
-        Stage Code: <input type="text" 
-        name="stage_code"
-        id="stage_code"
-        ng-model="praxi.stage_code"
-        ng-minlength="3" 
-        ng-maxlength="8" 
-        required/>
-        <div class="help-block" ng-messages="pracyForm.stage_code.$error" ng-show="praxiForm.stage_code.$touched">
-            <!-- show an error if name is too short -->
-            <p ng-message="minlength">Code is too short.</p>
-        
-            <!-- show an error if username is too long -->
-            <p ng-message="maxlength">Code is too long.</p>
-        
-            <!-- show an error if this isn't filled in -->
-            <p ng-message="required">Your stage code is required.</p>
-        </div>
-    </div>
-    <div class="form-group" ng-class="{ 'has-error': praxiForm.sequence.$touched && praxiForm.sequence.$invalid }">
-        Sequence: <input type="text" 
-        name="sequence"
-        id="sequence"
-        ng-model="praxi.sequence"
-        ng-minlength="3" 
-        ng-maxlength="8" 
-        required/>
-        <div class="help-block" ng-messages="pracyForm.sequence.$error" ng-show="praxiForm.sequence.$touched">
-            <!-- show an error if name is too short -->
-            <p ng-message="minlength">Code is too short.</p>
-        
-            <!-- show an error if username is too long -->
-            <p ng-message="maxlength">Code is too long.</p>
-        
-            <!-- show an error if this isn't filled in -->
-            <p ng-message="required">Your sequence is required.</p>
-        </div>
-    </div>
-    <div class="form-group" ng-class="{ 'has-error': praxiForm.sla.$touched && praxiForm.sla.$invalid }">
-        SLA: <input type="text" 
-        name="sla"
-        id="sla"
-        ng-model="praxi.sla"
-        ng-minlength="3" 
-        ng-maxlength="8" 
-        required/>
-        <div class="help-block" ng-messages="pracyForm.sla.$error" ng-show="praxiForm.sla.$touched">
-            <!-- show an error if name is too short -->
-            <p ng-message="minlength">Code is too short.</p>
-        
-            <!-- show an error if username is too long -->
-            <p ng-message="maxlength">Code is too long.</p>
-        
-            <!-- show an error if this isn't filled in -->
-            <p ng-message="required">Your sla is required.</p>
-        </div>
-    </div>
-    <div class="form-group" ng-class="{ 'has-error': praxiForm.tolerance_percentage.$touched && praxiForm.tolerance_percentage.$invalid }">
-        Tolerance Percentage: <input type="text" 
-        name="tolerance_percentage"
-        id="tolerance_percentage"
-        ng-model="praxi.tolerance_percentage"
-        ng-minlength="3" 
-        ng-maxlength="8" 
-        required/>
-        <div class="help-block" ng-messages="pracyForm.tolerance_percentage.$error" ng-show="praxiForm.tolerance_percentage.$touched">
-            <!-- show an error if name is too short -->
-            <p ng-message="minlength">Code is too short.</p>
-        
-            <!-- show an error if username is too long -->
-            <p ng-message="maxlength">Code is too long.</p>
-        
-            <!-- show an error if this isn't filled in -->
-            <p ng-message="required">Your tolerance percentage is required.</p>
-        </div>
-    </div>
-    <div class="form-group" ng-class="{ 'has-error': praxiForm.critical.$touched && praxiForm.critical.$invalid }">
-        Critical: <input type="text" 
-        name="critical"
-        id="critical"
-        ng-model="praxi.critical"
-        ng-minlength="3" 
-        ng-maxlength="8" 
-        required/>
-        <div class="help-block" ng-messages="pracyForm.critical.$error" ng-show="praxiForm.critical.$touched">
-            <!-- show an error if name is too short -->
-            <p ng-message="minlength">Code is too short.</p>
-        
-            <!-- show an error if username is too long -->
-            <p ng-message="maxlength">Code is too long.</p>
-        
-            <!-- show an error if this isn't filled in -->
-            <p ng-message="required">Your critical is required.</p>
-        </div>
-    </div>
-</div>
-<div class="formWrapper">
-    <div>
-        <button type="submit" class="btn-lg">Add Praxi</button>
-        <a href="/praxis" class="btn-lg">Back To List</a>
+    <div class="cols-xs-12 button-pull-right">
+        <button type="submit" class="button">Add Praxi</button> <a href="/praxis"  class="button">Back To List</a>
     </div>
 </div>

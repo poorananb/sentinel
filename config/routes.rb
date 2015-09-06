@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   post 'praxis' => 'praxis#create'
   delete 'praxis' => 'praxis#destroy'
   put 'praxis' => 'praxis#update'
+  get 'createPraxi' => 'praxis#new'
 
   get 'signup', to: 'admin/users#new', as: 'signup'
   get 'login', to: 'sessions#index', as: 'login'

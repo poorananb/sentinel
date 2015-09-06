@@ -7,37 +7,165 @@
     </div>
 </div>
 
-
-<div class="formWrapper">
-    <div class="container">
+<div class="form-container">
+    <form ng-submit="updatePraxi()" id="praxiForm">
+        <input type="hidden" name="id" ng-model="praxi.id"/>
         <div class="row">
-            <div id="contentTable">
-                <form ng-submit="updatePraxy()">
-                    <input type="hidden" name="id" ng-model="praxy.id"/>
-            		<table class="col-sm-12 table-bordered table-striped table-condensed cf">
-            				<thead class="cf">
-            					<tr>
-            						<th>Name</th>
-            						<th>Code</th>
-            					</tr>
-            				</thead>
-        					<tbody>
-        					    <tr>
-        							<td data-title="Name"><input type="text" ng-model="praxy.name" name="name"/></td>
-        							<td data-title="Code"><input type="text" ng-model="praxy.code" name="code"/></td>
-        						</tr>
-        						<tr>
-        						    <td colspan="2"><button type="submit" class="btn-lg">Update Praxys</button></td> 
-        						</tr>
-        					</tbody>
-            		</table>
-            	</form>
-        	</div>	
+            <div class="col-xs-12 col-sm-12">
+                <span class="form-title">Edit Praxis</span>        
+            </div>   
+            <div class="row wrap">
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Organization Code:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <select 
+                        name="org_code" 
+                        ng-model="praxi.org_code"
+                        id="org_code"
+                        required
+                        disabled
+                        >
+                            <option ng-repeat="org in orgs" value="{{org.code}}" {{praxi.org_code == org.code? 'selected':''}}>{{org.name}}</option>
+                        </select>
+                        <input type="hidden" name="org_code" ng-model="praxi.org_code" value="{{praxi.org_code}}"/>
+                        <div class="help-block" ng-messages="praxiForm.org_code.$error" ng-show="praxiForm.org_code.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Organization code is required.</p>
+                        </div>
+                    </div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Client Code:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <select 
+                        name="client_code" 
+                        id="client_code"
+                        ng-model="praxi.client_code"
+                        required
+                        disabled
+                        >
+                            <option ng-repeat="client in clients" value="{{client.code}}">{{client.name}}</option>
+                        </select>
+                        <input type="hidden" name="client_code" ng-model="praxi.client_code" value="{{praxi.client_code}}"/>
+                        <div class="help-block" ng-messages="praxiForm.client_code.$error" ng-show="praxiForm.client_code.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Client code is required.</p>
+                        </div>
+                    </div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Realm Code:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <select 
+                        name="realm_code" 
+                        id="realm_code"
+                        ng-model="praxi.realm_code"
+                        required
+                        disabled
+                        >
+                            <option ng-repeat="realm in realms" value="{{realm.code}}">{{realm.name}}</option>
+                        </select>
+                        <input type="hidden" name="realm_code" ng-model="praxi.realm_code" value="{{praxi.realm_code}}"/>
+                        <div class="help-block" ng-messages="praxiForm.realm_code.$error" ng-show="praxiForm.realm_code.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Realm code is required.</p>
+                        </div>
+                    </div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Process Code:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <select 
+                        name="prosess_code" 
+                        id="prosess_code"
+                        ng-model="praxi.prosess_code"
+                        required
+                        disabled
+                        >
+                            <option ng-repeat="prosess in prosesses" value="{{prosess.code}}">{{prosess.name}}</option>
+                        </select>
+                        <input type="hidden" name="prosess_code" ng-model="praxi.prosess_code" value="{{praxi.prosess_code}}"/>
+                        <div class="help-block" ng-messages="praxiForm.prosess_code.$error" ng-show="praxiForm.prosess_code.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Process code is required.</p>
+                        </div>
+                    </div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Stage Code:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <select 
+                        name="stage_code" 
+                        id="stage_code"
+                        ng-model="praxi.stage_code"
+                        required
+                        disabled
+                        >
+                            <option ng-repeat="stage in stages" value="{{stage.code}}">{{stage.name}}</option>
+                        </select>
+                        <input type="hidden" name="stage_code" ng-model="praxi.stage_code" value="{{praxi.stage_code}}"/>
+                        <div class="help-block" ng-messages="praxiForm.stage_code.$error" ng-show="praxiForm.stage_code.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Stage code is required.</p>
+                        </div>
+                    </div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Sequence:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <input type="text" 
+                        name="sequence"
+                        id="sequence"
+                        ng-model="praxi.sequence"
+                        required/>
+                        <div class="help-block" ng-messages="praxiForm.sequence.$error" ng-show="praxiForm.sequence.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Sequence is required.</p>
+                        </div>
+                    </div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">SLA:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <input type="text" 
+                        name="sla"
+                        id="sla"
+                        ng-model="praxi.sla"
+                        required/>
+                        <div class="help-block" ng-messages="praxiForm.sla.$error" ng-show="praxiForm.sla.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">SLA is required.</p>
+                        </div>
+                    </div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Tolerance Percentage:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <input type="text" 
+                        name="tolerance_percentage"
+                        id="tolerance_percentage"
+                        ng-model="praxi.tolerance_percentage"
+                        required/>
+                        <div class="help-block" ng-messages="praxiForm.tolerance_percentage.$error" ng-show="praxiForm.tolerance_percentage.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Tolerance percentage is required.</p>
+                        </div>
+                    </div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Critical:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <input type="checkbox" 
+                        name="critical"
+                        id="critical"
+                        ng-model="praxi.critical"
+                        value="1"/>
+                    </div>  
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-
-<div class="formWrapper">
-    <a href="/praxys" class="btn-lg">Back To List</a>        
+    	<div class="cols-xs-12 button-pull-right">
+            <button type="submit" class="button">Update Praxi</button> <a href="/praxis" class="button">Back To List</a>
+        </div>
+    </form>
 </div>

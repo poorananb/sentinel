@@ -1,10 +1,53 @@
-<div>
-    <div>
-        Name: {{praxy.name}}
+<div class="form-container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <span class="form-title">Praxi preview</span>        
+        </div>   
+        <div class="row wrap">
+            <div>
+                <div class="col-xs-12 col-sm-6"><span class="form-label">Praxi Code:</span></div>
+                <div class="col-xs-12 col-sm-6"><span class="form-value">{{praxi.praxis_code}}</span></div>  
+            </div>
+            <div>
+                <div class="col-xs-12 col-sm-6"><span class="form-label">Organization Code:</span></div>
+                <div class="col-xs-12 col-sm-6"><span class="form-value">{{praxi.org_code}}</span></div>  
+            </div>
+            <div>
+                <div class="col-xs-12 col-sm-6"><span class="form-label">Client Code:</span></div>
+                <div class="col-xs-12 col-sm-6"><span class="form-value">{{praxi.client_code}}</span></div>  
+            </div>
+            <div>
+                <div class="col-xs-12 col-sm-6"><span class="form-label">Realm Code:</span></div>
+                <div class="col-xs-12 col-sm-6"><span class="form-value">{{praxi.realm_code}}</span></div>  
+            </div>
+            <div>
+                <div class="col-xs-12 col-sm-6"><span class="form-label">Process Code:</span></div>
+                <div class="col-xs-12 col-sm-6"><span class="form-value">{{praxi.prosess_code}}</span></div>  
+            </div>
+            <div>
+                <div class="col-xs-12 col-sm-6"><span class="form-label">Stage Code:</span></div>
+                <div class="col-xs-12 col-sm-6"><span class="form-value">{{praxi.stage_code}}</span></div>  
+            </div>
+            <div>
+                <div class="col-xs-12 col-sm-6"><span class="form-label">Sequence:</span></div>
+                <div class="col-xs-12 col-sm-6"><span class="form-value">{{praxi.sequence}}</span></div>  
+            </div>
+            <div>
+                <div class="col-xs-12 col-sm-6"><span class="form-label">SLA:</span></div>
+                <div class="col-xs-12 col-sm-6"><span class="form-value">{{praxi.sla}}</span></div>  
+            </div>
+            <div>
+                <div class="col-xs-12 col-sm-6"><span class="form-label">Tolerance Percentage:</span></div>
+                <div class="col-xs-12 col-sm-6"><span class="form-value">{{praxi.tolerance_percentage}}</span></div>  
+            </div>
+            <div>
+                <div class="col-xs-12 col-sm-6"><span class="form-label">Critical:</span></div>
+                <div class="col-xs-12 col-sm-6"><span class="form-value">{{praxi.critical == "TRUE" || praxi.critical == 1 ? "Yes" : "No"}}</span></div>  
+            </div>
+        </div>
     </div>
-    <div>
-        Code: {{praxy.code}}
+    <div class="cols-xs-12 button-pull-right">
+        <a href="/praxis" class="button">Back To List</a>
     </div>
-    
-    <a href="/praxys">Back to list</a>
 </div>
+

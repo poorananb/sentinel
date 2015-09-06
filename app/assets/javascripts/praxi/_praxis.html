@@ -15,14 +15,31 @@
 
 <div class="contentWrapper">
     <div class="header-title">
-        <div>Name</div>
-        <div>Code</div>
+        <div>Praxi Code</div>
+        <div>Org Code</div>
+        <div>Client Code</div>
+        <div>Realm Code</div>
+        <div>Process Code</div>
+        <div>Stage Code</div>
+        <div>Sequence</div>
+        <div>SLA</div>
+        <div>Tolerance Percentage</div>
+        <div>Criticality</div>
         <div>&nbsp;</div>
     </div>
     
     <div class="main-content" ng-repeat="praxi in praxis">
-            <div data-title="Name">{{praxi.name}}</div>
-            <div data-title="Code">{{praxi.code}}</div>
+        <div data-title="{{praxi.praxis_code}}">{{praxi.praxis_code}}</div>
+            <div data-title="{{praxi.org_code}}">{{praxi.org_code}}</div>
+            <div data-title="{{praxi.client_code}}">{{praxi.client_code}}</div>
+            <div data-title="{{praxi.realm_code}}">{{praxi.realm_code}}</div>
+            <div data-title="{{praxi.prosess_code}}">{{praxi.prosess_code}}</div>
+            <div data-title="{{praxi.stage_code}}">{{praxi.stage_code}}</div>
+            <div data-title="{{praxi.sequence}}">{{praxi.sequence}}</div>
+            <div data-title="{{praxi.sla}}">{{praxi.sla}}</div>
+            <div data-title="{{praxi.tolerance_percentage}}">{{praxi.tolerance_percentage}}</div>
+            <div data-title="{{praxi.critical}}">{{praxi.critical == "TRUE" || praxi.critical == 1 ? "Yes" : "No"}}</div>
+            
             <div>
 			    <a ui-sref="showPraxi({id:praxi.id})" title="Show">
                     <svg class="icon icon-search"><use xlink:href="#icon-search"></use>
@@ -44,7 +61,7 @@
                         </defs>
                     </svg>    
 			     </a> 
-			    <a href="" ng-click="deletePraxi(org)" ng-confirm-click="Are you sure?" title="Delete">
+			    <a href="" ng-click="deletePraxi(praxi)" ng-confirm-click="Are you sure?" title="Delete">
                     <svg class="icon icon-bin"><use xlink:href="#icon-bin"></use>
                     	<defs>
                             <symbol id="icon-bin" viewBox="0 0 1024 1024">

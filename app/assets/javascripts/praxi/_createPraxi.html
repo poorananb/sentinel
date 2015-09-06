@@ -1,5 +1,5 @@
 <div ng-show="message.message != null">
-    <div ng-show="message.status == 'error'">
+    <div ng-show="message.status == 'error' || message.status == 'exists'">
         <div class="error">{{message.message}}</div>
     </div>
 </div>
