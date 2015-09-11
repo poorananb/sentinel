@@ -10,19 +10,18 @@
                     <img alt="image" src="<%= asset_path('sentinel-logo.png') %>" style="width:40px;">
                 </div>
             </li>
-            <li class="active"><a href="/home"><i class="fa fa-th-large"></i> <span class="nav-label">Orders</span> <span class="fa arrow"></span></a></li>
-			<li><a href="/home"><i class="fa fa-th-large"></i> <span class="nav-label">Shipment</span></a></li>
-			<li><a href=""><i class="fa fa-th-large"></i> <span class="nav-label">Setup</span><span class="fa arrow"></span></a>
+            <li ng-class='{"active":tog==1}' ng-click='tog=1'><a href="/home"><i class="icons icon-orders"><img alt="image" src="<%= asset_path('icons-orders.png') %>"></i> <span class="nav-label">Orders</span></span></a></li>
+			<li ng-class='{"active":tog==2}' ng-click='tog=2'><a href="/home"><i class="icons icon-shipment"><img alt="image" src="<%= asset_path('icons-shipment.png') %>"></i> <span class="nav-label">Shipment</span></a></li>
+			<li ng-class='{"active":tog==3}' ng-click='tog=3'><a href=""><i class="icons icon-setup"><img alt="image" src="<%= asset_path('icons-setup.png') %>"></i> <span class="nav-label">Setup</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse" aria-expanded="false" style="height: 0px;">
-        			<li><a href="/realms"><i class="fa fa-th-large"></i> <span class="nav-label">Realms</span></a></li>
-        			<li><a href="/jobs"><i class="fa fa-th-large"></i> <span class="nav-label">Jobs</span></a></li>
-        			<li><a href="/clients"><i class="fa fa-th-large"></i> <span class="nav-label">Clients</span></a></li>
-        			<li><a href="/orgs"><i class="fa fa-th-large"></i> <span class="nav-label">Organization</span></a></li>
-        			<li><a href="/prosesses"><i class="fa fa-th-large"></i> <span class="nav-label">Process</span></a></li>
-        			<li><a href="/communications"><i class="fa fa-th-large"></i> <span class="nav-label">Communication</span></a></li>
-        			<li><a href="/realms"><i class="fa fa-th-large"></i> <span class="nav-label">Realms</span></a></li>
-        			<li><a href="/stages"><i class="fa fa-th-large"></i> <span class="nav-label">Stages</span></a></li>
-        			<li><a href="/praxis"><i class="fa fa-th-large"></i> <span class="nav-label">Praxis</span></a></li>
+        			<li><a href="/jobs"><i class="icons icon-jobs"><img alt="image" src="<%= asset_path('icons-jobs.png') %>"></i> <span class="nav-label">Jobs</span></a></li>
+        			<li><a href="/clients"><i class="icons icon-clients"><img alt="image" src="<%= asset_path('icons-clients.png') %>"></i> <span class="nav-label">Clients</span></a></li>
+        			<li><a href="/orgs"><i class="icons icon-orgs"><img alt="image" src="<%= asset_path('icons-org.png') %>"></i> <span class="nav-label">Organization</span></a></li>
+        			<li><a href="/prosesses"><i class="icons icon-process"><img alt="image" src="<%= asset_path('icons-process.png') %>"></i> <span class="nav-label">Process</span></a></li>
+        			<li><a href="/communications"><i class="icons icon-communications"><img alt="image" src="<%= asset_path('icons-communication.png') %>"></i> <span class="nav-label">Communication</span></a></li>
+        			<li><a href="/realms"><i class="icons icon-realms"><img alt="image" src="<%= asset_path('icons-realms.png') %>"></i> <span class="nav-label">Realms</span></a></li>
+        			<li><a href="/stages"><i class="icons icon-stages"><img alt="image" src="<%= asset_path('icons-stages.png') %>"></i> <span class="nav-label">Stages</span></a></li>
+        			<li><a href="/praxis"><i class="icons icon-praxis"><img alt="image" src="<%= asset_path('icons-praxis.png') %>"></i> <span class="nav-label">Praxis</span></a></li>
                 </ul> 			
             </li>
 		</ul>
