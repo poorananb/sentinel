@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  praxis_code: MyString
+  event_id: MyString
+  occurred_at: 2015-09-11 05:34:36
+  zipcode: MyString
+  country: MyString
+
+two:
+  praxis_code: MyString
+  event_id: MyString
+  occurred_at: 2015-09-11 05:34:36
+  zipcode: MyString
+  country: MyString
