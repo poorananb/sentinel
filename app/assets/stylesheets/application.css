@@ -1,4 +1,4 @@
-body{font-family: 'Montserrat', sans-serif;background-color:#f8f8f8;font-size:13px;color:#7e7e7e;overflow-x:hidden;}
+body{font-family: 'Montserrat', sans-serif;background-color:#f8f8f8;font-size:12px;color:#7e7e7e;overflow-x:hidden;}
 html,body{height:100%;}
 body.full-height-layout #wrapper,body.full-height-layout #page-wrapper{height:100%;}
 .nav > li > a{color:#000000;font-weight:400;padding:14px 20px 14px 25px;font-size: 12px; letter-spacing: 0.5px;}
@@ -138,8 +138,9 @@ box-shadow: 3px 8px 13px -13px rgba(0,0,0,0.55);}
 .contentWrapper.communication .main-content > div  {font-size: 12px;width: 14%;line-height: 35px; padding: 0 4px;background-color: #fff; color: #231F20; text-transform: uppercase; margin-right: 1px; margin-top:1px; float: left;}
 
 #page-wrapper .border-bottom {border-bottom: 1px solid #EAEAEA !important;}
- #contentTable .icon {width:17px; height:17px; margin: 0px 10px -3px; fill: #054679;}
- #contentTable th {color: #FFF; padding-top: 13px; padding-bottom: 13px; background-color: #000; text-transform: uppercase;border-bottom: 0px; font-weight: 400; font-size: 12px;} 
+ #contentTable .icon {width:17px; height:17px; margin: 0px 10px -3px; fill: #757575;}
+ #contentTable .icon:hover {fill:#054679;}
+ #contentTable th {color: #FFF; padding-top: 13px; padding-bottom: 13px; background-color: #000; text-transform: uppercase;border-bottom: 0px; font-weight: 400; font-size: 12px; text-align:center;} 
  #contentTable tr td {padding-top: 12px; padding-bottom: 12px;} 
 .table-bordered {margin-top: 2%;}
 .dashboard-header span {position: relative;top: 9px;}
@@ -193,4 +194,10 @@ box-shadow: 3px 8px 13px -13px rgba(0,0,0,0.55);}
 @media (max-width:480px){
  .form-container .button-pull-right .button {margin-bottom:10px;}
  .form-container .row .form-title {font-size: 14px;}
+}
+@media (min-width:768px){
+ #contentTable tr td {padding-left:15px; text-align:center;}
+ #contentTable tr td:last-child {padding-left:0px;padding-right:0px;} 
+ #contentTable th:last-child {width:120px;}
+ #contentTable tbody:nth-child(odd) tr {background: #ECECEC !important;}
 }

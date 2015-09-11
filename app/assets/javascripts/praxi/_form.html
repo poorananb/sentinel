@@ -2,127 +2,127 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12">
             <span class="form-title">Praxis</span>        
-        </div> 
+        </div>   
         <div class="row wrap">
-            <div class="form-group" ng-class="{ 'has-error': praxiForm.org_code.$touched && praxiForm.org_code.$invalid }">
-                Org Code: 
-                <select 
-                name="org_code" 
-                ng-model="praxi.org_code"
-                id="org_code"
-                required
-                >
-                    <option ng-repeat="org in orgs" value="{{org.code}}">{{org.name}}</option>
-                </select>
-                
-                <div class="help-block" ng-messages="praxiForm.org_code.$error" ng-show="praxiForm.org_code.$touched">
-                    <!-- show an error if this isn't filled in -->
-                    <p ng-message="required">Organization code is required.</p>
+            <div>
+                <div ng-class="{ 'has-error': praxiForm.org_code.$touched && praxiForm.org_code.$invalid }">
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Org Code:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <select name="org_code" ng-model="praxi.org_code" id="org_code" required>
+                            <option ng-repeat="org in orgs" value="{{org.code}}">{{org.name}}</option>
+                        </select>
+                        
+                        <div class="help-block" ng-messages="praxiForm.org_code.$error" ng-show="praxiForm.org_code.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Organization code is required.</p>
+                        </div>                   
+                    </div>  
                 </div>
             </div>
-            <div class="form-group" ng-class="{ 'has-error': praxiForm.client_code.$touched && praxiForm.client_code.$invalid }">
-                Client Code: 
-                <select 
-                name="client_code" 
-                id="client_code"
-                ng-model="praxi.client_code"
-                required
-                >
-                    <option ng-repeat="client in clients" value="{{client.code}}">{{client.name}}</option>
-                </select>
-                <div class="help-block" ng-messages="praxiForm.client_code.$error" ng-show="praxiForm.client_code.$touched">
-                    <!-- show an error if this isn't filled in -->
-                    <p ng-message="required">Client code is required.</p>
+            <div>
+                <div  ng-class="{ 'has-error': praxiForm.client_code.$touched && praxiForm.client_code.$invalid }">
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Client Code:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <select name="client_code" id="client_code" ng-model="praxi.client_code" required>
+                            <option ng-repeat="client in clients" value="{{client.code}}">{{client.name}}</option>
+                        </select>
+                        <div class="help-block" ng-messages="praxiForm.client_code.$error" ng-show="praxiForm.client_code.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Client code is required.</p>
+                        </div>                 
+                    </div>  
+                </div>
+            </div>     
+            <div>
+                <div ng-class="{ 'has-error': praxiForm.realm_code.$touched && praxiForm.realm_code.$invalid }">
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Realm:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <select name="realm_code" id="realm_code" ng-model="praxi.realm_code" required>
+                            <option ng-repeat="realm in realms" value="{{realm.code}}">{{realm.name}}</option>
+                        </select>
+                        <div class="help-block" ng-messages="praxiForm.realm_code.$error" ng-show="praxiForm.realm_code.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Realm code is required.</p>
+                        </div>                
+                    </div>  
+                </div>
+            </div>  
+            <div>
+                <div ng-class="{ 'has-error': praxiForm.prosess_code.$touched && praxiForm.prosess_code.$invalid }">
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Process Code:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <select name="prosess_code" id="prosess_code" ng-model="praxi.prosess_code" required>
+                            <option ng-repeat="prosess in prosesses" value="{{prosess.code}}">{{prosess.name}}</option>
+                        </select>
+                        <div class="help-block" ng-messages="praxiForm.prosess_code.$error" ng-show="praxiForm.prosess_code.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Process code is required.</p>
+                        </div>                
+                    </div>  
+                </div>
+            </div>   
+            <div>
+                <div ng-class="{ 'has-error': praxiForm.stage_code.$touched && praxiForm.stage_code.$invalid }">
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Stage Code:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <select name="stage_code" id="stage_code" ng-model="praxi.stage_code" required>
+                            <option ng-repeat="stage in stages" value="{{stage.code}}">{{stage.name}}</option>
+                        </select>
+                        <div class="help-block" ng-messages="praxiForm.stage_code.$error" ng-show="praxiForm.stage_code.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Stage code is required.</p>
+                        </div>               
+                    </div>  
+                </div>
+            </div>  
+            <div>
+                <div ng-class="{ 'has-error': praxiForm.sequence.$touched && praxiForm.sequence.$invalid }">
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Sequence:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <input type="text" name="sequence" id="sequence" ng-model="praxi.sequence" required/>
+                        <div class="help-block" ng-messages="praxiForm.sequence.$error" ng-show="praxiForm.sequence.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Sequence is required.</p>
+                        </div>              
+                    </div>  
+                </div>
+            </div> 
+            <div>
+                <div ng-class="{ 'has-error': praxiForm.sla.$touched && praxiForm.sla.$invalid }">
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">SLA:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <input type="text" name="sla" id="sla" ng-model="praxi.sla" required/>
+                        <div class="help-block" ng-messages="praxiForm.sla.$error" ng-show="praxiForm.sla.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">SLA is required.</p>
+                        </div>             
+                    </div>  
+                </div>
+            </div>  
+            <div>
+                <div ng-class="{ 'has-error': praxiForm.tolerance_percentage.$touched && praxiForm.tolerance_percentage.$invalid }">
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Tolerance Percentage:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <input type="text" name="tolerance_percentage" id="tolerance_percentage" ng-model="praxi.tolerance_percentage" required/>
+                        <div class="help-block" ng-messages="praxiForm.tolerance_percentage.$error" ng-show="praxiForm.tolerance_percentage.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Tolerance percentage is required.</p>
+                        </div>            
+                    </div>  
                 </div>
             </div>
-            <div class="form-group" ng-class="{ 'has-error': praxiForm.realm_code.$touched && praxiForm.realm_code.$invalid }">
-                Realm Code: 
-                <select 
-                name="realm_code" 
-                id="realm_code"
-                ng-model="praxi.realm_code"
-                required
-                >
-                    <option ng-repeat="realm in realms" value="{{realm.code}}">{{realm.name}}</option>
-                </select>
-                <div class="help-block" ng-messages="praxiForm.realm_code.$error" ng-show="praxiForm.realm_code.$touched">
-                    <!-- show an error if this isn't filled in -->
-                    <p ng-message="required">Realm code is required.</p>
+            <div>
+                <div ng-class="{ 'has-error': praxiForm.critical.$touched && praxiForm.critical.$invalid }">
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Critical:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <input type="checkbox" name="critical" id="critical" ng-model="praxi.critical" value="1"/>            
+                    </div>  
                 </div>
-            </div>
-            <div class="form-group" ng-class="{ 'has-error': praxiForm.prosess_code.$touched && praxiForm.prosess_code.$invalid }">
-                Process Code: 
-                <select 
-                name="prosess_code" 
-                id="prosess_code"
-                ng-model="praxi.prosess_code"
-                required
-                >
-                    <option ng-repeat="prosess in prosesses" value="{{prosess.code}}">{{prosess.name}}</option>
-                </select>
-                <div class="help-block" ng-messages="praxiForm.prosess_code.$error" ng-show="praxiForm.prosess_code.$touched">
-                    <!-- show an error if this isn't filled in -->
-                    <p ng-message="required">Process code is required.</p>
-                </div>
-            </div>
-            <div class="form-group" ng-class="{ 'has-error': praxiForm.stage_code.$touched && praxiForm.stage_code.$invalid }">
-                Stage Code: 
-                <select 
-                name="stage_code" 
-                id="stage_code"
-                ng-model="praxi.stage_code"
-                required
-                >
-                    <option ng-repeat="stage in stages" value="{{stage.code}}">{{stage.name}}</option>
-                </select>
-                <div class="help-block" ng-messages="praxiForm.stage_code.$error" ng-show="praxiForm.stage_code.$touched">
-                    <!-- show an error if this isn't filled in -->
-                    <p ng-message="required">Stage code is required.</p>
-                </div>
-            </div>
-            <div class="form-group" ng-class="{ 'has-error': praxiForm.sequence.$touched && praxiForm.sequence.$invalid }">
-                Sequence: <input type="text" 
-                name="sequence"
-                id="sequence"
-                ng-model="praxi.sequence"
-                required/>
-                <div class="help-block" ng-messages="praxiForm.sequence.$error" ng-show="praxiForm.sequence.$touched">
-                    <!-- show an error if this isn't filled in -->
-                    <p ng-message="required">Sequence is required.</p>
-                </div>
-            </div>
-            <div class="form-group" ng-class="{ 'has-error': praxiForm.sla.$touched && praxiForm.sla.$invalid }">
-                SLA: <input type="text" 
-                name="sla"
-                id="sla"
-                ng-model="praxi.sla"
-                required/>
-                <div class="help-block" ng-messages="praxiForm.sla.$error" ng-show="praxiForm.sla.$touched">
-                    <!-- show an error if this isn't filled in -->
-                    <p ng-message="required">SLA is required.</p>
-                </div>
-            </div>
-            <div class="form-group" ng-class="{ 'has-error': praxiForm.tolerance_percentage.$touched && praxiForm.tolerance_percentage.$invalid }">
-                Tolerance Percentage: <input type="text" 
-                name="tolerance_percentage"
-                id="tolerance_percentage"
-                ng-model="praxi.tolerance_percentage"
-                required/>
-                <div class="help-block" ng-messages="praxiForm.tolerance_percentage.$error" ng-show="praxiForm.tolerance_percentage.$touched">
-                    <!-- show an error if this isn't filled in -->
-                    <p ng-message="required">Tolerance percentage is required.</p>
-                </div>
-            </div>
-            <div class="form-group" ng-class="{ 'has-error': praxiForm.critical.$touched && praxiForm.critical.$invalid }">
-                Critical: <input type="checkbox" 
-                name="critical"
-                id="critical"
-                ng-model="praxi.critical"
-                value="1"/>
-            </div>
+            </div>             
         </div>
     </div>
     <div class="cols-xs-12 button-pull-right">
         <button type="submit" class="button">Add Praxi</button> <a href="/praxis"  class="button">Back To List</a>
     </div>
 </div>
+
