@@ -85,7 +85,18 @@ Rails.application.routes.draw do
   resources :clients
   resources :stages
   resources :praxis
-
+  
+  namespace :api do
+    namespace :v1 do
+      resources :events, defaults: {format: 'json'}
+    end
+  end
+  
+  get 'events' => 'events#index'
+  post 'events' => 'events#create'
+  delete 'events' => 'events#destroy'
+  put 'events' => 'events#update'
+  
   namespace :admin do
   	get '', to: 'dashboard#index', as: '/'
   	resources :users
