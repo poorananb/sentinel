@@ -193,4 +193,4 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   whenever
-  will_paginate
+  will_paginate (~> 3.0.4)

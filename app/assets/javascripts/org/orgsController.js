@@ -17,16 +17,6 @@ angular.module('Sentinel.orgsController', [])
             ]
         };
         
-        $scope.loadPerPage = function(option){
-            $scope.main.limit = option;
-            $scope.loadPage($scope.main.offset);
-        }
-        
-        $scope.loadSortPage = function(option){
-            $scope.main.sort = option;
-            $scope.loadPage($scope.main.offset);
-        }
-        
         $scope.loadPage = function(page){
             $scope.main.offset = page;
             Org.get({offset:$scope.main.offset, limit:$scope.main.limit, sort:$scope.main.sort}, function(data){
@@ -47,6 +37,16 @@ angular.module('Sentinel.orgsController', [])
                 }
                 $scope.pages = pagesArray;
 		    }); 
+        }
+        
+        $scope.loadPerPage = function(option){
+            $scope.main.limit = option;
+            $scope.loadPage($scope.main.offset);
+        }
+        
+        $scope.loadSortPage = function(option){
+            $scope.main.sort = option;
+            $scope.loadPage($scope.main.offset);
         }
 		
         $scope.loadPage(1);//fetch all orgs. Issues a GET to /api/orgs
