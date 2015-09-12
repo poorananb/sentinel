@@ -20,7 +20,7 @@
     </ul> 
     Show:
     <select id="show" ng-model="show" ng-change="loadPerPage(show)">
-        <option ng-repeat="show in main.rowsArray" value="{{show.id}}" ng-selected="{{show.id == main.limit}}">{{show.label}}</option>
+        <option ng-repeat="show in main.rowsArray" value="{{show.id}}" ng-selected="{{show.id == main.limit}}" ng-if="show.id <= count">{{show.label}}</option>
     </select>
    Sort:
     <select id="sort" ng-model="sort" ng-change="loadSortPage(sort)">

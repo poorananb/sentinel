@@ -1,9 +1,14 @@
 class PraxisController < ApplicationController
-    respond_to :json, :html
+  respond_to :json, :html
   
   def index
-    @praxis = Praxi.all
-    respond_with @praxis
+    @praxis = Praxi.order(params[:sort]).all
+    @total_count = @praxis.count(:all)
+    @limit = params[:limit].to_i
+    @limited_orgs = @praxis.paginate(:page => params[:offset], :per_page => @limit)
+    
+    @response = { :praxis => @limited_orgs, :count => @total_count }
+    respond_with @response
   end
 
   def new
