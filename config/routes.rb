@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   get 'client/index'
 
   get 'home' => 'home#index'
@@ -42,9 +43,14 @@ Rails.application.routes.draw do
   put 'praxis' => 'praxis#update'
   get 'createPraxi' => 'praxis#new'
 
-  get 'signup', to: 'admin/users#new', as: 'signup'
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'createUser', to: 'users#new', as: 'createuser'
   get 'login', to: 'sessions#index', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'users' => 'users#index'
+  post 'users' => 'users#create'
+  delete 'users' => 'users#destroy'
+  put 'users' => 'users#update'
   
   #get 'help'    => 'static_pages#help'
   #get 'about'   => 'static_pages#about'
@@ -74,6 +80,10 @@ Rails.application.routes.draw do
   end
   scope :api do
       resources :praxis, defaults: {format: 'json'}
+  end
+  
+  scope :api do
+    resources :users, defaults: {format: 'json'}
   end
   
   resources :users

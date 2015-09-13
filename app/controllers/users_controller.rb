@@ -1,13 +1,19 @@
 class UsersController < ApplicationController
-  layout 'admin'
-  before_filter :authorize
+  #before_filter :authorize
+  respond_to :json, :html
   
   def index
-	@users = User.all
+	  @users = User.order(params[:sort]).all
+    @total_count = @users.count(:all)
+    @limit = params[:limit].to_i
+    @limited_orgs = @users.paginate(:page => params[:offset], :per_page => @limit)
+    
+    @response = { :users => @limited_orgs, :count => @total_count }
+    respond_with @response
   end
   
   def new 
-	@user = User.new 
+	  @user = User.new 
   end
   
   def show
@@ -15,21 +21,30 @@ class UsersController < ApplicationController
   end
   
   def create 
-	@user = User.new(user_params) 
-	
-	respond_to do |format| 
-		if @user.save 
-			format.html { redirect_to admin_users_url, notice: 'User was successfully created.' } 
-			format.json { render json: @user, status: :created, location: [:admin,@user] } 
-		else 
-			format.html { render action: "new" } 
-			format.json { render json: @user.errors, status: :unprocessable_entity } 
-		end 
-	end 
+  	@user = User.new(user_params) 
+    #Rails.logger.debug("My password: #{@user}")
+  	@user.password = params[:password]
+  	respond_to do |format|
+      if @user.save
+        format.json do
+          render :json => { 
+             :status => :ok, 
+             :message => "User was created successfully!"
+          }.to_json
+        end  
+      else
+        format.json do 
+          render :json => {
+            :message => @user.errors, 
+            :status => :error #unprocessable_entity 
+          }.to_json
+        end
+      end 
+    end
   end
   
   private
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+        params.require(:user).permit(:name, :email, :password)
     end
 end

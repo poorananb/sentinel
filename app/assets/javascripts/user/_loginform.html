@@ -1,0 +1,50 @@
+<div class="form-container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <span class="form-title">Login</span>        
+        </div>   
+        <div class="row wrap">
+            <div ng-class="{ 'has-error': userForm.email.$touched && userForm.email.$invalid }">
+                <div class="col-xs-12 col-sm-6">
+                    <span class="form-label">Login Email:</span>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <input type="text" email="email" id="email" ng-model="user.email"  ng-minlength="3" ng-maxlength="8" required/>
+                    <div class="help-block" ng-messages="userForm.email.$error" ng-show="userForm.email.$touched">
+                        <!-- show an error if email is too short -->
+                        <p ng-message="minlength">Email is too short.</p>
+                    
+                        <!-- show an error if email is too long -->
+                        <p ng-message="maxlength">Email is too long.</p>
+                    
+                        <!-- show an error if this isn't filled in -->
+                        <p ng-message="required">Email is required.</p>
+                    </div>                    
+                </div>  
+            </div>
+            <div ng-class="{ 'has-error': userForm.password.$touched && userForm.password.$invalid }">
+                <div class="col-xs-12 col-sm-6">
+                    <span class="form-label">Password:</span>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <input type="text" email="password" id="password" ng-model="user.password"  ng-minlength="3" ng-maxlength="8" required/>
+                    <div class="help-block" ng-messages="userForm.password.$error" ng-show="userForm.password.$touched">
+                        <!-- show an error if email is too short -->
+                        <p ng-message="minlength">Password is too short.</p>
+                    
+                        <!-- show an error if email is too long -->
+                        <p ng-message="maxlength">Password is too long.</p>
+                    
+                        <!-- show an error if this isn't filled in -->
+                        <p ng-message="required">Password is required.</p>
+                    </div>                    
+                </div>  
+            </div>
+        </div>
+    </div>
+    <div class="cols-xs-12 button-pull-right">
+        <button type="submit" class="button">Sign In</button> <a href="/signup"  class="button">Sign Up</a>
+        <a href="/forgotpass"  class="button">Forgot Password?</a>
+    </div>
+</div>
+

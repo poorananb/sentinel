@@ -1,0 +1,10 @@
+<div ng-show="message.message != null">
+    <div ng-show="message.status == 'error'">
+        <div class="error">{{message.message}}</div>
+    </div>
+</div>
+<div>
+    <form ng-submit="forgot()" name="loginForm" novalidate>
+        <div ng-include="'user/_forgotform.html'"></div>
+    </form>
+</div>

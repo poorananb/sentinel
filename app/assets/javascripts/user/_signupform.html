@@ -1,0 +1,85 @@
+<div class="form-container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <span class="form-title">Sign Up</span>        
+        </div>   
+        <div class="row wrap">
+            <div ng-class="{ 'has-error': signupForm.name.$touched && signupForm.name.$invalid }">
+                <div class="col-xs-12 col-sm-6">
+                    <span class="form-label">Name:</span>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <input type="text" name="name" id="name" ng-model="user.name"  ng-minlength="3" ng-maxlength="50" required/>
+                    <div class="help-block" ng-messages="signupForm.name.$error" ng-show="signupForm.name.$touched">
+                        <!-- show an error if email is too short -->
+                        <p ng-message="minlength">Name is too short.</p>
+                    
+                        <!-- show an error if email is too long -->
+                        <p ng-message="maxlength">Name is too long.</p>
+                    
+                        <!-- show an error if this isn't filled in -->
+                        <p ng-message="required">Name is required.</p>
+                    </div>                    
+                </div>  
+            </div>
+            <div ng-class="{ 'has-error': signupForm.email.$touched && signupForm.email.$invalid }">
+                <div class="col-xs-12 col-sm-6">
+                    <span class="form-label">Email:</span>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <input type="text" name="email" id="email" ng-model="user.email"  ng-minlength="5" ng-maxlength="50" required/>
+                    <div class="help-block" ng-messages="signupForm.email.$error" ng-show="signupForm.email.$touched">
+                        <!-- show an error if email is too short -->
+                        <p ng-message="minlength">Email is too short.</p>
+                    
+                        <!-- show an error if email is too long -->
+                        <p ng-message="maxlength">Email is too long.</p>
+                    
+                        <!-- show an error if this isn't filled in -->
+                        <p ng-message="required">Email is required.</p>
+                    </div>                    
+                </div>  
+            </div>
+            <div ng-class="{ 'has-error': signupForm.password.$touched && signupForm.password.$invalid }">
+                <div class="col-xs-12 col-sm-6">
+                    <span class="form-label">Password:</span>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <input type="password" name="password" id="password" ng-model="user.password"  ng-minlength="6" ng-maxlength="15" required/>
+                    <div class="help-block" ng-messages="signupForm.password.$error" ng-show="signupForm.password.$touched">
+                        <!-- show an error if email is too short -->
+                        <p ng-message="minlength">Password is too short.</p>
+                    
+                        <!-- show an error if email is too long -->
+                        <p ng-message="maxlength">Password is too long.</p>
+                    
+                        <!-- show an error if this isn't filled in -->
+                        <p ng-message="required">Password is required.</p>
+                    </div>                    
+                </div>  
+            </div>
+            <div ng-class="{ 'has-error': signupForm.confirmation.$touched && signupForm.confirmation.$invalid }">
+                <div class="col-xs-12 col-sm-6">
+                    <span class="form-label">Confirm Password:</span>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <input type="password" name="confirmation" id="confirmation" ng-model="user.confirmation"  ng-minlength="6" ng-maxlength="15" required/>
+                    <div class="help-block" ng-messages="signupForm.confirmation.$error" ng-show="signupForm.confirmation.$touched">
+                        <!-- show an error if email is too short -->
+                        <p ng-message="minlength">Confirmation Password is too short.</p>
+                    
+                        <!-- show an error if email is too long -->
+                        <p ng-message="maxlength">Confirmation Password is too long.</p>
+                    
+                        <!-- show an error if this isn't filled in -->
+                        <p ng-message="required">Password Confirmation is required.</p>
+                    </div>                    
+                </div>  
+            </div>
+        </div>
+    </div>
+    <div class="cols-xs-12 button-pull-right">
+        <button type="submit" class="button">Sign Up</button> <a href="/login"  class="button">Login</a>
+    </div>
+</div>
+

@@ -1,0 +1,20 @@
+<div ng-show="message.message != null">
+    <div ng-show="message.status == 'error'">
+        <div class="error">
+            <ul>
+                <li ng-repeat="errors in message.message">
+                    <ul>
+                        <li ng-repeat="err in errors">
+                            {{err}}
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div>
+    <form ng-submit="addUser()" name="signupForm" novalidate>
+        <div ng-include="'user/_signupform.html'"></div>
+    </form>
+</div>
