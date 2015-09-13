@@ -101,12 +101,12 @@ angular.module('Sentinel.usersController', [])
 
     $scope.loadUser();
 }])
-.controller('UserLoginController',['$scope', '$state', '$stateParams', 'User', function($scope,$state,$stateParams,User){
+.controller('UserLoginController',['$scope', '$state', '$stateParams', 'Session', function($scope,$state,$stateParams,Session){
 
-    $scope.user=new User();
+    $scope.session=new Session();
 	
     $scope.login=function(){
-        $scope.user.$save(function(response){
+        $scope.session.$save(function(response){
             $scope.message = response;
         	
             if(response.status == 'ok'){

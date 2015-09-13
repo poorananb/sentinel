@@ -63,7 +63,7 @@
                     <span class="form-label">Confirm Password:</span>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    <input type="password" name="confirmation" id="confirmation" ng-model="user.confirmation"  ng-minlength="6" ng-maxlength="15" required/>
+                    <input type="password" name="confirmation" id="confirmation" ng-model="user.confirmation"  ng-minlength="6" ng-maxlength="15" valid-password-c="user.password" required/>
                     <div class="help-block" ng-messages="signupForm.confirmation.$error" ng-show="signupForm.confirmation.$touched">
                         <!-- show an error if email is too short -->
                         <p ng-message="minlength">Confirmation Password is too short.</p>
@@ -73,6 +73,7 @@
                     
                         <!-- show an error if this isn't filled in -->
                         <p ng-message="required">Password Confirmation is required.</p>
+                        <p ng-show="signupForm.confirmation.$error.noMatch" class="error">Passwords do not match.</span>
                     </div>                    
                 </div>  
             </div>

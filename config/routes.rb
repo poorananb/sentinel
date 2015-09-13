@@ -46,6 +46,7 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new', as: 'signup'
   get 'createUser', to: 'users#new', as: 'createuser'
   get 'login', to: 'sessions#index', as: 'login'
+  get 'sessions', to: 'sessions#create', as: 'logon'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'users' => 'users#index'
   post 'users' => 'users#create'
@@ -84,6 +85,10 @@ Rails.application.routes.draw do
   
   scope :api do
     resources :users, defaults: {format: 'json'}
+  end
+  
+  scope :api do
+    resources :sessions, defaults: {format: 'json'}
   end
   
   resources :users

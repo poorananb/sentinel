@@ -30,4 +30,13 @@ class User < ActiveRecord::Base
   def clear_password
     self.password = nil
   end
+  
+  def authenticate(user, password)
+    #Rails.logger.debug("My password: #{password}")
+    if user && user.encrypted_password == BCrypt::Engine.hash_secret(password, user.salt)
+      user
+    else
+      nil
+    end
+  end
 end

@@ -4,13 +4,13 @@
             <span class="form-title">Login</span>        
         </div>   
         <div class="row wrap">
-            <div ng-class="{ 'has-error': userForm.email.$touched && userForm.email.$invalid }">
+            <div ng-class="{ 'has-error': loginForm.email.$touched && loginForm.email.$invalid }">
                 <div class="col-xs-12 col-sm-6">
                     <span class="form-label">Login Email:</span>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    <input type="text" email="email" id="email" ng-model="user.email"  ng-minlength="3" ng-maxlength="8" required/>
-                    <div class="help-block" ng-messages="userForm.email.$error" ng-show="userForm.email.$touched">
+                    <input type="text" name="email" id="email" ng-model="session.email"  ng-minlength="3" ng-maxlength="50" required/>
+                    <div class="help-block" ng-messages="loginForm.email.$error" ng-show="loginForm.email.$touched">
                         <!-- show an error if email is too short -->
                         <p ng-message="minlength">Email is too short.</p>
                     
@@ -22,13 +22,13 @@
                     </div>                    
                 </div>  
             </div>
-            <div ng-class="{ 'has-error': userForm.password.$touched && userForm.password.$invalid }">
+            <div ng-class="{ 'has-error': loginForm.password.$touched && loginForm.password.$invalid }">
                 <div class="col-xs-12 col-sm-6">
                     <span class="form-label">Password:</span>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    <input type="text" email="password" id="password" ng-model="user.password"  ng-minlength="3" ng-maxlength="8" required/>
-                    <div class="help-block" ng-messages="userForm.password.$error" ng-show="userForm.password.$touched">
+                    <input type="password" name="password" id="password" ng-model="session.password"  ng-minlength="6" ng-maxlength="15" required/>
+                    <div class="help-block" ng-messages="loginForm.password.$error" ng-show="loginForm.password.$touched">
                         <!-- show an error if email is too short -->
                         <p ng-message="minlength">Password is too short.</p>
                     
