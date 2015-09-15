@@ -2,8 +2,13 @@ class OrgsController < ApplicationController
   respond_to :json, :html
   
   def index
-    @orgs = Org.all
-    respond_with @orgs
+    @orgs = Org.order(params[:sort]).all
+    @total_count = @orgs.count(:all)
+    @limit = params[:limit].to_i
+    @limited_orgs = @orgs.paginate(:page => params[:offset], :per_page => @limit)
+    
+    @response = { :orgs => @limited_orgs, :count => @total_count }
+    respond_with @response
   end
 
   def new

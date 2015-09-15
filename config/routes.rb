@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   get 'client/index'
 
   get 'home' => 'home#index'
@@ -42,9 +43,15 @@ Rails.application.routes.draw do
   put 'praxis' => 'praxis#update'
   get 'createPraxi' => 'praxis#new'
 
-  get 'signup', to: 'admin/users#new', as: 'signup'
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'createUser', to: 'users#new', as: 'createuser'
   get 'login', to: 'sessions#index', as: 'login'
+  get 'sessions', to: 'sessions#create', as: 'logon'
   get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'users' => 'users#index'
+  post 'users' => 'users#create'
+  delete 'users' => 'users#destroy'
+  put 'users' => 'users#update'
   
   #get 'help'    => 'static_pages#help'
   #get 'about'   => 'static_pages#about'
@@ -76,6 +83,14 @@ Rails.application.routes.draw do
       resources :praxis, defaults: {format: 'json'}
   end
   
+  scope :api do
+    resources :users, defaults: {format: 'json'}
+  end
+  
+  scope :api do
+    resources :sessions, defaults: {format: 'json'}
+  end
+  
   resources :users
   resources :orgs
   resources :sessions
@@ -85,7 +100,18 @@ Rails.application.routes.draw do
   resources :clients
   resources :stages
   resources :praxis
-
+  
+  namespace :api do
+    namespace :v1 do
+      resources :events, defaults: {format: 'json'}
+    end
+  end
+  
+  get 'events' => 'events#index'
+  post 'events' => 'events#create'
+  delete 'events' => 'events#destroy'
+  put 'events' => 'events#update'
+  
   namespace :admin do
   	get '', to: 'dashboard#index', as: '/'
   	resources :users

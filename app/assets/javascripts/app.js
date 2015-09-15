@@ -1,4 +1,4 @@
-angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'ngResource', 'Sentinel.orgsController', 'Sentinel.orgs','Sentinel.prosessesController', 'Sentinel.prosesses','Sentinel.communicationsController', 'Sentinel.communications','Sentinel.realmsController','Sentinel.realms','Sentinel.stages','Sentinel.stagesController','Sentinel.clientsController', 'Sentinel.clients', 'Sentinel.praxis', 'Sentinel.praxisController']);
+angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'elif', 'ngResource', 'Sentinel.orgsController', 'Sentinel.orgs','Sentinel.prosessesController', 'Sentinel.prosesses','Sentinel.communicationsController', 'Sentinel.communications','Sentinel.realmsController','Sentinel.realms','Sentinel.stages','Sentinel.stagesController','Sentinel.clientsController', 'Sentinel.clients', 'Sentinel.praxis', 'Sentinel.praxisController', 'Sentinel.users', 'Sentinel.usersController']);
 angular.module('Sentinel').config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
 function($stateProvider, $urlRouterProvider, $locationProvider) {
 	$stateProvider
@@ -31,7 +31,15 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
 	.state('praxis', {url: '/praxis',templateUrl: 'praxi/_praxis.html',controller: 'PraxiController'})
 	.state('createPraxi', {url: '/createPraxi',templateUrl: 'praxi/_createPraxi.html',controller: 'PraxiCreateController'})
 	.state('showPraxi', {url: '/praxis/:id',templateUrl: 'praxi/_show.html',controller: 'PraxiViewController'})
-	.state('editPraxi', {url: '/praxis/{id}/edit',templateUrl: 'praxi/_edit.html',controller: 'PraxiEditController'});
+	.state('editPraxi', {url: '/praxis/{id}/edit',templateUrl: 'praxi/_edit.html',controller: 'PraxiEditController'})
+	.state('logout', {url: '/logout',templateUrl: 'user/_logout.html',controller: 'UserLogoutController'})
+	.state('login', {url: '/login',templateUrl: 'user/_login.html',controller: 'UserLoginController'})
+	.state('forgotpass', {url: '/forgotpass',templateUrl: 'user/_forgot.html',controller: 'UserForgotController'})
+	.state('signup', {url: '/signup',templateUrl: 'user/_signup.html',controller: 'UserCreateController'})
+	.state('users', {url: '/users',templateUrl: 'user/_users.html',controller: 'UserController'})
+	.state('createUser', {url: '/createUser',templateUrl: 'user/_createUser.html',controller: 'UserCreateController'})
+	.state('showUser', {url: '/users/:id',templateUrl: 'user/_show.html',controller: 'UserViewController'})
+	.state('editUser', {url: '/users/{id}/edit',templateUrl: 'user/_edit.html',controller: 'UserEditController'});
 	
 	$urlRouterProvider.otherwise('home');
 	
@@ -56,3 +64,22 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
     }
   }
 ])
+.directive('validPasswordC', function() {
+  return {
+    require: 'ngModel',
+    scope: {
+      reference: '=validPasswordC'
+    },
+    link: function(scope, elm, attrs, ctrl) {
+      ctrl.$parsers.unshift(function(viewValue, $scope) {
+        var noMatch = viewValue != scope.reference
+        ctrl.$setValidity('noMatch', !noMatch);
+        return (noMatch)?noMatch:undefined;
+      });
+
+      scope.$watch("reference", function(value) {;
+        ctrl.$setValidity('noMatch', value === ctrl.$viewValue);
+      });
+    }
+  }
+});

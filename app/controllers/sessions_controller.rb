@@ -1,6 +1,4 @@
 class SessionsController < ApplicationController
-  layout 'admin'
-  
   def index
   end
   
@@ -8,18 +6,36 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.where(email: params[:email]).first
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to admin_url, notice: "Logged in!"
-    else
-      flash.now.alert = "Email or password is invalid"
-      render "index"
+    @user = User.where(email: params[:email]).first
+    respond_to do |format|
+      if @user && @user.authenticate(@user, params[:password])
+        session[:user_id] = @user.id
+        format.json do
+          render :json => { 
+             :status => :ok, 
+             :message => "User logged in successfully!"
+          }.to_json
+        end  
+      else
+        format.json do 
+          render :json => {
+            :message => "Please check email/password and try again.", 
+            :status => :error #unprocessable_entity 
+          }.to_json
+        end
+      end 
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, notice: "Logged out!"
+    respond_to do |format|
+      format.json do
+        render :json => { 
+           :status => :ok, 
+           :message => "User logged out successfully!"
+        }.to_json
+      end
+    end
   end
 end

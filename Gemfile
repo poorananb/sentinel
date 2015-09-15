@@ -73,4 +73,10 @@ gem 'bcrypt',               '3.1.9'
 
 gem 'responders', '~> 2.0'
 
+gem "will_paginate", "~> 3.0.4"
+
 gem 'angular_rails_csrf'
+
+gem 'devise'
+
+gem 'pundit'
