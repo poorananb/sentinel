@@ -1,14 +1,249 @@
 <!-- loading main tabs -->
-<div class="" ng-include="template.brand"></div>
+  <div style="display: flex;
+    justify-content: space-between;">
+    <div class="chart-1"></div>
+     <div class="chart-2"></div>
+      <div class="chart-3"></div></div>
+       <div style="display: flex;
+    justify-content: space-between;">
+    <div class="chart-4"></div>
+     <div class="chart-5"></div>
+      <div class="chart-6"></div></div>
+      
+<!--<div class="" ng-include="template.brand"></div> -->
 
-<div class="row  border-bottom white-bg dashboard-header" style="clear:both;">
+<!-- <div class="row  border-bottom white-bg dashboard-header" style="clear:both;"> -->
 	<!-- loading notification -->
-	<div class="" ng-include="template.notifications"></div>
+<!--	<div class="" ng-include="template.notifications"></div> -->
 
 	<!-- loading graph -->
-	<div class="" ng-include="template.graph"></div>
+<!--	<div class="" ng-include="template.graph"></div> -->
 
 	<!-- loading project releated -->
-	<div class="" ng-include="template.project"></div>
-</div>
+<!--	<div class="" ng-include="template.project"></div> -->
+<!-- </div>-->
 
+<script>
+        var introChart = new RadialProgressChart('.chart-1', {
+            diameter: 100,           
+            round: false,
+            max:800,
+            //series: [10, 15],
+            series: [
+                    {
+                        value: 500,
+                        index: 1,
+                        item: 'order',
+                        color: ['#1ad5de', '#1ad5de']
+                    },
+                    {
+                        value: 200,
+                        index: 2,
+                        item:'parcel',
+                        color: ['#a0ff03', '#a0ff03']
+                    }
+                    ],           
+            center: [function (value) {
+                return 'outer ' + 500
+
+            }, function (value) {
+                return 'inner ' + 200 
+
+            }]
+
+        });
+
+        function getRandom(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        (function loop() {
+            introChart.update([getRandom(100, 600), getRandom(100, 600)]);
+            setTimeout(loop, 15000);
+        })();
+        var introChart = new RadialProgressChart('.chart-2', {
+            diameter: 100,           
+            round: false,
+            max:800,
+            //series: [10, 15],
+            series: [
+                    {
+                        value: 500,
+                        index: 1,
+                        item: 'order',
+                        color: ['#e90b3a', '#e90b3a']
+                    },
+                    {
+                        value: 200,
+                        index: 2,
+                        item:'parcel',
+                        color: ['#ff9500', '#ff9500']
+                    }
+                    ],           
+            center: [function (value) {
+                return 'outer ' + 500
+
+            }, function (value) {
+                return 'inner ' + 200 
+
+            }]
+
+        });
+
+        function getRandom(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        (function loop() {
+            introChart.update([getRandom(100, 600), getRandom(100, 600)]);
+            setTimeout(loop, 15000);
+        })();
+        var introChart = new RadialProgressChart('.chart-3', {
+            diameter: 100,           
+            round: false,
+            max:800,
+            //series: [10, 15],
+            series: [
+                    {
+                        value: 500,
+                        index: 1,
+                        item: 'order',
+                        color: ['#007aff', '#007aff']
+                    },
+                    {
+                        value: 200,
+                        index: 2,
+                        item:'parcel',
+                        color: ['#ffcc00', '#ffcc00']
+                    }
+                    ],           
+            center: [function (value) {
+                return 'outer ' + 500
+
+            }, function (value) {
+                return 'inner ' + 200 
+
+            }]
+
+        });
+
+        function getRandom(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        (function loop() {
+            introChart.update([getRandom(100, 600), getRandom(100, 600)]);
+            setTimeout(loop, 15000);
+        })();
+        var introChart = new RadialProgressChart('.chart-4', {
+            diameter: 100,           
+            round: false,
+            max:800,
+            //series: [10, 15],
+            series: [
+                    {
+                        value: 500,
+                        index: 1,
+                        item: 'order',
+                        color: ['#5856d6', '#5856d6']
+                    },
+                    {
+                        value: 200,
+                        index: 2,
+                        item:'parcel',
+                        color: ['#8e8e93', '#8e8e93']
+                    }
+                    ],           
+            center: [function (value) {
+                return 'outer ' + 500
+
+            }, function (value) {
+                return 'inner ' + 200 
+
+            }]
+
+        });
+
+        function getRandom(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        (function loop() {
+            introChart.update([getRandom(100, 600), getRandom(100, 600)]);
+            setTimeout(loop, 15000);
+        })();
+        var introChart = new RadialProgressChart('.chart-5', {
+            diameter: 100,           
+            round: false,
+            max:800,
+            //series: [10, 15],
+            series: [
+                    {
+                        value: 500,
+                        index: 1,
+                        item: 'order',
+                        color: ['#a0ff03', '#a0ff03']
+                    },
+                    {
+                        value: 200,
+                        index: 2,
+                        item:'parcel',
+                        color: ['#ff9500', '#ff9500']
+                    }
+                    ],           
+            center: [function (value) {
+                return 'outer ' + 500
+
+            }, function (value) {
+                return 'inner ' + 200 
+
+            }]
+
+        });
+
+        function getRandom(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        (function loop() {
+            introChart.update([getRandom(100, 600), getRandom(100, 600)]);
+            setTimeout(loop, 15000);
+        })();
+        var introChart = new RadialProgressChart('.chart-6', {
+            diameter: 100,           
+            round: false,
+            max:800,
+            //series: [10, 15],
+            series: [
+                    {
+                        value: 500,
+                        index: 1,
+                        item: 'order',
+                        color: ['#ffcc00', '#ffcc00']
+                    },
+                    {
+                        value: 200,
+                        index: 2,
+                        item:'parcel',
+                        color: ['#8e8e93', '#8e8e93']
+                    }
+                    ],           
+            center: [function (value) {
+                return 'outer ' + 500
+
+            }, function (value) {
+                return 'inner ' + 200 
+
+            }]
+
+        });
+
+        function getRandom(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        (function loop() {
+            introChart.update([getRandom(100, 600), getRandom(100, 600)]);
+            setTimeout(loop, 15000);
+        })();
+    </script>
