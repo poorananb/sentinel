@@ -197,6 +197,8 @@ box-shadow: 3px 8px 13px -13px rgba(0,0,0,0.55);}
  .form-container .row .col-sm-12 {text-align:center;}
  .login-container {margin: 22% auto 5% !important;}
  .signup-wrapper {margin: -3% auto 5% !important;}
+ .sentiChart {text-align:center;}
+
 }
 
 @media (max-width:480px){
@@ -209,6 +211,7 @@ box-shadow: 3px 8px 13px -13px rgba(0,0,0,0.55);}
  #contentTable th:last-child {width:120px;}
  #contentTable tbody:nth-child(odd) tr {background: #ECECEC !important;}
  .gray-bg.dashbard-1 {min-height:100% !important;}
+ .sentiChart div {float: left;}
 }
 
 .navbar-static-side .icons img {width:20px; margin-right:6px;}
@@ -222,6 +225,7 @@ box-shadow: 3px 8px 13px -13px rgba(0,0,0,0.55);}
 .login-container input {max-width: 230px; width: 100%; margin: 2px auto 3px; display: block; padding: 7px; border: none;font-size: 11px;}
 .login-container .help-block {text-align: center; margin-bottom:0px; margin-top:0px;}
 .login-container .signin {max-width: 230px; width: 100%; display: block; margin: auto; background-color: #000; border: none; color: #fff; text-transform: uppercase; letter-spacing: 1px; padding: 8px 7px 7px;}
-.login-container .forgotpassword {max-width: 130px; width: 100%; display: block; margin: 25px auto; background-color: #E8E6E6; border: 1px solid #D6D6D6; color: #828282; text-transform: uppercase; letter-spacing: 0px; padding: 7px 7px 5px; font-size: 10px;}
+.login-container .forgotpassword {max-width: 130px; width: 100%; display: block; margin: 25px auto; background-color: #E8E6E6; border: 1px solid #245279; color: #245279; text-transform: uppercase; letter-spacing: 0px; padding: 7px 7px 5px; font-size: 10px;}
 .signup-wrapper {max-width: 300px;width: 100%; margin: -3% 7% 5%; background-color: #245279; border-radius: 0px; padding-bottom: 2px; text-align: center; text-transform: uppercase;}
 .signup-wrapper a {color: #e2e2e2; padding: 8px 7px 7px;display: block; letter-spacing:0px;}    
+.sentiChart {display: block; clear: both;}
