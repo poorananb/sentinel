@@ -207,6 +207,7 @@ box-shadow: 3px 8px 13px -13px rgba(0,0,0,0.55);}
 @media (max-width:480px){
  .form-container .button-pull-right .button {margin-bottom:10px;}
  .form-container .row .form-title {font-size: 14px;}
+ .pagination .select div {margin-bottom:10px;}
 }
 @media (min-width:768px){
  #contentTable tr td {padding-left:15px; text-align:center;}
@@ -216,6 +217,7 @@ box-shadow: 3px 8px 13px -13px rgba(0,0,0,0.55);}
  .gray-bg.dashbard-1 {min-height:100% !important;}
  .sentiChart div {float: left; width:28%; margin-right:7%;}
  .sentiChart div:last-child {margin-right: 0px;}
+ .pagination .select {display: inline-flex;}
 }
 
 .navbar-static-side .icons img {width:20px; margin-right:6px;}
