@@ -1,4 +1,5 @@
-class SessionsController < ApplicationController
+class SessionsController < ApplicationController 
+  layout 'login'
   def index
   end
   
