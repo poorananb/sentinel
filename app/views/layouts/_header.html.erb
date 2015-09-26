@@ -23,9 +23,15 @@
 	
 	
 			<li>
-				<a href="/login">
-					<i class="fa fa-sign-out"></i> Log In
+				<% if logged_in? %>
+				<a href="" id="logPlaceHolder" ng-click="click()">
+					<i class="fa fa-sign-out"></i> <span>Log Out</span>
 				</a>
+				<% else %>
+				<a href="/login" id="logPlaceHolder">
+					<i class="fa fa-sign-in"></i> <span>Log In</span>
+				</a>
+				<% end %>
 			</li>
 		</ul>
 	

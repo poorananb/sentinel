@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     @user = User.where(email: params[:email]).first
     respond_to do |format|
       if @user && @user.authenticate(@user, params[:password])
-        session[:user_id] = @user.id
+        log_in @user
         format.json do
           render :json => { 
              :status => :ok, 

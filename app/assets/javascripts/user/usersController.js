@@ -1,5 +1,8 @@
 angular.module('Sentinel.usersController', [])
 .controller('UserController', ['$scope', '$state', '$window', 'User', function($scope, $state, $window, User){	
+    $scope.click=function(){
+        console.log('test')
+    }
         $scope.main = {
             offset: 1,
             limit: 1,
@@ -102,7 +105,6 @@ angular.module('Sentinel.usersController', [])
     $scope.loadUser();
 }])
 .controller('UserLoginController',['$scope', '$state', '$stateParams', 'Session', function($scope,$state,$stateParams,Session){
-
     $scope.session=new Session();
 	
     $scope.login=function(){
@@ -110,11 +112,22 @@ angular.module('Sentinel.usersController', [])
             $scope.message = response;
         	
             if(response.status == 'ok'){
-				$state.go('users'); //redirect to home
+                $('#logPlaceHolder').attr('href', '/logout').children('span').text('Log Out');
+				$state.go('home'); //redirect to home
 			}
         });
     }
-
+    
+    $scope.logout=function(){
+        $scope.session.$destroy(function(response){
+            $scope.message = response;
+        	
+            if(response.status == 'ok'){
+                $('#logPlaceHolder').attr('href', '/login').children('span').text('Log In');
+				$state.go('login'); //redirect to home
+			}
+        })
+    }
 }])
 .controller('UserForgotController',['$scope', '$state', '$stateParams', 'User', function($scope,$state,$stateParams,User){
 
