@@ -1,4 +1,5 @@
 class Api::V1::EventsController < ApplicationController
+  protect_from_forgery with: :null_session
     
   def index
     logger.debug 'Hit Events index'
@@ -10,8 +11,10 @@ class Api::V1::EventsController < ApplicationController
   end
   
   def create
+    
     respond_to do |format|
-      if Event.create(event_params)
+      if Event.create(event_myparams)
+        logger.debug 'Loggit ' + event_myparams.inspect
         format.json do
           render :json => {
             :status => :ok,
@@ -40,7 +43,7 @@ class Api::V1::EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     respond_to do |format|
-      if @event.update(event_params)
+      if @event.update(event_myparams)
         format.json do
           render :json => { 
              :status => :ok, 
@@ -81,7 +84,7 @@ class Api::V1::EventsController < ApplicationController
   
   
   private
-  def event_params
-    params.require(:event).permit(:praxis_code, :event_id, :occurred_at, :zipcode, :country) if params[:event]
+  def event_myparams
+   params.require(:event).permit(:praxis_code, :event_id, :occurred_at, :zipcode, :country) if params[:event]
   end
 end
