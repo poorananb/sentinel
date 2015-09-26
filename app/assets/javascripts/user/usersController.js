@@ -1,8 +1,5 @@
 angular.module('Sentinel.usersController', [])
 .controller('UserController', ['$scope', '$state', '$window', 'User', function($scope, $state, $window, User){	
-    $scope.click=function(){
-        console.log('test')
-    }
         $scope.main = {
             offset: 1,
             limit: 1,
@@ -112,8 +109,9 @@ angular.module('Sentinel.usersController', [])
             $scope.message = response;
         	
             if(response.status == 'ok'){
-                $('#logPlaceHolder').attr('href', '/logout').children('span').text('Log Out');
-				$state.go('home'); //redirect to home
+                //$('#logPlaceHolder').attr('href', '/logout').children('span').text('Log Out');
+				//$state.go('home'); //redirect to home
+				window.location='/home'
 			}
         });
     }
@@ -123,8 +121,7 @@ angular.module('Sentinel.usersController', [])
             $scope.message = response;
         	
             if(response.status == 'ok'){
-                $('#logPlaceHolder').attr('href', '/login').children('span').text('Log In');
-				$state.go('login'); //redirect to home
+                window.location = '/login';
 			}
         })
     }

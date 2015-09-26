@@ -1,5 +1,6 @@
 class StagesController < ApplicationController
-    respond_to :json, :html
+  before_filter :authorize
+  respond_to :json, :html
   
   def index
     @stages = Stage.all

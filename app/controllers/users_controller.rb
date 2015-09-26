@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  #before_filter :authorize
+  before_filter :authorize
   respond_to :json, :html
   
   def index

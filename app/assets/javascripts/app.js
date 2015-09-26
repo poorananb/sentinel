@@ -32,7 +32,6 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
 	.state('createPraxi', {url: '/createPraxi',templateUrl: 'praxi/_createPraxi.html',controller: 'PraxiCreateController'})
 	.state('showPraxi', {url: '/praxis/:id',templateUrl: 'praxi/_show.html',controller: 'PraxiViewController'})
 	.state('editPraxi', {url: '/praxis/{id}/edit',templateUrl: 'praxi/_edit.html',controller: 'PraxiEditController'})
-	.state('logout', {url: '/logout',templateUrl: 'user/_logout.html',controller: 'UserLoginController'})
 	.state('login', {url: '/login',templateUrl: 'user/_login.html',controller: 'UserLoginController'})
 	.state('forgotpass', {url: '/forgotpass',templateUrl: 'user/_forgot.html',controller: 'UserForgotController'})
 	.state('signup', {url: '/signup',templateUrl: 'user/_signup.html',controller: 'UserCreateController'})
@@ -82,4 +81,23 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
       });
     }
   }
-});
+})
+.directive('ngUserLogout', [
+  function(){
+  	return {
+      priority: 100,
+      restrict: 'A',
+      link: {
+        pre: function(scope, element, attrs){ //<---------
+          element.bind('click touchstart', function(e){
+            var message = attrs.ngConfirmClick;
+            if(message && message =='logout'){
+              console.log('test')
+              window.location = '/login';
+            }
+          });
+        }
+      }
+    }
+  }
+]);

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150913073950) do
+ActiveRecord::Schema.define(version: 20150926071802) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "code",       limit: 10
@@ -39,6 +39,23 @@ ActiveRecord::Schema.define(version: 20150913073950) do
     t.datetime "occurred_at"
     t.string   "zipcode"
     t.string   "country"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "labels", force: :cascade do |t|
+    t.string   "org_code"
+    t.string   "client_code"
+    t.string   "key"
+    t.string   "label"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "milestones", force: :cascade do |t|
+    t.string   "org_code"
+    t.string   "client_code"
+    t.string   "key"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -104,6 +121,7 @@ ActiveRecord::Schema.define(version: 20150913073950) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "salt"
+    t.string   "remember"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

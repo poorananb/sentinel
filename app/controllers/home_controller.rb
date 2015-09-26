@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
-	def index
-		render 'layouts/application'
-	end
+  before_filter :authorize
+	
+  def index
+	render 'layouts/application'
+  end
 end

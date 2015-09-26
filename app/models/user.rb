@@ -1,10 +1,6 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-  
   attr_accessor :password
+  attr_accessor :remember_token
   
   before_save { self.email = email.downcase }  
   before_save :encrypt_password
@@ -32,11 +28,32 @@ class User < ActiveRecord::Base
   end
   
   def authenticate(user, password)
-    #Rails.logger.debug("My password: #{password}")
     if user && user.encrypted_password == BCrypt::Engine.hash_secret(password, user.salt)
-      user
+      true
     else
       nil
     end
+  end
+  
+  # Returns the hash digest of the given string.
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
+  
+  # Returns a random token.
+  def User.new_token
+    SecureRandom.urlsafe_base64
+  end
+  
+  def remember
+    self.remember_token = User.new_token
+    self.update_column(:remember, User.digest(remember_token))
+  end
+  
+  # Forgets a user.
+  def forget
+    update_attribute(:remember, nil)
   end
 end
