@@ -38,7 +38,7 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
 	.state('users', {url: '/users',templateUrl: 'user/_users.html',controller: 'UserController'})
 	.state('createUser', {url: '/createUser',templateUrl: 'user/_createUser.html',controller: 'UserCreateController'})
 	.state('showUser', {url: '/users/:id',templateUrl: 'user/_show.html',controller: 'UserViewController'})
-	.state('editUser', {url: '/users/{id}/edit',templateUrl: 'user/_edit.html',controller: 'UserEditController'});
+	.state('editUser', {url: '/users/{id}/edit',templateUrl: 'user/_editProfile.html',controller: 'UserEditController'});
 	
 	$urlRouterProvider.otherwise('home');
 	

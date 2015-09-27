@@ -85,12 +85,16 @@ angular.module('Sentinel.usersController', [])
 
 }]).controller('UserEditController',['$scope', '$state', '$stateParams', 'User', function($scope,$state,$stateParams,User){
 
-    $scope.updateUser=function(){
+    $scope.updateProfile=function(){
         $scope.user.$update(function(response){
         	$scope.message = response;
         	
             if(response.status == 'ok'){
-				$state.go('users'); //redirect to home
+				$state.go('home'); //redirect to home
+			}
+			
+			if(response.status == 'wrpass'){
+			   $scope.user=response.data;
 			}
         });
     };

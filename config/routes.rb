@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   get 'brand' => 'orgs#orgs'
   get 'jobs' => 'orgs#orgs'
   get 'clients' => 'clients#index'
-  
 
+  get 'orgs' => 'orgs#index'
   post 'orgs' => 'orgs#create'
   delete 'orgs' => 'orgs#destroy'
   put 'orgs' => 'orgs#update'
@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   delete 'stages' => 'stages#destroy'
   put 'stages' => 'stages#update'
   
+  get 'clients' => 'clients#index'
   post 'clients' => 'clients#create'
   delete 'clients' => 'clients#destroy'
   put 'clients' => 'clients#update'
@@ -82,11 +83,10 @@ Rails.application.routes.draw do
   end
   
   scope :api do
-    resources :users, defaults: {format: 'json'}
+      resources :sessions, defaults: {format: 'json'}
   end
-  
   scope :api do
-    resources :sessions, defaults: {format: 'json'}
+      resources :users, defaults: {format: 'json'}
   end
   
   resources :users
@@ -112,7 +112,6 @@ Rails.application.routes.draw do
   
   namespace :admin do
   	get '', to: 'dashboard#index', as: '/'
-  	resources :users
   end
 
   resources :widgets

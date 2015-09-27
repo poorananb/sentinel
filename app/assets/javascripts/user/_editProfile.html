@@ -1,0 +1,110 @@
+<div ng-show="message.message != null">
+    <div ng-show="message.status == 'ok'">
+        <div class="success">{{message.message}}</div>
+    </div>
+    <div ng-show="message.status == 'error'">
+        <div class="error">{{message.message}}</div>
+    </div>
+    <div ng-show="message.status == 'wrpass'">
+        <div class="error">{{message.message}}</div>
+    </div>
+</div>
+
+<div class="form-container">
+    <form ng-submit="updateProfile()" name="editUserForm" novalidate>
+    <div class="row">
+        <input type="hidden" name="id" ng-model="org.id"/>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <span class="form-title">Change Password</span>        
+                </div>   
+                <div class="row wrap">
+                    <div ng-class="{ 'has-error': editUserForm.current_password.$touched && editUserForm.current_password.$invalid }">
+                        <div class="col-xs-12 col-sm-6">
+                            <span class="form-label">Current Password:</span>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <input type="password" name="current_password" id="current_password" ng-model="user.current_password"  ng-minlength="6" ng-maxlength="15" required/>
+                            <div class="help-block" ng-messages="editUserForm.current_password.$error" ng-show="editUserForm.current_password.$touched">
+                                <!-- show an error if email is too short -->
+                                <p ng-message="minlength">Current Password is too short.</p>
+                            
+                                <!-- show an error if email is too long -->
+                                <p ng-message="maxlength">Current Password is too long.</p>
+                            
+                                <!-- show an error if this isn't filled in -->
+                                <p ng-message="required">Current Password is required.</p>
+                            </div>                    
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xs-12 col-sm-12">
+                <span class="form-title">Edit Profile</span>        
+            </div>   
+            
+            <div class="row wrap">
+                <div ng-class="{ 'has-error': editUserForm.name.$touched && editUserForm.name.$invalid }">
+                    <div class="col-xs-12 col-sm-6">
+                        <span class="form-label">Name:</span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <input type="text" name="name" id="name" ng-model="user.name"  ng-minlength="3" ng-maxlength="50" required/>
+                        <div class="help-block" ng-messages="editUserForm.name.$error" ng-show="editUserForm.name.$touched">
+                            <!-- show an error if email is too short -->
+                            <p ng-message="minlength">Name is too short.</p>
+                        
+                            <!-- show an error if email is too long -->
+                            <p ng-message="maxlength">Name is too long.</p>
+                        
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Name is required.</p>
+                        </div>                    
+                    </div>  
+                </div>
+                <div ng-class="{ 'has-error': editUserForm.password.$touched && editUserForm.password.$invalid }">
+                    <div class="col-xs-12 col-sm-6">
+                        <span class="form-label">Password:</span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <input type="password" name="password" id="password" ng-model="user.password"  ng-minlength="6" ng-maxlength="15" required/>
+                        <div class="help-block" ng-messages="editUserForm.password.$error" ng-show="editUserForm.password.$touched">
+                            <!-- show an error if email is too short -->
+                            <p ng-message="minlength">Password is too short.</p>
+                        
+                            <!-- show an error if email is too long -->
+                            <p ng-message="maxlength">Password is too long.</p>
+                        
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Password is required.</p>
+                        </div>                    
+                    </div>  
+                </div>
+                <div ng-class="{ 'has-error': editUserForm.confirmation.$touched && editUserForm.confirmation.$invalid }">
+                    <div class="col-xs-12 col-sm-6">
+                        <span class="form-label">Confirm Password:</span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <input type="password" name="confirmation" id="confirmation" ng-model="user.confirmation"  ng-minlength="6" ng-maxlength="15" valid-password-c="user.password" required/>
+                        <div class="help-block" ng-messages="editUserForm.confirmation.$error" ng-show="editUserForm.confirmation.$touched">
+                            <!-- show an error if email is too short -->
+                            <p ng-message="minlength">Confirmation Password is too short.</p>
+                        
+                            <!-- show an error if email is too long -->
+                            <p ng-message="maxlength">Confirmation Password is too long.</p>
+                        
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Password Confirmation is required.</p>
+                            <p ng-show="editUserForm.confirmation.$error.noMatch" class="error">Passwords do not match.</span>
+                        </div>                    
+                    </div>  
+                </div>
+            </div>
+    </div>
+    <div class="cols-xs-12 button-pull-right">
+        <button type="submit" class="button">Save</button>
+    </div>
+    </form>
+</div>
+
