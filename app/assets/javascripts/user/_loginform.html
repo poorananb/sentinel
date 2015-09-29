@@ -4,7 +4,6 @@
 	</div>
 	<div class="login-title">
 	    <h2>Welcome to Sentinel</h2>
-	    <span>&nbsp;</span>
 	</div>
 	
 	<div ng-class="{ 'has-error': loginForm.email.$touched && loginForm.email.$invalid }" class="input-login">
@@ -36,10 +35,13 @@
 	    </div>
 	</div>
 	
+	<div class="remember"><input type="checkbox" name="remember_me" ng-model="session.remember_me" value="1">&nbsp; Remember Me</div>
 	<div><button type="submit" class="signin">Sign In</button></div>
 	<div><a href="/forgotpass" class="forgotpassword">Forgot Password?</a></div>	
 </div>
-
+<div class="copyright">
+    Copyright 2015. Sentinel
+</div>
 <!-- <div class="signup-wrapper"><a href="/signup">Create and Account</a></div>  -->
 
 

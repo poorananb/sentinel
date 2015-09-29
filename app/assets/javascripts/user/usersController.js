@@ -85,12 +85,16 @@ angular.module('Sentinel.usersController', [])
 
 }]).controller('UserEditController',['$scope', '$state', '$stateParams', 'User', function($scope,$state,$stateParams,User){
 
-    $scope.updateUser=function(){
+    $scope.updateProfile=function(){
         $scope.user.$update(function(response){
         	$scope.message = response;
         	
             if(response.status == 'ok'){
-				$state.go('users'); //redirect to home
+				$state.go('home'); //redirect to home
+			}
+			
+			if(response.status == 'wrpass'){
+			   $scope.user=response.data;
 			}
         });
     };
@@ -102,7 +106,6 @@ angular.module('Sentinel.usersController', [])
     $scope.loadUser();
 }])
 .controller('UserLoginController',['$scope', '$state', '$stateParams', 'Session', function($scope,$state,$stateParams,Session){
-
     $scope.session=new Session();
 	
     $scope.login=function(){
@@ -110,11 +113,22 @@ angular.module('Sentinel.usersController', [])
             $scope.message = response;
         	
             if(response.status == 'ok'){
-				$state.go('users'); //redirect to home
+                //$('#logPlaceHolder').attr('href', '/logout').children('span').text('Log Out');
+				//$state.go('home'); //redirect to home
+				window.location='/home'
 			}
         });
     }
-
+    
+    $scope.logout=function(){
+        $scope.session.$destroy(function(response){
+            $scope.message = response;
+        	
+            if(response.status == 'ok'){
+                window.location = '/login';
+			}
+        })
+    }
 }])
 .controller('UserForgotController',['$scope', '$state', '$stateParams', 'User', function($scope,$state,$stateParams,User){
 

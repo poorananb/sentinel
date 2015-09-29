@@ -77,6 +77,6 @@ gem "will_paginate", "~> 3.0.4"
 
 gem 'angular_rails_csrf'
 
-gem 'devise'
+#gem 'devise'
 
 gem 'pundit'
