@@ -2,12 +2,17 @@ class OrgsController < ApplicationController
   respond_to :json, :html
   
   def index
-    @orgs = Org.order(params[:sort]).all
-    @total_count = @orgs.count(:all)
-    @limit = params[:limit].to_i
-    @limited_orgs = @orgs.paginate(:page => params[:offset], :per_page => @limit)
-    
-    @response = { :orgs => @limited_orgs, :count => @total_count }
+    if(params[:sort])
+      Rails.logger.debug("My password: #{params}")
+      @orgs = Org.order(params[:sort]).all
+      @total_count = @orgs.count(:all)
+      @limit = params[:limit].to_i
+      @limited_orgs = @orgs.paginate(:page => params[:offset], :per_page => @limit)
+      @response = { :orgs => @limited_orgs, :count => @total_count }
+    else
+      Rails.logger.debug("i am at else:")
+      @response = Org.all
+    end
     respond_with @response
   end
 

@@ -1,4 +1,4 @@
-angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'elif', 'ngResource', 'Sentinel.orgsController', 'Sentinel.orgs','Sentinel.prosessesController', 'Sentinel.prosesses','Sentinel.communicationsController', 'Sentinel.communications','Sentinel.realmsController','Sentinel.realms','Sentinel.stages','Sentinel.stagesController','Sentinel.clientsController', 'Sentinel.clients', 'Sentinel.praxis', 'Sentinel.praxisController', 'Sentinel.users', 'Sentinel.usersController']);
+angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'elif', 'ngResource', 'Sentinel.orgsController', 'Sentinel.orgs','Sentinel.prosessesController', 'Sentinel.prosesses','Sentinel.communicationsController', 'Sentinel.communications','Sentinel.realmsController','Sentinel.realms','Sentinel.stages','Sentinel.stagesController','Sentinel.clientsController', 'Sentinel.clients', 'Sentinel.praxis', 'Sentinel.praxisController', 'Sentinel.labels', 'Sentinel.labelsController', 'Sentinel.users', 'Sentinel.usersController']);
 angular.module('Sentinel').config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
 function($stateProvider, $urlRouterProvider, $locationProvider) {
 	$stateProvider
@@ -32,6 +32,10 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
 	.state('createPraxi', {url: '/createPraxi',templateUrl: 'praxi/_createPraxi.html',controller: 'PraxiCreateController'})
 	.state('showPraxi', {url: '/praxis/:id',templateUrl: 'praxi/_show.html',controller: 'PraxiViewController'})
 	.state('editPraxi', {url: '/praxis/{id}/edit',templateUrl: 'praxi/_edit.html',controller: 'PraxiEditController'})
+	.state('labels', {url: '/labels',templateUrl: 'label/_labels.html',controller: 'LabelController'})
+	.state('createLabel', {url: '/createLabel',templateUrl: 'label/_createLabel.html',controller: 'LabelCreateController'})
+	.state('showLabel', {url: '/labels/:id',templateUrl: 'label/_show.html',controller: 'LabelViewController'})
+	.state('editLabel', {url: '/labels/{id}/edit',templateUrl: 'label/_edit.html',controller: 'LabelEditController'})
 	.state('logout', {url: '/logout',templateUrl: 'user/_logout.html',controller: 'UserLogoutController'})
 	.state('login', {url: '/login',templateUrl: 'user/_login.html',controller: 'UserLoginController'})
 	.state('forgotpass', {url: '/forgotpass',templateUrl: 'user/_forgot.html',controller: 'UserForgotController'})
