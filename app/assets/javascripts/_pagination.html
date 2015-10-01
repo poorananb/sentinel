@@ -1,29 +1,37 @@
 <div class="pagination" ng-if="count > 0">
-    <ul>
-    	<li ng-if="main.offset!=1"><a ng-click="loadPage(1)" href="">&laquo;&laquo;</a></li>
-        <li ng-if="main.offset==1">&laquo;&laquo;</li>
-
-        <li ng-repeat="page in pages">
-            <span ng-if="page == main.offset">
-                {{page}}
-            </span>
-            <span ng-else-if="page == 1">
-                <a ng-click="loadPage(page)" href="">{{page}}</a>
-            </span>
-            <span ng-else="pagesCount >= page">
-                <a ng-click="loadPage(page)" href="">{{page}}</a>
-            </span>
-        </li>
-        
-        <li ng-if="main.offset != pagesCount"><a ng-click="loadPage(pagesCount)" href="">&raquo;&raquo;</a></li>
-        <li ng-if="main.offset == pagesCount">&raquo;&raquo;</li>
-    </ul> 
-    Show:
-    <select id="show" ng-model="show" ng-change="loadPerPage(show)">
-        <option ng-repeat="show in main.rowsArray" value="{{show.id}}" ng-selected="{{show.id == main.limit}}" ng-if="show.id <= count">{{show.label}}</option>
-    </select>
-   Sort:
-    <select id="sort" ng-model="sort" ng-change="loadSortPage(sort)">
-        <option ng-repeat="sort in main.sortArray" value="{{sort.id}}" ng-selected="{{sort.id == main.sort}}">{{sort.label}}</option>
-    </select>
+    <div class="number">
+        <ul>
+        	<li ng-if="main.offset!=1"><a ng-click="loadPage(1)" href="">&laquo;&laquo;</a></li>
+            <li ng-if="main.offset==1">&laquo;&laquo;</li>
+    
+            <li class="pagesNumber" ng-repeat="page in pages">
+                <span ng-if="page == main.offset">
+                    {{page}}
+                </span>
+                <span ng-else-if="page == 1">
+                    <a ng-click="loadPage(page)" href="">{{page}}</a>
+                </span>
+                <span ng-else="pagesCount >= page">
+                    <a ng-click="loadPage(page)" href="">{{page}}</a>
+                </span>
+            </li>
+            
+            <li ng-if="main.offset != pagesCount"><a ng-click="loadPage(pagesCount)" href="">&raquo;&raquo;</a></li>
+            <li ng-if="main.offset == pagesCount">&raquo;&raquo;</li>
+        </ul>
+    </div>
+    <div class="select">
+        <div>
+            Show:
+            <select id="show" ng-model="show" ng-change="loadPerPage(show)">
+                <option ng-repeat="show in main.rowsArray" value="{{show.id}}" ng-selected="{{show.id == main.limit}}" ng-if="show.id <= count">{{show.label}}</option>
+            </select>
+        </div>
+        <div>
+            Sort:
+            <select id="sort" ng-model="sort" ng-change="loadSortPage(sort)">
+                <option ng-repeat="sort in main.sortArray" value="{{sort.id}}" ng-selected="{{sort.id == main.sort}}">{{sort.label}}</option>
+            </select>
+        </div>
+    </div>
 </div>

@@ -1,6 +1,11 @@
 class SessionsController < ApplicationController 
   layout 'login'
   def index
+    @current_user ||= User.find_by(id: session[:user_id])
+    
+    if(@current_user)
+      redirect_to '/home#index'
+    end
   end
   
   def new
@@ -10,7 +15,9 @@ class SessionsController < ApplicationController
     @user = User.where(email: params[:email]).first
     respond_to do |format|
       if @user && @user.authenticate(@user, params[:password])
-        session[:user_id] = @user.id
+        log_in @user
+        params[:remember_me] == true ? remember(@user) : forget(@user)
+
         format.json do
           render :json => { 
              :status => :ok, 
@@ -29,14 +36,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
-    respond_to do |format|
-      format.json do
-        render :json => { 
-           :status => :ok, 
-           :message => "User logged out successfully!"
-        }.to_json
-      end
-    end
+    log_out
+    redirect_to '/login'
   end
 end

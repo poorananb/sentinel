@@ -47,9 +47,13 @@ ActiveRecord::Schema.define(version: 20150924080746) do
     t.string   "org_code"
     t.string   "client_code"
     t.string   "key"
+<<<<<<< HEAD
     t.string   "label_name"
     t.string   "realm_code"
     t.string   "icon"
+=======
+    t.string   "label"
+>>>>>>> 6b6b8bbd5b352dca996f8c3a0eb032643904ce67
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -123,6 +127,7 @@ ActiveRecord::Schema.define(version: 20150924080746) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "salt"
+    t.string   "remember"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

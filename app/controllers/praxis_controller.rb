@@ -1,4 +1,5 @@
 class PraxisController < ApplicationController
+  before_filter :authorize
   respond_to :json, :html
   
   def index

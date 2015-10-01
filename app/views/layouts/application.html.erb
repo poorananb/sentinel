@@ -3,11 +3,11 @@
 
 <head>
   <base href="/">
-  <title>GettingStarted</title>
+  <title>Sentinel</title>
    
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <!--[if lt IE 9]>
-	  <%= javascript_include_tag  '//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js' %>
+  <%= javascript_include_tag  '//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js' %>
   <![endif]-->
   <%= stylesheet_link_tag  '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css' %>
   <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'  %>
@@ -41,8 +41,14 @@
         <div style="min-height: 671px;" id="page-wrapper" class="gray-bg dashbard-1">
 			<%= render 'layouts/header' %>
 
-			<!--  Content  -->
-           
+			<!--  display errors  -->
+            <% if notice %>
+              <p class="alert alert-success"><%= notice %></p>
+            <% end %>
+            <% if alert %>
+              <p class="alert alert-danger"><%= alert %></p>
+            <% end %>
+            
 			<!-- Main Content  -->
 			<div class="container">
 				<div class="row">

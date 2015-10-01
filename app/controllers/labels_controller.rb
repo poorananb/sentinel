@@ -1,4 +1,5 @@
 class LabelsController < ApplicationController
+
     respond_to :json, :html
   
   def index
@@ -85,4 +86,5 @@ class LabelsController < ApplicationController
   def label_params
     params.require(:label).permit(:org_code, :client_code, :key, :label_name,:realm_code,:icon) if params[:label]
   end
+
 end
