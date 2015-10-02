@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150926071802) do
+ActiveRecord::Schema.define(version: 20150924080746) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "code",       limit: 10
@@ -47,7 +47,13 @@ ActiveRecord::Schema.define(version: 20150926071802) do
     t.string   "org_code"
     t.string   "client_code"
     t.string   "key"
+<<<<<<< HEAD
+    t.string   "label_name"
+    t.string   "realm_code"
+    t.string   "icon"
+=======
     t.string   "label"
+>>>>>>> 6b6b8bbd5b352dca996f8c3a0eb032643904ce67
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
