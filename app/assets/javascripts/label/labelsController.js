@@ -1,4 +1,4 @@
-angular.module('Sentinel.labelsController', ['ngFileUpload'])
+angular.module('Sentinel.labelsController', [])
 .controller('LabelController', ['$scope', '$state', '$window', 'Label', function($scope, $state, $window, Label){	
     /*    $scope.main = {
             offset: 1,

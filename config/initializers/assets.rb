@@ -9,4 +9,5 @@ Rails.application.config.assets.version = '1.0'
 
 
 Rails.application.config.assets.precompile += %w( radial-progress-chart.js )
+Rails.application.config.assets.precompile += %w( ng-file-upload-all.js )
 Rails.application.config.assets.precompile += %w( font-awesome.css )
