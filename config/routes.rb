@@ -41,6 +41,12 @@ Rails.application.routes.draw do
   delete 'praxis' => 'praxis#destroy'
   put 'praxis' => 'praxis#update'
   get 'createPraxi' => 'praxis#new'
+  
+  get 'labels' => 'labels#index'
+  post 'labels' => 'labels#create'
+  delete 'labels' => 'labels#destroy'
+  put 'labels' => 'labels#update'
+  get 'createLabel' => 'labels#new'
 
   get 'signup', to: 'users#new', as: 'signup'
   get 'createUser', to: 'users#new', as: 'createuser'
@@ -90,6 +96,11 @@ Rails.application.routes.draw do
   scope :api do
       resources :sessions, defaults: {format: 'json'}
   end
+
+  scope :api do
+    resources :labels, defaults: {format: 'json'}
+  end
+
   scope :api do
       resources :users, defaults: {format: 'json'}
   end
@@ -107,6 +118,8 @@ Rails.application.routes.draw do
   resources :stages
   resources :praxis
   resources :roles
+  resources :labels
+  resources :images
   
   namespace :api do
     namespace :v1 do

@@ -1,0 +1,122 @@
+<div class="form-container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <span class="form-title">Label</span>        
+        </div>   
+        <div class="row wrap">
+            <div>
+                <div ng-class="{ 'has-error': labelForm.org_code.$touched && labelForm.org_code.$invalid }">
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Org Code:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                    
+                     <select name="org_code" ng-model="label.org_code" id="org_code" required>
+                        <option ng-repeat="org in orgs" value="{{org.code}}">{{org.name}}</option>
+                    </select>
+                        
+                        <div class="help-block" ng-messages="labelForm.org_code.$error" ng-show="labelForm.org_code.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Organization code is required.</p>
+                        </div>                   
+                    </div>  
+                </div>
+            </div>
+            
+            <div>
+                <div  ng-class="{ 'has-error': labelForm.client_code.$touched && labelForm.client_code.$invalid }">
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Client Code:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <select name="client_code" id="client_code" ng-model="label.client_code" required>
+                            <option ng-repeat="client in clients" value="{{client.code}}">{{client.name}}</option>
+                        </select>
+                        <div class="help-block" ng-messages="labelForm.client_code.$error" ng-show="labelForm.client_code.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Client code is required.</p>
+                        </div>                 
+                    </div>  
+                </div>
+            </div> 
+             <div>
+                <div ng-class="{ 'has-error': labelForm.realm_code.$touched && labelForm.realm_code.$invalid }">
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Realm:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <select name="realm_code" id="realm_code" ng-model="label.realm_code" required>
+                            <option ng-repeat="realm in realms" value="{{realm.code}}">{{realm.name}}</option>
+                        </select>
+                        <div class="help-block" ng-messages="labelForm.realm_code.$error" ng-show="labelForm.realm_code.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Realm code is required.</p>
+                        </div>                
+                    </div>  
+                </div>
+            </div> 
+            
+            
+            <div ng-class="{ 'has-error': labelForm.key.$touched && labelForm.key.$invalid }">
+                <div class="col-xs-12 col-sm-6">
+                    <span class="form-label">Key:</span>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <input type="text" name="key" id="key" ng-model="label.key"  ng-minlength="3" ng-maxlength="8" required/>
+                    <div class="help-block" ng-messages="labelForm.key.$error" ng-show="labelForm.key.$touched">
+                        <!-- show an error if name is too short -->
+                        <p ng-message="minlength">key is too short.</p>
+                    
+                        <!-- show an error if name is too long -->
+                        <p ng-message="maxlength">key is too long.</p>
+                    
+                        <!-- show an error if this isn't filled in -->
+                        <p ng-message="required">Your key is required.</p>
+                    </div>                    
+                </div>  
+            </div>
+               <div ng-class="{ 'has-error': labelForm.label.$touched && labelForm.label.$invalid }">
+                <div class="col-xs-12 col-sm-6">
+                    <span class="form-label">Label:</span>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <input type="text" name="label" id="label_name" ng-model="label.label_name"  ng-minlength="3" ng-maxlength="8" required/>
+                    <div class="help-block" ng-messages="labelForm.label.$error" ng-show="labelForm.label.$touched">
+                        <!-- show an error if name is too short -->
+                        <p ng-message="minlength">label is too short.</p>
+                    
+                        <!-- show an error if name is too long -->
+                        <p ng-message="maxlength">label is too long.</p>
+                    
+                        <!-- show an error if this isn't filled in -->
+                        <p ng-message="required">Your label is required.</p>
+                    </div>                    
+                </div>  
+            </div>
+            <div ng-class="{ 'has-error': labelForm.icon.$touched && labelForm.icon.$invalid }">
+                <div class="col-xs-12 col-sm-6">
+                    <span class="form-label">Icon:</span>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <button type="file" ngf-select="uploadFiles($file)" 
+                      ngf-max-height="1000" ngf-max-size="1MB">
+                  Select File</button>
+                    <input type="hidden" name="icon" id="icon" ng-model="label.icon"  value={{f.name}}  required/>
+                      <div style="font:smaller" id="icon1">{{f.name}}
+                    </div>  
+                     {{f.$error}} {{f.$errorParam}}
+                  {{errorMsg}}              
+                </div>  
+            </div>
+         <!--   <div ng-class="{ 'has-error': labelForm.icon.$touched && labelForm.icon.$invalid }">
+                <div class="col-xs-12 col-sm-6"><span class="form-label">Icon:</span></div>
+                <div class="col-xs-12 col-sm-6">
+                <button type="file" ngf-select="uploadFiles($file)"
+                      ngf-max-height="1000" ngf-max-size="1MB">
+                  Select File</button>
+                    <div style="font:smaller" ng-model="label.icon">{{f.name}}
+                    </div>  
+                     {{f.$error}} {{f.$errorParam}}
+                  {{errorMsg}}
+            </div>
+        </div>-->
+    </div>
+    <div class="cols-xs-12 button-pull-right">
+        <button type="submit" class="button">Add Label</button> <a href="/labels"  class="button">Back To List</a>
+    </div>
+</div>
+

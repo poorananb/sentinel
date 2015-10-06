@@ -4,8 +4,9 @@ class CreateLabels < ActiveRecord::Migration
       t.string :org_code
       t.string :client_code
       t.string :key
-      t.string :label
-
+      t.string :label_name
+      t.string:realm_code
+      t.string:icon
       t.timestamps null: false
     end
   end
