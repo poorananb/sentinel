@@ -19,8 +19,7 @@ class User < ActiveRecord::Base
   
   def encrypt_password
     if password.present?
-      Rails.logger.debug("My password: #{true}")
-
+      #Rails.logger.debug("My password: #{true}")
       self.salt = BCrypt::Engine.generate_salt
       self.encrypted_password= BCrypt::Engine.hash_secret(password, salt)
     end

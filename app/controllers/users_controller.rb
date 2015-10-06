@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
-  before_filter :authorize
+  before_filter :authenticate_user
   respond_to :json, :html
+  
+  #after_filter :verify_authorized
   
   def index
 	  @users = User.order(params[:sort]).all
@@ -26,6 +28,7 @@ class UsersController < ApplicationController
   
   def create 
   	@user = User.new(user_params) 
+  	#authorise(@user)
   	@user.password = params[:password]
   	respond_to do |format|
       if @user.save

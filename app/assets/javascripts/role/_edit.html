@@ -1,0 +1,44 @@
+<div ng-show="message.message != null">
+    <div ng-show="message.status == 'ok'">
+        <div class="success">{{message.message}}</div>
+    </div>
+    <div ng-show="message.status == 'error'">
+        <div class="error">{{message.message}}</div>
+    </div>
+</div>
+
+
+<div class="form-container">
+    <form ng-submit="updateRole()" name="roleForm" novalidate>
+        <input type="hidden" name="id" ng-model="role.id"/>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <span class="form-title">Edit Role</span>        
+            </div>   
+            <div class="row wrap">
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Organization Name:</span></div>
+                    <div class="col-xs-12 col-sm-6"><input type="text" ng-model="role.name" name="name"/></div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Roles:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                    <div ng-repeat="activity in acties">
+                      <input
+                        type="checkbox"
+                        name="activities_list[]"
+                        value="{{activity}}"
+                        ng-model="role.activities_list[activity]"
+                        ng-click="toggleSelection(activity)"
+                        checked
+                      > {{activity}}
+                    </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <div class="cols-xs-12 button-pull-right">
+            <button type="submit" class="button">Update Role</button> <a href="/roles" class="button">Back To List</a>
+        </div>
+    </form>
+</div>

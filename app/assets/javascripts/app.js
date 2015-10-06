@@ -1,4 +1,4 @@
-angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'elif', 'ngResource', 'Sentinel.orgsController', 'Sentinel.orgs','Sentinel.prosessesController', 'Sentinel.prosesses','Sentinel.communicationsController', 'Sentinel.communications','Sentinel.realmsController','Sentinel.realms','Sentinel.stages','Sentinel.stagesController','Sentinel.clientsController', 'Sentinel.clients', 'Sentinel.praxis', 'Sentinel.praxisController', 'Sentinel.users', 'Sentinel.usersController']);
+angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'elif', 'ngResource', 'Sentinel.orgsController', 'Sentinel.orgs','Sentinel.prosessesController', 'Sentinel.prosesses','Sentinel.communicationsController', 'Sentinel.communications','Sentinel.realmsController','Sentinel.realms','Sentinel.stages','Sentinel.stagesController','Sentinel.clientsController', 'Sentinel.clients', 'Sentinel.praxis', 'Sentinel.praxisController', 'Sentinel.users', 'Sentinel.usersController', 'Sentinel.roles', 'Sentinel.rolesController']);
 angular.module('Sentinel').config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
 function($stateProvider, $urlRouterProvider, $locationProvider) {
 	$stateProvider
@@ -38,7 +38,11 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
 	.state('users', {url: '/users',templateUrl: 'user/_users.html',controller: 'UserController'})
 	.state('createUser', {url: '/createUser',templateUrl: 'user/_createUser.html',controller: 'UserCreateController'})
 	.state('showUser', {url: '/users/:id',templateUrl: 'user/_show.html',controller: 'UserViewController'})
-	.state('editUser', {url: '/users/{id}/edit',templateUrl: 'user/_editProfile.html',controller: 'UserEditController'});
+	.state('editUser', {url: '/users/{id}/edit',templateUrl: 'user/_editProfile.html',controller: 'UserEditController'})
+	.state('roles', {url: '/roles',templateUrl: 'role/_roles.html',controller: 'RoleController'})
+	.state('createRole', {url: '/createRole',templateUrl: 'role/_createRole.html',controller: 'RoleCreateController'})
+	.state('showRole', {url: '/roles/:id',templateUrl: 'role/_show.html',controller: 'RoleViewController'})
+	.state('editRole', {url: '/roles/{id}/edit',templateUrl: 'role/_edit.html',controller: 'RoleEditController'});
 	
 	$urlRouterProvider.otherwise('home');
 	

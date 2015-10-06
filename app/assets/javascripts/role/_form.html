@@ -1,0 +1,47 @@
+<div class="form-container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <span class="form-title">Role</span>        
+        </div>   
+        <div class="row wrap">
+            <div ng-class="{ 'has-error': roleForm.name.$touched && roleForm.name.$invalid }">
+                <div class="col-xs-12 col-sm-6">
+                    <span class="form-label">Role Name:</span>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <input type="text" name="name" id="name" ng-model="role.name"  ng-minlength="3" ng-maxlength="8" required/>
+                    <div class="help-block" ng-messages="roleForm.name.$error" ng-show="roleForm.name.$touched">
+                        <!-- show an error if name is too short -->
+                        <p ng-message="minlength">Name is too short.</p>
+                    
+                        <!-- show an error if name is too long -->
+                        <p ng-message="maxlength">Name is too long.</p>
+                    
+                        <!-- show an error if this isn't filled in -->
+                        <p ng-message="required">Your name is required.</p>
+                    </div>                    
+                </div>  
+            </div>
+            <div>
+                <div class="col-xs-12 col-sm-6">
+                    <span class="form-label">Role List:</span>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <label ng-repeat="activity in activities">
+                      <input
+                        type="checkbox"
+                        name="activities[]"
+                        value="{{activity}}"
+                        ng-checked="selection.indexOf(activity) > -1"
+                        ng-model="role.activities[activity]"
+                      > {{activity}}
+                    </label>
+                </div>  
+            </div>
+        </div>
+    </div>
+    <div class="cols-xs-12 button-pull-right">
+        <button type="submit" class="button">Add Role</button> <a href="/roles"  class="button">Back To List</a>
+    </div>
+</div>
+

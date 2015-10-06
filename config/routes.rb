@@ -52,6 +52,11 @@ Rails.application.routes.draw do
   delete 'users' => 'users#destroy'
   put 'users' => 'users#update'
   
+  get 'roles' => 'roles#index'
+  post 'roles' => 'roles#create'
+  delete 'roles' => 'roles#destroy'
+  put 'roles' => 'roles#update'
+  
   #get 'help'    => 'static_pages#help'
   #get 'about'   => 'static_pages#about'
   #get 'contact' => 'static_pages#contact'
@@ -88,6 +93,9 @@ Rails.application.routes.draw do
   scope :api do
       resources :users, defaults: {format: 'json'}
   end
+  scope :api do
+      resources :roles, defaults: {format: 'json'}
+  end
   
   resources :users
   resources :orgs
@@ -98,6 +106,7 @@ Rails.application.routes.draw do
   resources :clients
   resources :stages
   resources :praxis
+  resources :roles
   
   namespace :api do
     namespace :v1 do

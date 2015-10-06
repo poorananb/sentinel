@@ -1,3 +1,3 @@
 class LabelsController < ApplicationController
-    before_filter :authorize
+    before_filter :authenticate_user
 end
