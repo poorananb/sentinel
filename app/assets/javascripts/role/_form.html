@@ -27,14 +27,8 @@
                     <span class="form-label">Role List:</span>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    <label ng-repeat="activity in activities">
-                      <input
-                        type="checkbox"
-                        name="activities[]"
-                        value="{{activity}}"
-                        ng-checked="selection.indexOf(activity) > -1"
-                        ng-model="role.activities[activity]"
-                      > {{activity}}
+                    <label ng-repeat="activity in activities" class="activityCheckbox">
+                      <input type="checkbox" name="activities[]" value="{{activity}}" ng-checked="selection.indexOf(activity) > -1" ng-model="role.activities[activity]"> {{activity}}
                     </label>
                 </div>  
             </div>

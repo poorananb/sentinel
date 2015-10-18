@@ -257,3 +257,5 @@ box-shadow: 3px 8px 13px -13px rgba(0,0,0,0.55);}
 .copyright {position: absolute; bottom: 0; background-color: #E8E6E6; display: block; width: 100%; text-align: center; padding: 10px; text-transform: uppercase; font-size: 11px; margin-left: -15px;}
 svg.icon {display: inline-block;width: 22px;height: 22px;fill: #404040;position: relative; margin-right: 10px;}
 svg.icon:hover {fill:#000;}
+.activityCheckbox {width:100px;}
+.activityCheckbox input {width:14px !important; height:14px !important; position: relative; top: 3px;}
