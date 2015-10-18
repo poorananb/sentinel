@@ -5,15 +5,19 @@ class RolesController < ApplicationController
   
   def index
     if params[:sort]
-    	@roles = Role.order(params[:sort]).all
+    	  @roles = Role.order(params[:sort]).all
         @total_count = @roles.count(:all)
         @limit = params[:limit].to_i
-        @limited_roles = @roles.paginate(:page => params[:offset], :per_page => @limit)
+        @roles = @roles.paginate(:page => params[:offset], :per_page => @limit)
+        
+        @response = { :roles => @roles, :count => @total_count }
     else
         @roles = Role.all
         @total_count = @roles.count(:all)
+        
+        @response = @roles
     end
-    @response = { :roles => @limited_roles, :count => @total_count }
+    
     respond_with @response
   end
   
