@@ -58,7 +58,7 @@ class RolesController < ApplicationController
     role_activities = self.checkValues
   	@role.activities = role_activities
     respond_to do |format|
-      if @role.update(role_params)
+      if @role.update(role_update_params)
         format.json do
           render :json => { 
              :status => :ok, 
@@ -80,20 +80,24 @@ class RolesController < ApplicationController
   def checkValues
     acts = []
     if params[:activities_list].present?
-        if params[:action] == "update"
-            arr = params[:activities_list] #eval(params[:activities_list])
-        else
-            arr = params[:activities_list]
-        end
-        arr.each do |key, value| 
-            acts << key  #associate that user with something else
-        end
+        arr = params[:activities_list]
+    else
+        arr = params[:activities]    
     end
+    
+    arr.each do |key, value| 
+        acts << key  #associate that user with something else
+    end
+    
     return acts
   end
   
   private
     def role_params
         params.require(:role).permit(:name, :activities_list => [])
+    end
+  private
+    def role_update_params
+        params.permit(:name, :activities_list => [])
     end
 end
