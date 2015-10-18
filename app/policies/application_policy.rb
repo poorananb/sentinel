@@ -5,6 +5,10 @@ class ApplicationPolicy
     @user = user
     @record = record
   end
+  
+  def user_activities
+    @user.roles.select(:activities).distinct.map(&:activities).flatten
+  end
 
   def index?
     false

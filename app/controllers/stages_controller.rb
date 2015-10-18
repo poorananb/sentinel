@@ -1,5 +1,5 @@
 class StagesController < ApplicationController
-  before_filter :authorize
+  before_filter :authenticate_user
   respond_to :json, :html
   
   def index

@@ -1,5 +1,5 @@
 class WidgetsController < ApplicationController
-  before_filter :authorize
+  before_filter :authenticate_user
   before_action :set_widget, only: [:show, :edit, :update, :destroy]
 
   # GET /widgets

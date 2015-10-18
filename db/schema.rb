@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150926071802) do
+ActiveRecord::Schema.define(version: 20151004131457) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "code",       limit: 10
@@ -47,7 +47,9 @@ ActiveRecord::Schema.define(version: 20150926071802) do
     t.string   "org_code"
     t.string   "client_code"
     t.string   "key"
-    t.string   "label"
+    t.string   "label_name"
+    t.string   "realm_code"
+    t.string   "icon"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -98,6 +100,13 @@ ActiveRecord::Schema.define(version: 20150926071802) do
     t.datetime "updated_at",            null: false
   end
 
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.string   "activities", default: "{}"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
   create_table "stages", force: :cascade do |t|
     t.string   "code",       limit: 20
     t.string   "name"
@@ -122,6 +131,7 @@ ActiveRecord::Schema.define(version: 20150926071802) do
     t.datetime "updated_at",                          null: false
     t.string   "salt"
     t.string   "remember"
+    t.integer  "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

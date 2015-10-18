@@ -1,4 +1,4 @@
-angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'elif', 'ngResource', 'Sentinel.orgsController', 'Sentinel.orgs','Sentinel.prosessesController', 'Sentinel.prosesses','Sentinel.communicationsController', 'Sentinel.communications','Sentinel.realmsController','Sentinel.realms','Sentinel.stages','Sentinel.stagesController','Sentinel.clientsController', 'Sentinel.clients', 'Sentinel.praxis', 'Sentinel.praxisController', 'Sentinel.users', 'Sentinel.usersController']);
+angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'ngFileUpload', 'elif', 'ngResource', 'Sentinel.orgsController', 'Sentinel.orgs','Sentinel.prosessesController', 'Sentinel.prosesses','Sentinel.communicationsController', 'Sentinel.communications','Sentinel.realmsController','Sentinel.realms','Sentinel.stages','Sentinel.stagesController','Sentinel.clientsController', 'Sentinel.clients', 'Sentinel.praxis', 'Sentinel.praxisController', 'Sentinel.labels', 'Sentinel.labelsController', 'Sentinel.users', 'Sentinel.usersController', 'Sentinel.roles', 'Sentinel.rolesController']);
 angular.module('Sentinel').config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
 function($stateProvider, $urlRouterProvider, $locationProvider) {
 	$stateProvider
@@ -32,13 +32,24 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
 	.state('createPraxi', {url: '/createPraxi',templateUrl: 'praxi/_createPraxi.html',controller: 'PraxiCreateController'})
 	.state('showPraxi', {url: '/praxis/:id',templateUrl: 'praxi/_show.html',controller: 'PraxiViewController'})
 	.state('editPraxi', {url: '/praxis/{id}/edit',templateUrl: 'praxi/_edit.html',controller: 'PraxiEditController'})
+
+	.state('labels', {url: '/labels',templateUrl: 'label/_labels.html',controller: 'LabelController'})
+	.state('createLabel', {url: '/createLabel',templateUrl: 'label/_createLabel.html',controller: 'LabelCreateController'})
+	.state('showLabel', {url: '/labels/:id',templateUrl: 'label/_show.html',controller: 'LabelViewController'})
+	.state('editLabel', {url: '/labels/{id}/edit',templateUrl: 'label/_edit.html',controller: 'LabelEditController'})
+	.state('logout', {url: '/logout',templateUrl: 'user/_logout.html',controller: 'UserLogoutController'})
+
 	.state('login', {url: '/login',templateUrl: 'user/_login.html',controller: 'UserLoginController'})
 	.state('forgotpass', {url: '/forgotpass',templateUrl: 'user/_forgot.html',controller: 'UserForgotController'})
 	.state('signup', {url: '/signup',templateUrl: 'user/_signup.html',controller: 'UserCreateController'})
 	.state('users', {url: '/users',templateUrl: 'user/_users.html',controller: 'UserController'})
 	.state('createUser', {url: '/createUser',templateUrl: 'user/_createUser.html',controller: 'UserCreateController'})
 	.state('showUser', {url: '/users/:id',templateUrl: 'user/_show.html',controller: 'UserViewController'})
-	.state('editUser', {url: '/users/{id}/edit',templateUrl: 'user/_editProfile.html',controller: 'UserEditController'});
+	.state('editUser', {url: '/users/{id}/edit',templateUrl: 'user/_editProfile.html',controller: 'UserEditController'})
+	.state('roles', {url: '/roles',templateUrl: 'role/_roles.html',controller: 'RoleController'})
+	.state('createRole', {url: '/createRole',templateUrl: 'role/_createRole.html',controller: 'RoleCreateController'})
+	.state('showRole', {url: '/roles/:id',templateUrl: 'role/_show.html',controller: 'RoleViewController'})
+	.state('editRole', {url: '/roles/{id}/edit',templateUrl: 'role/_edit.html',controller: 'RoleEditController'});
 	
 	$urlRouterProvider.otherwise('home');
 	
