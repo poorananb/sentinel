@@ -81,21 +81,30 @@ angular.module('Sentinel.rolesController', [])
     $scope.acties = ['user:show', 'user:create', 'user:update', 'user:destroy'];
     
     $scope.updateRole=function(){
-        $scope.role.$update(function(response){
-        	$scope.message = response;
+        var roleForm = jQuery('#roleForm').serialize();
+        jQuery.ajax({
+            url: '/roles/update',
+            method: 'post',
+            data: roleForm,
+            dataType: 'json',
+            success:function(response){
+                $scope.message = response.message;
         	
-            if(response.status == 'ok'){
-				$state.go('roles'); //redirect to home
-			}
-        });
+                if(response.status == 'ok'){
+    				$state.go('roles'); //redirect to home
+    			}
+            }
+        })
     };
 
     $scope.activities = [];
+    var array = [];
     $scope.loadRole=function(){
         Role.get({id:$stateParams.id}, function(response){
             $scope.role = response;
-            $scope.activities = response.activities;
-            console.log($scope.activities);
+            array = response.activities;
+            $scope.activities = JSON.parse(array);
+            //console.log(Object.prototype.toString.call($scope.activities));
         });
         
     };
@@ -103,13 +112,13 @@ angular.module('Sentinel.rolesController', [])
     $scope.loadRole();
     
     $scope.toggleSelection = function toggleSelection(id) {
-        var idx = $scope.role.activities.indexOf(id);
+        var idx = $scope.activities.indexOf(id);
         if (idx > -1) {
-          $scope.selectedRefs.splice(idx, 1);
+          $scope.activities.splice(idx, 1);
         }
         else {
-          $scope.selectedRefs.push(id);
+          $scope.activities.push(id);
         }
-        console.log($scope.selectedRefs)
+        console.log($scope.activities)
     };
 }]);

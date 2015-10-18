@@ -61,7 +61,7 @@ Rails.application.routes.draw do
   get 'roles' => 'roles#index'
   post 'roles' => 'roles#create'
   delete 'roles' => 'roles#destroy'
-  put 'roles' => 'roles#update'
+  post 'roles/update'
   
   #get 'help'    => 'static_pages#help'
   #get 'about'   => 'static_pages#about'

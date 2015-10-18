@@ -9,8 +9,8 @@
 
 
 <div class="form-container">
-    <form ng-submit="updateRole()" name="roleForm" novalidate>
-        <input type="hidden" name="id" ng-model="role.id"/>
+    <form ng-submit="updateRole()" name="roleForm" novalidate method="post" id="roleForm">
+        <input type="hidden" name="id" ng-model="role.id" value="{{role.id}}"/>
         <div class="row">
             <div class="col-xs-12 col-sm-12">
                 <span class="form-title">Edit Role</span>        
@@ -26,11 +26,11 @@
                     <div ng-repeat="activity in acties">
                       <input
                         type="checkbox"
-                        name="activities_list[]"
+                        name="activities[]"
                         value="{{activity}}"
                         ng-model="role.activities_list[activity]"
                         ng-click="toggleSelection(activity)"
-                        checked
+                        ng-checked="role.activities.indexOf(activity) >-1"
                       > {{activity}}
                     </div>
                     </div>  
