@@ -100,7 +100,7 @@ body.mini-navbar .navbar-content .nav > li > a {font-size:12px;}
 .dashboard-header span {padding-right:20px;border-right:1px solid #fff;}
 .dashboard-header span.divider {border-left:1px solid #ebeced;padding-left: 20px;} 
 .dashboard-header span:last-child {border-right:0px solid #fff;}
-.dashboard-header .modTitle {float:left; color: #054679; font-weight: 700;}
+.dashboard-header .modTitle {float:left; color: #054679; font-weight: 700; text-transform:uppercase;}
 .dashboard-header .createBtn {float:right;}
 .createBtn .btnLg {font-size: 11px; text-transform: uppercase;font-weight: 700;color: #fff; background-color: #424242; padding: 7px 20px;border-radius: 4px;}
 
