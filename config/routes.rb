@@ -47,6 +47,12 @@ Rails.application.routes.draw do
   delete 'labels' => 'labels#destroy'
   put 'labels' => 'labels#update'
   get 'createLabel' => 'labels#new'
+  
+  get 'milestones' => 'milestones#index'
+  post 'milestones' => 'milestones#create'
+  delete 'milestones' => 'milestones#destroy'
+  put 'milestones' => 'milestones#update'
+  get 'createMilestone' => 'milestones#new'
 
   get 'signup', to: 'users#new', as: 'signup'
   get 'createUser', to: 'users#new', as: 'createuser'
@@ -87,6 +93,9 @@ Rails.application.routes.draw do
       resources :clients, defaults: {format: 'json'}
   end
   scope :api do
+      resources :milestones, defaults: {format: 'json'}
+  end
+  scope :api do
       resources :stages, defaults: {format: 'json'}
   end
   scope :api do
@@ -120,6 +129,7 @@ Rails.application.routes.draw do
   resources :roles
   resources :labels
   resources :images
+  resources :milestones
   
   namespace :api do
     namespace :v1 do
