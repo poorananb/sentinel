@@ -25,7 +25,7 @@ angular.module('Sentinel.orgsController', [])
                 $scope.orgs = data.orgs;
                 
                 // total number of rows
-                alert(data.count);
+                
                 $scope.count = data.count;
                 
                 // number of pages of orgs
