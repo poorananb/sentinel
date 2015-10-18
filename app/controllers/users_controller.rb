@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   
   def create 
   	@user = User.new(user_params) 
-  	#authorise(@user)
+  	authorise(@user)
   	@user.password = params[:password]
   	respond_to do |format|
       if @user.save
@@ -49,7 +49,7 @@ class UsersController < ApplicationController
     end
   end
   
-  def update 
+  def update
     @user = User.where(email: params[:email]).first
     if @user && @user.authenticate(@user, params[:current_password])
     	respond_to do |format|
@@ -85,6 +85,6 @@ class UsersController < ApplicationController
   
   private
     def user_params
-        params.require(:user).permit(:name, :password)
+        params.require(:user).permit(:name, :email, :password, :role)
     end
 end
