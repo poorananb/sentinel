@@ -47,9 +47,7 @@ ActiveRecord::Schema.define(version: 20151004131457) do
     t.string   "org_code"
     t.string   "client_code"
     t.string   "key"
-    t.string   "label_name"
-    t.string   "realm_code"
-    t.string   "icon"
+    t.string   "label"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

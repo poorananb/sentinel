@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessor :password
   attr_accessor :remember_token
-  
+
   before_save { self.email = email.downcase }  
   before_save :encrypt_password
   after_save :clear_password

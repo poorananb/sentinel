@@ -7,32 +7,72 @@
 		&nbsp;
 		</div>
 		<ul class="nav navbar-top-links navbar-right">
-			<li>
+		<!--	<li>
 				<span class="m-r-sm text-muted welcome-message">Welcome to Sentinel</span>
-			</li>
-			<li class="dropdown">
-				<a aria-expanded="false" class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-					<i class="fa fa-envelope"></i>
+			</li>-->
+			<li class="dropdown" title="Email">
+				<a href="#">
+					<span>
+						<svg class="icon icon-envelope"><use xlink:href="#icon-envelope"></use>
+							<defs>
+								<symbol id="icon-envelope" viewBox="0 0 1024 1024">
+									<title>envelope</title>
+									<path class="path1" d="M928 128h-832c-53.024 0-96 42.976-96 96v576c0 52.992 42.976 96 96 96h832c53.024 0 96-43.008 96-96v-576c0-53.024-42.976-96-96-96zM87.712 831.68l-23.392-23.424 263.968-263.936 23.392 23.424-263.968 263.936zM936.288 831.68l-263.968-263.936 23.392-23.424 263.968 263.936-23.392 23.424zM544 618.4v21.6h-64v-21.6l-415.904-385.6 40.704-40.704 407.2 377.536 407.2-377.536 40.704 40.704-415.904 385.6z"></path>
+								</symbol>
+							</defs>						
+						</svg>
+					</span>
 				</a>
 		   </li>
 			<li class="dropdown">
-				<a aria-expanded="false" class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-					<i class="fa fa-bell"></i>
+				<a href="#" title="Notifications">
+					<span>
+						<svg class="icon icon-notifications"><use xlink:href="#icon-notifications"></use>
+							<defs>
+								<symbol id="icon-notifications" viewBox="0 0 1024 1024">
+									<title>notifications</title>
+									<path class="path1" d="M768 682l86 86v42h-726v-42l86-86v-234q0-96 60-172t152-98v-28q0-26 19-45t45-19 45 19 19 45v28q92 22 153 98t61 172v234zM490 938q-34 0-59-25t-25-59h170q0 34-26 59t-60 25z"></path>
+								</symbol>
+							</defs>						
+						</svg>
+					</span>
 				</a>
 			</li>
 	
+	        <li>
+	        	<% if logged_in? %>
+	        	<a href="/users/<%= current_user.id %>/edit" id="logPlaceHolder" title="Profile">
+					<span>
+						<svg class="icon icon-user"><use xlink:href="#icon-user"></use>
+							<defs>
+								<symbol id="icon-user" viewBox="0 0 1024 1024">
+									<title>user</title>
+									<path class="path1" d="M889.366 737.92c-44.8-58.454-98.986-96.426-176.618-117.952l-72.748 254.698c0 23.466-19.2 42.666-42.666 42.666s-42.666-19.2-42.666-42.666v-202.666c0-29.44-23.894-53.334-53.334-53.334s-53.334 23.894-53.334 53.334v202.666c0 23.466-19.2 42.666-42.666 42.666s-42.666-19.2-42.666-42.666l-72.746-254.698c-77.654 21.76-131.84 59.498-176.64 117.952-17.708 23.040-27.308 69.334-27.948 94.080v106.666c0 47.146 38.186 85.334 85.334 85.334h661.334c47.146 0 85.334-38.186 85.334-85.334v-106.666c-0.642-24.746-10.242-71.040-27.97-94.080zM501.334 533.334c143.786 0 224-183.040 224-307.628s-100.268-225.706-224-225.706-224 101.12-224 225.706 77.652 307.628 224 307.628z"></path>
+								</symbol>
+							</defs>						
+						</svg>
+					</span>
+				</a>
+	        	<% end %>
+	        </li>
 	
 			<li>
 				<% if logged_in? %>
-				<a href="#" id="logPlaceHolder" ng-user-logout="logut">
-					<i class="fa fa-sign-out"></i> <span>Log Out</span>
-				</a>
-				<a href="/users/<%= current_user.id %>/edit" id="logPlaceHolder">
-					<i class="fa fa-sign-out"></i> <span>Profile</span>
+				<a href="#" id="logPlaceHolder" ng-user-logout="logut" title="Logout">
+					<span>
+						<svg class="icon icon-exit"><use xlink:href="#icon-exit"></use>
+							<defs>
+								<symbol id="icon-exit" viewBox="0 0 1024 1024">
+									<title>user</title>
+									<path class="path1" d="M768 640v-128h-320v-128h320v-128l192 192zM704 576v256h-320v192l-384-192v-832h704v320h-64v-256h-512l256 128v576h256v-192z"></path>
+								</symbol>
+							</defs>						
+						</svg>
+					</span>
 				</a>
 				<% else %>
 				<a href="/login" id="logPlaceHolder">
-					<i class="fa fa-sign-in"></i> <span>Log In</span>
+					<span>Log In</span>
 				</a>
 				<% end %>
 			</li>

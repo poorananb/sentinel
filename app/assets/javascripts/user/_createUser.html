@@ -2,10 +2,10 @@
     <div ng-show="message.status == 'error'">
         <div class="error">
             <ul>
-                <li ng-repeat="errors in message.message">
+                <li ng-repeat="(key, errors) in message.message">
                     <ul>
                         <li ng-repeat="err in errors">
-                            {{err}}
+                            {{key}} : {{err}}
                         </li>
                     </ul>
                 </li>
