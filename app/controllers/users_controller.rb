@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user
+  after_action :verify_authorized
   respond_to :json, :html
-  
-  #after_filter :verify_authorized
   
   def index
 	  @users = User.order(params[:sort]).all
+	  authorize User
     @total_count = @users.count(:all)
     @limit = params[:limit].to_i
     @limited_orgs = @users.paginate(:page => params[:offset], :per_page => @limit)
@@ -23,6 +23,7 @@ class UsersController < ApplicationController
   end
   
   def edit
+    authorize User
     respond_with User.find(params[:id])
   end
   

@@ -22,6 +22,8 @@ angular.module('Sentinel.usersController', [])
             User.get({offset:$scope.main.offset, limit:$scope.main.limit, sort:$scope.main.sort}, function(data){
 		        //var Users = JSON.parse(data);
 		        // users from your api
+		        console.log('test')
+		        
                 $scope.users = data.users;
                 
                 // total number of rows
