@@ -1,4 +1,4 @@
-angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'ngFileUpload', 'elif', 'ngResource', 'Sentinel.orgsController', 'Sentinel.orgs','Sentinel.prosessesController', 'Sentinel.prosesses','Sentinel.communicationsController', 'Sentinel.communications','Sentinel.realmsController','Sentinel.realms','Sentinel.stages','Sentinel.stagesController','Sentinel.clientsController', 'Sentinel.clients', 'Sentinel.praxis', 'Sentinel.praxisController', 'Sentinel.labels', 'Sentinel.labelsController', 'Sentinel.users', 'Sentinel.usersController', 'Sentinel.roles', 'Sentinel.rolesController']);
+angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'ngFileUpload', 'elif', 'ngResource', 'Sentinel.orgsController', 'Sentinel.orgs','Sentinel.prosessesController', 'Sentinel.prosesses','Sentinel.communicationsController', 'Sentinel.communications','Sentinel.realmsController','Sentinel.realms','Sentinel.stages','Sentinel.stagesController','Sentinel.clientsController', 'Sentinel.clients', 'Sentinel.praxis', 'Sentinel.praxisController', 'Sentinel.labels', 'Sentinel.labelsController', 'Sentinel.users', 'Sentinel.usersController', 'Sentinel.roles', 'Sentinel.rolesController', 'Sentinel.milestones', 'Sentinel.milestonesController']);
 angular.module('Sentinel').config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
 function($stateProvider, $urlRouterProvider, $locationProvider) {
 	$stateProvider
@@ -37,6 +37,11 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
 	.state('createLabel', {url: '/createLabel',templateUrl: 'label/_createLabel.html',controller: 'LabelCreateController'})
 	.state('showLabel', {url: '/labels/:id',templateUrl: 'label/_show.html',controller: 'LabelViewController'})
 	.state('editLabel', {url: '/labels/{id}/edit',templateUrl: 'label/_edit.html',controller: 'LabelEditController'})
+	
+	.state('milestones', {url: '/milestones',templateUrl: 'milestone/_milestones.html',controller: 'MilestoneController'})
+	.state('createMilestone', {url: '/createMilestone',templateUrl: 'milestone/_createMilestone.html',controller: 'MilestoneCreateController'})
+	.state('showMilestone', {url: '/milestones/:id',templateUrl: 'milestone/_show.html',controller: 'MilestoneViewController'})
+	.state('editMilestone', {url: '/milestones/{id}/edit',templateUrl: 'milestone/_edit.html',controller: 'MilestoneEditController'})
 	.state('logout', {url: '/logout',templateUrl: 'user/_logout.html',controller: 'UserLogoutController'})
 
 	.state('login', {url: '/login',templateUrl: 'user/_login.html',controller: 'UserLoginController'})
