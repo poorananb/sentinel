@@ -3,9 +3,21 @@ class StagesController < ApplicationController
   respond_to :json, :html
   
   def index
-    @stages = Stage.all
-    respond_with @stages
+    if(params[:sort])
+      @stages = Stage.order(params[:sort]).all
+      @total_count = @stages.count(:all)
+      @limit = params[:limit].to_i
+      @limited_stages = @stages.paginate(:page => params[:offset], :per_page => @limit)
+      @response = { :stages => @limited_stages, :count => @total_count }
+    else
+      @response = Stage.all
+    end
+    respond_with @response
   end
+  # def index
+  #   @stages = Stage.all
+  #   respond_with @stages
+  # end
 
   def new
   end

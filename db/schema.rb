@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20151004131457) do
   create_table "clients", force: :cascade do |t|
     t.string   "code",       limit: 10
     t.string   "name"
+    t.string   "org_code"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.string   "timezone"
@@ -47,7 +48,9 @@ ActiveRecord::Schema.define(version: 20151004131457) do
     t.string   "org_code"
     t.string   "client_code"
     t.string   "key"
-    t.string   "label"
+    t.string   "label_name"
+    t.string   "realm_code"
+    t.string   "icon"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -74,6 +77,7 @@ ActiveRecord::Schema.define(version: 20151004131457) do
     t.string   "praxis_code"
     t.string   "org_code"
     t.string   "client_code"
+    t.string   "milestone_key"
     t.string   "realm_code"
     t.string   "prosess_code"
     t.string   "stage_code"

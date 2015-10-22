@@ -3,9 +3,16 @@ class LabelsController < ApplicationController
 
   respond_to :json, :html
   
-  def index
-
-    @response = Label.all
+    def index
+     if(params[:sort])
+      @labels = Label.order(params[:sort]).all
+      @total_count = @labels.count(:all)
+      @limit = params[:limit].to_i
+      @limited_labels = @labels.paginate(:page => params[:offset], :per_page => @limit)
+      @response = { :labels => @limited_labels, :count => @total_count }
+    else
+      @response = Label.all
+    end
     respond_with @response
   end
 

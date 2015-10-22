@@ -9,9 +9,9 @@
                     <div class="col-xs-12 col-sm-6"><span class="form-label">Org Code:</span></div>
                     <div class="col-xs-12 col-sm-6">
                     
-                     <select name="org_code" ng-model="label.org_code" id="org_code" required>
-                        <option ng-repeat="org in orgs" value="{{org.code}}">{{org.name}}</option>
-                    </select>
+                     <select name="org_code" ng-model="label.org_code" ng-options="option.code as option.name for option in orgs">
+	                        <option ng-disabled="true"  ng-selected="true" value="">Select  org</option>
+	                  </select>
                         
                         <div class="help-block" ng-messages="labelForm.org_code.$error" ng-show="labelForm.org_code.$touched">
                             <!-- show an error if this isn't filled in -->
@@ -25,8 +25,8 @@
                 <div  ng-class="{ 'has-error': labelForm.client_code.$touched && labelForm.client_code.$invalid }">
                     <div class="col-xs-12 col-sm-6"><span class="form-label">Client Code:</span></div>
                     <div class="col-xs-12 col-sm-6">
-                        <select name="client_code" id="client_code" ng-model="label.client_code" required>
-                            <option ng-repeat="client in clients" value="{{client.code}}">{{client.name}}</option>
+                         <select name="client_code" id="client_code" ng-model="label.client_code" ng-options="value.code as value.name for value in clients |filter:{org_code:communication.org_code}" required>
+                           <option ng-disabled="true"  ng-selected="true" value="">Select a Client</option>
                         </select>
                         <div class="help-block" ng-messages="labelForm.client_code.$error" ng-show="labelForm.client_code.$touched">
                             <!-- show an error if this isn't filled in -->

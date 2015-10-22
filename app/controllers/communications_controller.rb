@@ -3,9 +3,19 @@ class CommunicationsController < ApplicationController
   respond_to :json, :html
   
   def index
-    @communications = Communication.all
-    respond_with @communications
+    if(params[:sort])
+      Rails.logger.debug("my passw: #{params}")
+      @communications = Communication.order(params[:sort]).all
+      @total_count = @communications.count(:all)
+      @limit = params[:limit].to_i
+      @limited_communications = @communications.paginate(:page => params[:offset], :per_page => @limit)
+      @response = { :communications =>@limited_communications, :count => @total_count }
+    else
+      @response = Communication.all
+    end
+    respond_with @response
   end
+
 
   def new
   end

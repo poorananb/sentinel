@@ -3,8 +3,16 @@ class ClientsController < ApplicationController
   respond_to :json, :html
   
   def index
-    @clients = Client.all
-    respond_with @clients
+     if(params[:sort])
+      @clients = Client.order(params[:sort]).all
+      @total_count = @clients.count(:all)
+      @limit = params[:limit].to_i
+      @limited_clients = @clients.paginate(:page => params[:offset], :per_page => @limit)
+      @response = { :clients => @limited_clients, :count => @total_count }
+    else
+      @response = Client.all
+    end
+    respond_with @response
   end
 
   def new
@@ -37,7 +45,6 @@ class ClientsController < ApplicationController
   def edit
     respond_with Client.find(params[:id])
   end
-
   def update
     @client = Client.find(params[:id])
     respond_to do |format|
@@ -82,6 +89,6 @@ class ClientsController < ApplicationController
   
   private
   def client_params
-    params.require(:client).permit(:name, :code) if params[:client]
+    params.require(:client).permit(:name, :code,:org_code) if params[:client]
   end
 end

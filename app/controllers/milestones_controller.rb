@@ -4,10 +4,23 @@ class MilestonesController < ApplicationController
   respond_to :json, :html
   
   def index
-
-    @response = Milestone.all
+    if(params[:sort])
+      @milestones = Milestone.order(params[:sort]).all
+      @total_count = @milestones.count(:all)
+      @limit = params[:limit].to_i
+      @limited_milestones = @milestones.paginate(:page => params[:offset], :per_page => @limit)
+      @response = { :milestones => @limited_milestones, :count => @total_count }
+    else
+      @response = Milestone.all
+    end
     respond_with @response
   end
+  
+  # def index
+
+  #   @response = Milestone.all
+  #   respond_with @response
+  # end
 
   def new
   end

@@ -15,13 +15,34 @@
             </div>   
             <div class="row wrap">
                 <div>
+                <div ng-class="{ 'has-error': communicationForm.org_code.$touched && communicationForm.org_code.$invalid }">
                     <div class="col-xs-12 col-sm-6"><span class="form-label">Org Code:</span></div>
-                    <div class="col-xs-12 col-sm-6"><input type="text" ng-model="communication.org_code" name="org code"/></div>  
+                    <div class="col-xs-12 col-sm-6">
+                 	<select name="org_code" ng-model="communication.org_code" ng-options="option.code as option.name for option in orgs">
+	                    <option ng-disabled="true"  ng-selected="true" value="">Select  org</option>
+	                </select>
+                        <div class="help-block" ng-messages="communicationForm.org_code.$error" ng-show="communicationForm.org_code.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Organization code is required.</p>
+                        </div>                   
+                    </div>  
                 </div>
-                <div>
-                    <div class="col-xs-12 col-sm-6"><span class="form-label">Client Code:</span></div>
-                    <div class="col-xs-12 col-sm-6"><input type="text" ng-model="communication.client_code" name="client code"/></div>  
+            </div>
+            <div ng-class="{ 'has-error': communicationForm.client_code.$touched && communicationForm.client_code.$invalid }">
+                <div class="col-xs-12 col-sm-6">
+                    <span class="form-label">Client Code:</span>
                 </div>
+                <div class="col-xs-12 col-sm-6">
+                       <select name="client_code" id="client_code" ng-model="communication.client_code" ng-options="value.code as value.name for value in clients |filter:{org_code:communication.org_code}" required>
+                           <option ng-disabled="true"  ng-selected="true" value="">Select a Client</option>
+                           <!-- <option ng-repeat="client in clients | filter:{org_code: org}" value="{{client.code}}">{{client.name}}</option>-->
+                        </select>
+                    <!--<input type="text" name="client_code" id="client_code" ng-model="communication.client_code" ng-minlength="3" ng-maxlength="8" required/>-->
+                    <div class="help-block" ng-messages="communicationForm.client_code.$error" ng-show="communicationForm.client_code.$touched">
+                      
+                    </div>                    
+                </div>
+            </div>
                 <div>
                     <div class="col-xs-12 col-sm-6"><span class="form-label">Primary Email:</span></div>
                     <div class="col-xs-12 col-sm-6"><input type="text" ng-model="communication.primary_email" name="primary email"/></div>  
