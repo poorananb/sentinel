@@ -4,11 +4,24 @@ class RealmsController < ApplicationController
   
   #after_filter :verify_authorized
   
-  def index
-    realm = Realm. new
-    authorise(realm)
-    @realms = Realm.all
-    respond_with @realms
+  # def index
+  #   realm = Realm. new
+  #   authorise(realm)
+  #   @realms = Realm.all
+  #   respond_with @realms
+  # end
+  
+   def index
+    if(params[:sort])
+      @realms = Realm.order(params[:sort]).all
+      @total_count = @realms.count(:all)
+      @limit = params[:limit].to_i
+      @limited_realms = @realms.paginate(:page => params[:offset], :per_page => @limit)
+      @response = { :realms => @limited_realms, :count => @total_count }
+    else
+      @response = Realm.all
+    end
+    respond_with @response
   end
 
   def new

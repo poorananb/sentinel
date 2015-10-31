@@ -77,6 +77,21 @@
                     </div>                    
                 </div>  
             </div>
+            <div>
+                <div ng-class="{ 'has-error': praxiForm.role.$touched && praxiForm.role.$invalid }">
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">User Role:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <select name="role" ng-model="user.role" id="role" required>
+                            <option ng-repeat="role in roles" value="{{role.id}}">{{role.name}}</option>
+                        </select>
+                        
+                        <div class="help-block" ng-messages="praxiForm.role.$error" ng-show="praxiForm.role.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">User role is required.</p>
+                        </div>                   
+                    </div>  
+                </div>
+            </div>
         </div>
     </div>
     <div class="cols-xs-12 button-pull-right">

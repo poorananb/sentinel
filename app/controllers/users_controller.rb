@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user
+  after_action :verify_authorized
   respond_to :json, :html
-  
-  #after_filter :verify_authorized
   
   def index
 	  @users = User.order(params[:sort]).all
+	  authorize User
     @total_count = @users.count(:all)
     @limit = params[:limit].to_i
     @limited_orgs = @users.paginate(:page => params[:offset], :per_page => @limit)
@@ -23,12 +23,13 @@ class UsersController < ApplicationController
   end
   
   def edit
+    authorize User
     respond_with User.find(params[:id])
   end
   
   def create 
   	@user = User.new(user_params) 
-  	#authorise(@user)
+  	authorise(@user)
   	@user.password = params[:password]
   	respond_to do |format|
       if @user.save
@@ -49,7 +50,7 @@ class UsersController < ApplicationController
     end
   end
   
-  def update 
+  def update
     @user = User.where(email: params[:email]).first
     if @user && @user.authenticate(@user, params[:current_password])
     	respond_to do |format|
@@ -85,6 +86,6 @@ class UsersController < ApplicationController
   
   private
     def user_params
-        params.require(:user).permit(:name, :password)
+        params.require(:user).permit(:name, :email, :password, :role)
     end
 end

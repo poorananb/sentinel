@@ -4,6 +4,7 @@ class CreateMilestones < ActiveRecord::Migration
       t.string :org_code
       t.string :client_code
       t.string :key
+      t.string :realm_code
 
       t.timestamps null: false
     end

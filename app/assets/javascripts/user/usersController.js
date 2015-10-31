@@ -22,6 +22,8 @@ angular.module('Sentinel.usersController', [])
             User.get({offset:$scope.main.offset, limit:$scope.main.limit, sort:$scope.main.sort}, function(data){
 		        //var Users = JSON.parse(data);
 		        // users from your api
+		        console.log('test')
+		        
                 $scope.users = data.users;
                 
                 // total number of rows
@@ -65,8 +67,11 @@ angular.module('Sentinel.usersController', [])
 .controller('UserViewController', ['$scope', '$stateParams' ,'User', function($scope,$stateParams,User){
     $scope.user=User.get({id:$stateParams.id});
 }])
-.controller('UserCreateController',['$scope', '$state', '$stateParams', 'User', function($scope,$state,$stateParams,User){
-
+.controller('UserCreateController',['$scope', '$state', '$stateParams', 'User', 'Role', function($scope,$state,$stateParams,User, Role){
+    
+    //roles
+    $scope.roles = Role.query();
+    
     $scope.user=new User();
 	
     $scope.addUser=function(){
@@ -83,8 +88,10 @@ angular.module('Sentinel.usersController', [])
         });
     }
 
-}]).controller('UserEditController',['$scope', '$state', '$stateParams', 'User', function($scope,$state,$stateParams,User){
-
+}]).controller('UserEditController',['$scope', '$state', '$stateParams', 'User', 'Role', function($scope,$state,$stateParams,User, Role){
+    //roles
+    $scope.roles = Role.query();
+    
     $scope.updateProfile=function(){
         $scope.user.$update(function(response){
         	$scope.message = response;

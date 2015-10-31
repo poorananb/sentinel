@@ -1,6 +1,6 @@
 angular.module('Sentinel.labelsController', [])
 .controller('LabelController', ['$scope', '$state', '$window', 'Label', function($scope, $state, $window, Label){	
-    /*    $scope.main = {
+       $scope.main = {
             offset: 1,
             limit: 1,
             sort: 'label_name ASC',
@@ -11,8 +11,6 @@ angular.module('Sentinel.labelsController', [])
             ],
             sortArray: [
                 {id:'org_code ASC',label:'Org Code (A-Z)'},
-                {id:'client_code ASC', label:'Client Code (A-Z)'},
-                {id:'key ASC',label:'Key (A-Z)'},
                 {id:'label_name ASC',label:'Label (A-Z)'}
                 
             ]
@@ -24,7 +22,7 @@ angular.module('Sentinel.labelsController', [])
 		        //var orgs = JSON.parse(data);
 		        // users from your api
                 $scope.labels = data.labels;
-                alert(data.count);
+                //alert(data.count);
                 // total number of rows
                 $scope.count = data.count;
                 
@@ -51,7 +49,7 @@ angular.module('Sentinel.labelsController', [])
         }
 		
         $scope.loadPage(1);//fetch all orgs. Issues a GET to /api/orgs*/
-		$scope.labels = Label.query(); 
+		//$scope.labels = Label.query(); 
 		$scope.deleteLabel = function(label) { // Delete a org. Issues a DELETE to /api/org/:id
 			label.$delete(function(response) {
 				$scope.message = response;

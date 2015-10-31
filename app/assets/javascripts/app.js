@@ -1,4 +1,4 @@
-angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'ngFileUpload', 'elif', 'ngResource', 'Sentinel.orgsController', 'Sentinel.orgs','Sentinel.prosessesController', 'Sentinel.prosesses','Sentinel.communicationsController', 'Sentinel.communications','Sentinel.realmsController','Sentinel.realms','Sentinel.stages','Sentinel.stagesController','Sentinel.clientsController', 'Sentinel.clients', 'Sentinel.praxis', 'Sentinel.praxisController', 'Sentinel.labels', 'Sentinel.labelsController', 'Sentinel.users', 'Sentinel.usersController', 'Sentinel.roles', 'Sentinel.rolesController']);
+angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'ngFileUpload', 'elif', 'ngResource', 'Sentinel.orgsController', 'Sentinel.orgs','Sentinel.prosessesController', 'Sentinel.prosesses','Sentinel.communicationsController', 'Sentinel.communications','Sentinel.realmsController','Sentinel.realms','Sentinel.stages','Sentinel.stagesController','Sentinel.clientsController', 'Sentinel.clients', 'Sentinel.praxis', 'Sentinel.praxisController', 'Sentinel.labels', 'Sentinel.labelsController', 'Sentinel.users', 'Sentinel.usersController', 'Sentinel.roles', 'Sentinel.rolesController', 'Sentinel.milestones', 'Sentinel.milestonesController']);
 angular.module('Sentinel').config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
 function($stateProvider, $urlRouterProvider, $locationProvider) {
 	$stateProvider
@@ -26,8 +26,8 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
 	.state('editStage', {url: '/stages/{id}/edit',templateUrl: 'stage/_edit.html',controller: 'StageEditController'})
 	.state('clients', {url: '/clients',templateUrl: 'clients/_clients.html',controller: 'clientsController'})
 	.state('createClient', {url: '/createClient',templateUrl: 'clients/_createClient.html',controller: 'ClientCreateController'})
-	.state('showClient', {url: '/clients/:id',templateUrl: 'client/_show.html',controller: 'ClientViewController'})
-	.state('editClient', {url: '/clients/{id}/edit',templateUrl: 'client/_edit.html',controller: 'ClientEditController'})
+	.state('showClient', {url: '/clients/:id',templateUrl: 'clients/_show.html',controller: 'ClientViewController'})
+	.state('editClient', {url: '/clients/{id}/edit',templateUrl: 'clients/_edit.html',controller: 'ClientEditController'})
 	.state('praxis', {url: '/praxis',templateUrl: 'praxi/_praxis.html',controller: 'PraxiController'})
 	.state('createPraxi', {url: '/createPraxi',templateUrl: 'praxi/_createPraxi.html',controller: 'PraxiCreateController'})
 	.state('showPraxi', {url: '/praxis/:id',templateUrl: 'praxi/_show.html',controller: 'PraxiViewController'})
@@ -37,6 +37,11 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
 	.state('createLabel', {url: '/createLabel',templateUrl: 'label/_createLabel.html',controller: 'LabelCreateController'})
 	.state('showLabel', {url: '/labels/:id',templateUrl: 'label/_show.html',controller: 'LabelViewController'})
 	.state('editLabel', {url: '/labels/{id}/edit',templateUrl: 'label/_edit.html',controller: 'LabelEditController'})
+	
+	.state('milestones', {url: '/milestones',templateUrl: 'milestone/_milestones.html',controller: 'MilestoneController'})
+	.state('createMilestone', {url: '/createMilestone',templateUrl: 'milestone/_createMilestone.html',controller: 'MilestoneCreateController'})
+	.state('showMilestone', {url: '/milestones/:id',templateUrl: 'milestone/_show.html',controller: 'MilestoneViewController'})
+	.state('editMilestone', {url: '/milestones/{id}/edit',templateUrl: 'milestone/_edit.html',controller: 'MilestoneEditController'})
 	.state('logout', {url: '/logout',templateUrl: 'user/_logout.html',controller: 'UserLogoutController'})
 
 	.state('login', {url: '/login',templateUrl: 'user/_login.html',controller: 'UserLoginController'})

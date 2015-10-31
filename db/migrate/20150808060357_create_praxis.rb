@@ -4,6 +4,7 @@ class CreatePraxis < ActiveRecord::Migration
       t.string :praxis_code
       t.string :org_code
       t.string :client_code
+      t.string :milestone_key
       t.string :realm_code
       t.string :prosess_code
       t.string :stage_code

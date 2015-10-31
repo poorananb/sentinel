@@ -1,0 +1,10 @@
+<div ng-show="message.message != null">
+    <div ng-show="message.status == 'error' || message.status == 'exists'">
+        <div class="error">{{message.message}}</div>
+    </div>
+</div>
+<div>
+    <form ng-submit="addMilestone()" name="milestoneForm" novalidate>
+        <div ng-include="'milestone/_form.html'"></div>
+    </form>
+</div>

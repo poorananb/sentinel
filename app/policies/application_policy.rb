@@ -54,4 +54,24 @@ class ApplicationPolicy
       scope
     end
   end
+  
+  def authorized(role, type)
+    if role!=0 && role!=''
+      @role = Role.find(role)
+      if @role
+        @activities = @role.activities
+        @exists = @activities.include?(type)
+        
+        if @exists
+          true
+        else
+          false
+        end
+      else
+        false
+      end
+    else
+      false
+    end
+  end
 end

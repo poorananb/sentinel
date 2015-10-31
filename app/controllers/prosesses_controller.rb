@@ -3,9 +3,18 @@ class ProsessesController < ApplicationController
   respond_to :json, :html
   
   def index
-    @prosesses = Prosess.all
-    respond_with @prosesses
+    if(params[:sort])
+      @prosesses = Prosess.order(params[:sort]).all
+      @total_count = @prosesses.count(:all)
+      @limit = params[:limit].to_i
+      @limited_prosesses = @prosesses.paginate(:page => params[:offset], :per_page => @limit)
+      @response = { :prosesses => @limited_prosesses, :count => @total_count }
+    else
+      @response = Prosess.all
+    end
+    respond_with @response
   end
+ 
 
   def new
   end

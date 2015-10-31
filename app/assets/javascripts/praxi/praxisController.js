@@ -67,7 +67,7 @@ angular.module('Sentinel.praxisController', [])
 .controller('PraxiViewController', ['$scope', '$stateParams' ,'Praxi', function($scope,$stateParams,Praxi){
     $scope.praxi=Praxi.get({id:$stateParams.id});
 }])
-.controller('PraxiCreateController', ['$scope', '$state', '$stateParams', 'Praxi', 'Org', 'Client', 'Realm', 'Prosess', 'Stage', function($scope,$state,$stateParams,Praxi,Org,Client,Realm,Prosess,Stage){
+.controller('PraxiCreateController', ['$scope', '$state', '$stateParams', 'Praxi', 'Org', 'Client', 'Realm', 'Prosess', 'Stage', 'Milestone', function($scope,$state,$stateParams,Praxi,Org,Client,Realm,Prosess,Stage,Milestone){
 
     $scope.praxi=new Praxi();
 
@@ -85,6 +85,9 @@ angular.module('Sentinel.praxisController', [])
     
     //stage
     $scope.stages = Stage.query();
+    
+    //milestone
+     $scope.milestones = Milestone.query();
 	
     $scope.addPraxi=function(){
         $scope.praxi.$save(function(response){
@@ -100,7 +103,7 @@ angular.module('Sentinel.praxisController', [])
         });
     }
 
-}]).controller('PraxiEditController', ['$scope', '$state', '$stateParams', 'Praxi', 'Org', 'Client', 'Realm', 'Prosess', 'Stage', function($scope,$state,$stateParams,Praxi,Org,Client,Realm,Prosess,Stage){
+}]).controller('PraxiEditController', ['$scope', '$state', '$stateParams', 'Praxi', 'Org', 'Client', 'Realm', 'Prosess', 'Stage','Milestone', function($scope,$state,$stateParams,Praxi,Org,Client,Realm,Prosess,Stage,Milestone){
     //orgs 
     $scope.orgs = Org.query();
     
@@ -115,6 +118,8 @@ angular.module('Sentinel.praxisController', [])
     
     //stage
     $scope.stages = Stage.query();
+    
+    $scope.milestones = Milestone.query();
     
     $scope.updatePraxi=function(){
         $scope.praxi.$update(function(response){

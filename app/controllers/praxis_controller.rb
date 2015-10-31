@@ -99,6 +99,6 @@ class PraxisController < ApplicationController
   
   private
   def praxi_params
-    params.require(:praxi).permit(:org_code, :client_code, :realm_code, :prosess_code, :stage_code, :sequence, :sla, :tolerance_percentage, :critical) if params[:praxi]
+    params.require(:praxi).permit(:org_code, :client_code,:milestone_key, :realm_code, :prosess_code, :stage_code, :sequence, :sla, :tolerance_percentage, :critical) if params[:praxi]
   end
 end

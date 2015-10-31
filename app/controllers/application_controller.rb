@@ -18,6 +18,12 @@ class ApplicationController < ActionController::Base
   # Enforces access right checks for collections
   #after_filter :verify_policy_scoped, :only => :index
   
+  #private
+  #def user_not_authorized
+    #flash[:alert] = "You are not authorized to perform this action."
+    #redirect_to(request.referrer || root_path)
+  #end
+  
   def authenticate_user
     redirect_to login_url, alert: "Not authorized" if current_user.nil?
   end
@@ -26,6 +32,7 @@ class ApplicationController < ActionController::Base
   
   private
     def permission_denied
-      head 403
+      #render :status => 403
+      render(:file => File.join(Rails.root, 'public/403.html'), :status => 403, :layout => false)
     end
 end

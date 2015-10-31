@@ -21,6 +21,7 @@
     					<tr>
     						<th>Name</th>
     						<th>Code</th>
+    						<th>Org Code</th>
     						<th>&nbsp;</th>    						
     					</tr>
     				</thead>
@@ -28,6 +29,7 @@
     				    <tr>
     						<td data-title="Name">{{client.name}}</td>
     						<td data-title="Code">{{client.code}}</td>
+    						<td data-title="Org_code">{{client.org_code}}</td>
     						<td data-title="      " class="actionsBtn">
                 			    <a ui-sref="showClient({id:client.id})" title="Show">
                                     <svg class="icon icon-search"><use xlink:href="#icon-search"></use>
@@ -68,6 +70,6 @@
     	</div>
     </div>
 </div>
-
+<div ng-include="'_pagination.html'"></div>
 
 <!--ng-controller="ClientCtrl" data-ng-init="getClients()"-->
