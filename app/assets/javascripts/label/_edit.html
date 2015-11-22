@@ -22,8 +22,8 @@
                         <!--    <option ng-repeat="org in orgs" value="{{org.code}}" {{label.org_code == org.code? 'selected':''}}>{{org.name}}</option>-->
                         <!--</select>-->
                         <select name="org_code" ng-model="label.org_code" ng-options="option.code as option.name for option in orgs">
-	                    <option ng-disabled="true"  ng-selected="true" value="">Select  org</option>
-	                </select>
+	                        <option ng-disabled="true"  ng-selected="true" value="">Select  org</option>
+	                    </select>
                         <input type="hidden" name="org_code" ng-model="label.org_code" value="{{label.org_code}}"/>
                         <div class="help-block" ng-messages="labelForm.org_code.$error" ng-show="labelForm.org_code.$touched">
                             <!-- show an error if this isn't filled in -->
@@ -39,7 +39,6 @@
                         <!--</select>-->
                         <select name="client_code" id="client_code" ng-model="label.client_code" ng-options="value.code as value.name for value in clients |filter:{org_code:communication.org_code}" required>
                            <option ng-disabled="true"  ng-selected="true" value="">Select a Client</option>
-                           <!-- <option ng-repeat="client in clients | filter:{org_code: org}" value="{{client.code}}">{{client.name}}</option>-->
                         </select>
                         <input type="hidden" name="client_code" ng-model="label.client_code" value="{{label.client_code}}"/>
                         <div class="help-block" ng-messages="labelForm.client_code.$error" ng-show="labelForm.client_code.$touched">
