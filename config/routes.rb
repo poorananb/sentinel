@@ -3,13 +3,17 @@ Rails.application.routes.draw do
 
   get 'home' => 'home#index'
   get 'brand' => 'orgs#orgs'
-  get 'jobs' => 'orgs#orgs'
   get 'clients' => 'clients#index'
 
   get 'orgs' => 'orgs#index'
   post 'orgs' => 'orgs#create'
   delete 'orgs' => 'orgs#destroy'
   put 'orgs' => 'orgs#update'
+  
+  get 'jobs' => 'jobs#index'
+  post 'jobs' => 'jobs#create'
+  delete 'jobs' => 'jobs#destroy'
+  put 'jobs' => 'jobs#update'
   
   get 'stages' => 'stages#index'
   post 'stages' => 'stages#create'
@@ -78,6 +82,10 @@ Rails.application.routes.draw do
   end
   
   scope :api do
+    resources :jobs, defaults: {format: 'json'}
+  end
+  
+  scope :api do
       resources :prosesses, defaults: {format: 'json'}
   end
   
@@ -119,6 +127,7 @@ Rails.application.routes.draw do
   
   resources :users
   resources :orgs
+  resources :jobs
   resources :sessions
   resources :prosesses
   resources :communications

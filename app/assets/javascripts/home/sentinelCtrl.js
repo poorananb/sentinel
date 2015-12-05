@@ -8,10 +8,7 @@ angular.module('Sentinel')
 			"project": "home/_project.html"
 		}
 	}]
-)
+);
 //.controller('RealmController', ['$scope', '$state', '$window', 'Org', function($scope, $state, $window, Org){		
 //	$scope.orgs = Org.query(); //fetch all orgs. Issues a GET to /api/orgs
 //}])
-.controller('JobsController', ['$scope', '$state', '$window', 'Org', function($scope, $state, $window, Org){		
-	$scope.orgs = Org.query(); //fetch all orgs. Issues a GET to /api/orgs
-}]);
