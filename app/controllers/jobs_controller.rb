@@ -6,7 +6,7 @@ class JobsController < ApplicationController
     @jobs = Job.order(params[:sort]).all
     @total_count = @jobs.count(:all)
     @limit = params[:limit].to_i
-    @limited_jobss = @jobs.paginate(:page => params[:offset], :per_page => @limit)
+    @limited_jobs = @jobs.paginate(:page => params[:offset], :per_page => @limit)
     
     @response = { :jobs => @limited_jobs, :count => @total_count }
     respond_with @response
@@ -18,12 +18,12 @@ class JobsController < ApplicationController
   def create 
     respond_to do |format|
       jobParams = job_params;
-      @job = Job.find_by_job_code(jobParams[:job_code])
-      if(@job)
+      @job = Job.isJobCodeExists(jobParams)
+      if(!@job.blank?)
         format.json do
             render :json => { 
                :status => :exists, 
-               :message => 'Sorry! Praxi already exists.'
+               :message => 'Sorry! Job already exists.'
             }.to_json
         end
       else
@@ -31,7 +31,7 @@ class JobsController < ApplicationController
           format.json do
             render :json => { 
                :status => :ok, 
-               :message => 'Praxi has been added successfully.'
+               :message => 'Job has been added successfully.'
             }.to_json
           end  
         else

@@ -81,7 +81,7 @@ angular.module('Sentinel.jobsController', [])
             $scope.message = response;
         	
             if(response.status == 'ok'){
-				$state.go('job'); //redirect to home
+				$state.go('jobs'); //redirect to home
 			}
 			
 			if(response.status == 'exists'){

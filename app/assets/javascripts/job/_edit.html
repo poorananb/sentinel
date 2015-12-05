@@ -32,11 +32,8 @@
                 <div>
                     <div class="col-xs-12 col-sm-6"><span class="form-label">Organization Code:</span></div>
                     <div class="col-xs-12 col-sm-6">
-                        <select name="org_code" ng-model="praxi.org_code" ng-options="option.code as option.name for option in orgs" disabled>
-	                        <option ng-disabled="true"  ng-selected="true" value="">Select  org</option>
-	                    </select>
-                        <input type="hidden" name="org_code" ng-model="praxi.org_code" value="{{praxi.org_code}}"/>
-                        <div class="help-block" ng-messages="praxiForm.org_code.$error" ng-show="praxiForm.org_code.$touched">
+                        <input type="text" name="org_code" ng-model="job.org_code" value="{{job.org_code}}" readonly/>
+                        <div class="help-block" ng-messages="jobForm.org_code.$error" ng-show="jobForm.org_code.$touched">
                             <!-- show an error if this isn't filled in -->
                             <p ng-message="required">Organization code is required.</p>
                         </div>
@@ -45,11 +42,8 @@
                 <div>
                     <div class="col-xs-12 col-sm-6"><span class="form-label">Client Code:</span></div>
                     <div class="col-xs-12 col-sm-6">
-                         <select name="client_code" id="client_code" ng-model="praxi.client_code" ng-options="value.code as value.name for value in clients" disabled>
-                           <option ng-disabled="true"  ng-selected="true" value="">Select a Client</option>
-                         </select>
-                        <input type="hidden" name="client_code" ng-model="praxi.client_code" value="{{praxi.client_code}}"/>
-                        <div class="help-block" ng-messages="praxiForm.client_code.$error" ng-show="praxiForm.client_code.$touched">
+                        <input type="text" name="client_code" ng-model="job.client_code" value="{{job.client_code}}" readonly/>
+                        <div class="help-block" ng-messages="jobForm.client_code.$error" ng-show="jobForm.client_code.$touched">
                             <!-- show an error if this isn't filled in -->
                             <p ng-message="required">Client code is required.</p>
                         </div>

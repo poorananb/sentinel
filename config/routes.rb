@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   put 'orgs' => 'orgs#update'
   
   get 'jobs' => 'jobs#index'
+  get 'createJob', to: 'jobs#new', as: 'createJob'
   post 'jobs' => 'jobs#create'
   delete 'jobs' => 'jobs#destroy'
   put 'jobs' => 'jobs#update'
