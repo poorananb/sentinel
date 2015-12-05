@@ -3,12 +3,15 @@ class IndicesController < ApplicationController
   respond_to :json, :html
   
   def index
-    @indices = Indice.order(params[:sort]).all
-    @total_count = @indices.count(:all)
-    @limit = params[:limit].to_i
-    @limited_indices = @indices.paginate(:page => params[:offset], :per_page => @limit)
-    
-    @response = { :indices => @limited_indices, :count => @total_count }
+    if(params[:sort])
+      @indices = Index.order(params[:sort]).all
+      @total_count = @indices.count(:all)
+      @limit = params[:limit].to_i
+      @limited_indices = @indices.paginate(:page => params[:offset], :per_page => @limit)
+      @response = { :indices => @limited_indices, :count => @total_count }
+    else
+      @response = Index.all
+    end
     respond_with @response
   end
 
@@ -18,8 +21,12 @@ class IndicesController < ApplicationController
   def create 
     respond_to do |format|
       indiceParams = indice_params;
-      indiceParams[:jobkey] = praxi_params[:job_code].upcase + '-' + praxi_params[:realm_code].upcase
-      @indice = indice.find_by_jobkey(praxiParams[:jobkey])
+      indiceParams[:jobkey] = indiceParams[:job_code].upcase + '-' + indiceParams[:realm_code].upcase
+      Rails.logger.debug("My password: #{indiceParams}")
+
+      indiceParams[:cron] = Index.buildCron(params)
+      @indice = Index.find_by_jobkey(indiceParams[:jobkey])
+      Rails.logger.debug("My password: #{@indice}")
       if(@indice)
         format.json do
             render :json => { 
@@ -28,7 +35,7 @@ class IndicesController < ApplicationController
             }.to_json
         end
       else
-        if Indice.create(indiceParams)
+        if Index.create(indiceParams)
           format.json do
             render :json => { 
                :status => :ok, 
@@ -48,15 +55,15 @@ class IndicesController < ApplicationController
   end
 
   def show
-    respond_with Indice.find(params[:id])
+    respond_with Index.find(params[:id])
   end
 
   def edit
-    respond_with Indice.find(params[:id])
+    respond_with Index.find(params[:id])
   end
 
   def update
-    @indice = Indice.find(params[:id])
+    @indice = Index.find(params[:id])
     respond_to do |format|
       if @indice.update(indice_params)
         format.json do
@@ -77,7 +84,7 @@ class IndicesController < ApplicationController
   end
 
   def destroy
-    @indice = Indice.find(params[:id])
+    @indice = Index.find(params[:id])
     respond_to do |format|
       if @indice.destroy
         format.json do
@@ -99,6 +106,6 @@ class IndicesController < ApplicationController
   
   private
   def indice_params
-    params.require(:indice).permit(:job_code, :realm_code, :cron_min,:cron_hour,:cron_day,:cron_week,:cron_month, :critical, :notify, :run_legth, :success_step) if params[:indice]
+    params.require(:index).permit(:job_code, :realm_code, :critical, :notify, :run_length, :success_step) if params[:index]
   end
 end

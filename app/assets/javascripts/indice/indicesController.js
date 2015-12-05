@@ -1,5 +1,5 @@
 angular.module('Sentinel.indicesController', [])
-.controller('IndiceController', ['$scope', '$state', '$window', 'Indice', function($scope, $state, $window, Indice){	
+.controller('IndiceController', ['$scope', '$state', '$window', 'Index', function($scope, $state, $window, Index){	
         $scope.main = {
             offset: 1,
             limit: 1,
@@ -17,7 +17,7 @@ angular.module('Sentinel.indicesController', [])
         
         $scope.loadPage = function(page){
             $scope.main.offset = page;
-            Indice.get({offset:$scope.main.offset, limit:$scope.main.limit, sort:$scope.main.sort}, function(data){
+            Index.get({offset:$scope.main.offset, limit:$scope.main.limit, sort:$scope.main.sort}, function(data){
 		        //var orgs = JSON.parse(data);
 		        // users from your api
                 $scope.indices = data.indices;
@@ -50,8 +50,8 @@ angular.module('Sentinel.indicesController', [])
 		
         $scope.loadPage(1);//fetch all orgs. Issues a GET to /api/orgs
 		
-		$scope.deleteIndice = function(indice) { // Delete a org. Issues a DELETE to /api/org/:id
-			indice.$delete(function(response) {
+		$scope.deleteIndice = function(index) { // Delete a org. Issues a DELETE to /api/org/:id
+			index.$delete(function(response) {
 				$scope.message = response;
 				
 				if(response.status == 'ok'){
@@ -61,12 +61,12 @@ angular.module('Sentinel.indicesController', [])
 		};
 	}]
 )
-.controller('IndiceViewController', ['$scope', '$stateParams' ,'Indice', function($scope,$stateParams,Indice){
-    $scope.indice=Indice.get({id:$stateParams.id});
+.controller('IndiceViewController', ['$scope', '$stateParams' ,'Index', function($scope,$stateParams,Index){
+    $scope.indice=Index.get({id:$stateParams.id});
 }])
-.controller('IndiceCreateController',['$scope', '$state', '$stateParams', 'Indice', 'Job', 'Realm', function($scope,$state,$stateParams,Indice,Job,Realm){
+.controller('IndiceCreateController',['$scope', '$state', '$stateParams', 'Index', 'Job', 'Realm', function($scope,$state,$stateParams,Index,Job,Realm){
     //indice
-    $scope.indice=new Indice();
+    $scope.indice=new Index();
     
     //jobs 
     $scope.jobs = Job.query();
@@ -88,7 +88,7 @@ angular.module('Sentinel.indicesController', [])
         });
     }
 
-}]).controller('IndiceEditController',['$scope', '$state', '$stateParams', 'Indice', 'Job', 'Realm', function($scope,$state,$stateParams,Indice,Job,Realm){
+}]).controller('IndiceEditController',['$scope', '$state', '$stateParams', 'Index', 'Job', 'Realm', function($scope,$state,$stateParams,Index,Job,Realm){
     //orgs 
     $scope.jobs = Job.query();
     
@@ -106,7 +106,7 @@ angular.module('Sentinel.indicesController', [])
     };
 
     $scope.loadIndice=function(){
-        $scope.indice=Indice.get({id:$stateParams.id});
+        $scope.indice=Index.get({id:$stateParams.id});
     };
 
     $scope.loadIndice();

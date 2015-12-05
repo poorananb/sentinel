@@ -3,12 +3,15 @@ class JobsController < ApplicationController
   respond_to :json, :html
   
   def index
-    @jobs = Job.order(params[:sort]).all
-    @total_count = @jobs.count(:all)
-    @limit = params[:limit].to_i
-    @limited_jobs = @jobs.paginate(:page => params[:offset], :per_page => @limit)
-    
-    @response = { :jobs => @limited_jobs, :count => @total_count }
+    if(params[:sort])
+      @jobs = Job.order(params[:sort]).all
+      @total_count = @jobs.count(:all)
+      @limit = params[:limit].to_i
+      @limited_jobs = @jobs.paginate(:page => params[:offset], :per_page => @limit)
+      @response = { :jobs => @limited_jobs, :count => @total_count }
+    else
+      @response = Job.all
+    end
     respond_with @response
   end
 

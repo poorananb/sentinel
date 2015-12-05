@@ -17,34 +17,14 @@
             <div class="row wrap">
                 <div>
                     <div class="col-xs-12 col-sm-6"><span class="form-label">Jobs Code:</span></div>
-                    <div class="col-xs-12 col-sm-6">
-                         <select name="job_code" id="job_code" ng-model="indice.job_code" ng-options="value.code as value.name for value in jobs" required>
-                           <option ng-disabled="true"  ng-selected="true" value="">Select a Job</option>
-                         </select>
-                        <input type="hidden" name="job_code" ng-model="indice.job_code" value="{{indice.job_code}}"/>
-                        <div class="help-block" ng-messages="indiceForm.job_code.$error" ng-show="indiceForm.job_code.$touched">
-                            <!-- show an error if this isn't filled in -->
-                            <p ng-message="required">Jobs code is required.</p>
-                        </div>
+                    <div class="col-xs-12 col-sm-6">{{indice.job_code}}
+                        <input type="hidden" name="job_code" ng-model="indice.job_code" value="{{indice.job_code}}" />
                     </div>  
                 </div>
                 <div>
                     <div class="col-xs-12 col-sm-6"><span class="form-label">Realm Code:</span></div>
-                    <div class="col-xs-12 col-sm-6">
-                        <select 
-                        name="realm_code" 
-                        id="realm_code"
-                        ng-model="indice.realm_code"
-                        required
-                        disabled
-                        >
-                            <option ng-repeat="realm in realms" value="{{realm.code}}">{{realm.name}}</option>
-                        </select>
-                        <input type="hidden" name="realm_code" ng-model="praxi.realm_code" value="{{praxi.realm_code}}"/>
-                        <div class="help-block" ng-messages="indiceForm.realm_code.$error" ng-show="indiceForm.realm_code.$touched">
-                            <!-- show an error if this isn't filled in -->
-                            <p ng-message="required">Realm code is required.</p>
-                        </div>
+                    <div class="col-xs-12 col-sm-6">{{indice.realm_code}}
+                        <input type="hidden" name="realm_code" ng-model="indice.realm_code" value="{{indice.realm_code}}"/>
                     </div>  
                 </div>
                 <div>
@@ -83,7 +63,7 @@
                         id="notify"
                         ng-model="indice.notify"
                         >
-                            <option value="1">Yes</option>
+                            <option value="1" >Yes</option>
                             <option value="0">No</option>
                         </select>
                     </div>  

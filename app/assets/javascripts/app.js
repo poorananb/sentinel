@@ -8,7 +8,7 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
 	.state('showJob', {url: '/jobs/:id',templateUrl: 'job/_show.html',controller: 'JobViewController'})
 	.state('editJob', {url: '/jobs/{id}/edit',templateUrl: 'job/_edit.html',controller: 'JobEditController'})
 	.state('indices', {url: '/indices',templateUrl: 'indice/_indices.html',controller: 'IndiceController'})
-	.state('createIndice', {url: '/createIndice',templateUrl: 'job/_createIndice.html',controller: 'IndiceCreateController'})
+	.state('createIndice', {url: '/createIndice',templateUrl: 'indice/_createIndice.html',controller: 'IndiceCreateController'})
 	.state('showIndice', {url: '/indices/:id',templateUrl: 'indice/_show.html',controller: 'IndiceViewController'})
 	.state('editIndice', {url: '/indices/{id}/edit',templateUrl: 'indice/_edit.html',controller: 'IndiceEditController'})
 	.state('orgs', {url: '/orgs',templateUrl: 'org/_orgs.html',controller: 'OrgController'})

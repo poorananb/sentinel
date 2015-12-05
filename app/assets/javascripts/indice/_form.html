@@ -5,12 +5,11 @@
         </div>   
         <div class="row wrap">
             <div>
-                <div class="col-xs-12 col-sm-6"><span class="form-label">Jobs Code:</span></div>
+                <div class="col-xs-12 col-sm-6"><span class="form-label">Job:</span></div>
                 <div class="col-xs-12 col-sm-6">
-                     <select name="job_code" id="job_code" ng-model="indice.job_code" ng-options="value.code as value.name for value in jobs" required>
-                       <option ng-disabled="true"  ng-selected="true" value="">Select a Job</option>
+                     <select name="job_code" id="job_code" ng-model="indice.job_code" ng-options="value.job_code as value.name for value in jobs" required>
+                       <option ng-disabled="true" ng-selected="true" value="">Select a Job</option>
                      </select>
-                    <input type="hidden" name="job_code" ng-model="indice.job_code" value="{{indice.job_code}}"/>
                     <div class="help-block" ng-messages="indiceForm.job_code.$error" ng-show="indiceForm.job_code.$touched">
                         <!-- show an error if this isn't filled in -->
                         <p ng-message="required">Jobs code is required.</p>
@@ -30,19 +29,30 @@
                         </div>                
                     </div>  
                 </div>
-            </div> 
+            </div>   
             <div>
                 <div class="col-xs-12 col-sm-6"><span class="form-label">Cron Timings:</span></div>
                 <div class="col-xs-12 col-sm-6">
-                    <input type="text" 
-                    name="cron"
-                    id="cron"
-                    ng-model="indice.cron"
-                    required/>
-                    <div class="help-block" ng-messages="indiceForm.cron.$error" ng-show="indiceForm.sequence.$touched">
-                        <!-- show an error if this isn't filled in -->
-                        <p ng-message="required">Cron is required.</p>
-                    </div>
+                    <select name="cron_min" id="cron_min" ng-model="indice.cron_min">
+                        <option value="*" selected>*</option>
+                        <option value="1">1</option>
+                    </select>
+                    <select name="cron_hour" id="cron_hour" ng-model="indice.cron_hour">
+                        <option value="*" selected>*</option>
+                        <option value="1">1</option>
+                    </select>
+                    <select name="cron_day" id="cron_day" ng-model="indice.cron_day">
+                        <option value="*" selected>*</option>
+                        <option value="1">1</option>
+                    </select>
+                    <select name="cron_week" id="cron_week" ng-model="indice.cron_week">
+                        <option value="*" selected>*</option>
+                        <option value="1">1</option>
+                    </select>
+                    <select name="cron_month" id="cron_week" ng-model="indice.cron_month">
+                        <option value="*" selected>*</option>
+                        <option value="1">1</option>
+                    </select>
                 </div>  
             </div>
             <div>
@@ -68,7 +78,7 @@
                     ng-model="indice.notify"
                     >
                         <option value="1">Yes</option>
-                        <option value="0">No</option>
+                        <option value="0" selected>No</option>
                     </select>
                 </div>  
             </div>
