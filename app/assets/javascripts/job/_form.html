@@ -1,0 +1,74 @@
+<div class="form-container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <span class="form-title">Jobs</span>        
+        </div>   
+        <div class="row wrap">
+            <div>
+                <div ng-class="{ 'has-error': jobForm.job_code.$touched && jobForm.job_code.$invalid }">
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Job Code:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <input type="text" name="job_code" id="job_code" ng-model="job.job_code" required/>
+                        <div class="help-block" ng-messages="jobForm.job_code.$error" ng-show="jobForm.job_code.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Job Code is required.</p>
+                        </div>              
+                    </div>  
+                </div>
+            </div> 
+            <div>
+                <div ng-class="{ 'has-error': jobForm.org_code.$touched && jobForm.org_code.$invalid }">
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Org Code:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <select name="org_code" id="org_code" ng-model="job.org_code" ng-options="option.code as option.name for option in orgs" required>
+	                        <option ng-disabled="true"  ng-selected="true" value="">Select  org</option>
+	                    </select>
+                        
+                        <div class="help-block" ng-messages="jobForm.org_code.$error" ng-show="jobForm.org_code.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Organization code is required.</p>
+                        </div>                   
+                    </div>  
+                </div>
+            </div>
+            <div>
+                <div  ng-class="{ 'has-error': jobForm.client_code.$touched && jobForm.client_code.$invalid }">
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Client Code:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <select name="client_code" id="client_code" ng-model="job.client_code" ng-options="value.code as value.name for value in clients" required>
+                           <option ng-disabled="true"  ng-selected="true" value="">Select a Client</option>
+                         </select>
+                        <div class="help-block" ng-messages="jobForm.client_code.$error" ng-show="jobForm.client_code.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Client code is required.</p>
+                        </div>                 
+                    </div>  
+                </div>
+            </div>    
+            <div>
+                <div ng-class="{ 'has-error': jobForm.name.$touched && jobForm.name.$invalid }">
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Job Name:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <input type="text" name="name" id="name" ng-model="job.name" required/>
+                        <div class="help-block" ng-messages="jobForm.name.$error" ng-show="jobForm.name.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Job Name is required.</p>
+                        </div>              
+                    </div>  
+                </div>
+            </div> 
+            <div>
+                <div ng-class="{ 'has-error': jobForm.sequence.$touched && jobForm.sequence.$invalid }">
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Job Description:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <textarea name="description" id="description" ng-model="job.description"></textarea>
+                    </div>  
+                </div>
+            </div> 
+        </div>
+    </div>
+    <div class="cols-xs-12 button-pull-right">
+        <button type="submit" class="button">Add Job</button> <a href="/jobs"  class="button">Back To List</a>
+    </div>
+</div>
+

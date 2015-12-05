@@ -1,0 +1,86 @@
+<div ng-show="message.message != null">
+    <div ng-show="message.status == 'ok'">
+        <div class="success">{{message.message}}</div>
+    </div>
+    <div ng-show="message.status == 'error'">
+        <div class="error">{{message.message}}</div>
+    </div>
+</div> 
+
+<div class="form-container">
+    <form ng-submit="updateJob()" id="jobForm">
+        <input type="hidden" name="id" ng-model="job.id"/>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <span class="form-title">Edit Job</span>        
+            </div>   
+            <div class="row wrap">
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Job Code:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <input type="text" 
+                        name="job_code"
+                        id="job_code"
+                        ng-model="job.job_code"
+                        required readonly/>
+                        <div class="help-block" ng-messages="jobForm.job_code.$error" ng-show="jobForm.job_code.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Job Name is required.</p>
+                        </div>
+                    </div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Organization Code:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <input type="text" name="org_code" ng-model="job.org_code" value="{{job.org_code}}" readonly/>
+                        <div class="help-block" ng-messages="jobForm.org_code.$error" ng-show="jobForm.org_code.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Organization code is required.</p>
+                        </div>
+                    </div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Client Code:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <input type="text" name="client_code" ng-model="job.client_code" value="{{job.client_code}}" readonly/>
+                        <div class="help-block" ng-messages="jobForm.client_code.$error" ng-show="jobForm.client_code.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Client code is required.</p>
+                        </div>
+                    </div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Job Name:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <input type="text" 
+                        name="name"
+                        id="name"
+                        ng-model="job.name"
+                        required/>
+                        <div class="help-block" ng-messages="jobForm.name.$error" ng-show="jobForm.name.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Job Name is required.</p>
+                        </div>
+                    </div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Job Description:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <input type="text" 
+                        name="description"
+                        id="description"
+                        ng-model="job.description"
+                        required/>
+                        <div class="help-block" ng-messages="jobForm.description.$error" ng-show="jobForm.description.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Job Description is required.</p>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    	<div class="cols-xs-12 button-pull-right">
+            <button type="submit" class="button">Update Job</button> <a href="/jobs" class="button">Back To List</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,10 @@
+<div ng-show="message.message != null">
+    <div ng-show="message.status == 'error' || message.status == 'exists'">
+        <div class="error">{{message.message}}</div>
+    </div>
+</div>
+<div>
+    <form ng-submit="addJob()" name="jobForm" novalidate>
+        <div ng-include="'job/_form.html'"></div>
+    </form>
+</div>

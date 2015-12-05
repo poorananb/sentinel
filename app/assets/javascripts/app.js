@@ -1,9 +1,12 @@
-angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'ngFileUpload', 'elif', 'ngResource', 'Sentinel.orgsController', 'Sentinel.orgs','Sentinel.prosessesController', 'Sentinel.prosesses','Sentinel.communicationsController', 'Sentinel.communications','Sentinel.realmsController','Sentinel.realms','Sentinel.stages','Sentinel.stagesController','Sentinel.clientsController', 'Sentinel.clients', 'Sentinel.praxis', 'Sentinel.praxisController', 'Sentinel.labels', 'Sentinel.labelsController', 'Sentinel.users', 'Sentinel.usersController', 'Sentinel.roles', 'Sentinel.rolesController', 'Sentinel.milestones', 'Sentinel.milestonesController']);
+angular.module('Sentinel', ['ui.router', 'templates', 'ngMessages', 'ngFileUpload', 'elif', 'ngResource', 'Sentinel.orgs', 'Sentinel.orgsController', 'Sentinel.jobs', 'Sentinel.jobsController','Sentinel.prosessesController', 'Sentinel.prosesses','Sentinel.communicationsController', 'Sentinel.communications','Sentinel.realmsController','Sentinel.realms','Sentinel.stages','Sentinel.stagesController','Sentinel.clientsController', 'Sentinel.clients', 'Sentinel.praxis', 'Sentinel.praxisController', 'Sentinel.labels', 'Sentinel.labelsController', 'Sentinel.users', 'Sentinel.usersController', 'Sentinel.roles', 'Sentinel.rolesController', 'Sentinel.milestones', 'Sentinel.milestonesController']);
 angular.module('Sentinel').config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
 function($stateProvider, $urlRouterProvider, $locationProvider) {
 	$stateProvider
 	.state('home', {url: '/home',templateUrl: 'home/_home.html',controller: 'SentinelCtrl'})
-	.state('jobs', {url: '/jobs',templateUrl: 'home/_jobs.html',controller: 'JobsController'})
+	.state('jobs', {url: '/jobs',templateUrl: 'job/_jobs.html',controller: 'JobController'})
+	.state('createJob', {url: '/createJob',templateUrl: 'job/_createJob.html',controller: 'JobCreateController'})
+	.state('showJob', {url: '/jobs/:id',templateUrl: 'job/_show.html',controller: 'JobViewController'})
+	.state('editJob', {url: '/jobs/{id}/edit',templateUrl: 'job/_edit.html',controller: 'JobEditController'})
 	.state('orgs', {url: '/orgs',templateUrl: 'org/_orgs.html',controller: 'OrgController'})
 	.state('createOrg', {url: '/createOrg',templateUrl: 'org/_createOrg.html',controller: 'OrgCreateController'})
 	.state('showOrg', {url: '/orgs/:id',templateUrl: 'org/_show.html',controller: 'OrgViewController'})
