@@ -16,6 +16,12 @@ Rails.application.routes.draw do
   delete 'jobs' => 'jobs#destroy'
   put 'jobs' => 'jobs#update'
   
+  get 'indices' => 'indices#index'
+  get 'createIndice', to: 'indices#new', as: 'createIndice'
+  post 'indices' => 'indices#create'
+  delete 'indices' => 'indices#destroy'
+  put 'indices' => 'indices#update'
+  
   get 'stages' => 'stages#index'
   post 'stages' => 'stages#create'
   delete 'stages' => 'stages#destroy'
@@ -87,6 +93,10 @@ Rails.application.routes.draw do
   end
   
   scope :api do
+    resources :indices, defaults: {format: 'json'}
+  end
+  
+  scope :api do
       resources :prosesses, defaults: {format: 'json'}
   end
   
@@ -129,6 +139,7 @@ Rails.application.routes.draw do
   resources :users
   resources :orgs
   resources :jobs
+  resources :indices
   resources :sessions
   resources :prosesses
   resources :communications
