@@ -9,7 +9,7 @@
                     <span class="form-label">Process Name:</span>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    <input type="text" name="name" id="name" ng-model="prosess.name"  ng-minlength="3" ng-maxlength="8" required/>
+                    <input type="text" name="name" id="name" ng-model="prosess.name"  ng-minlength="6" ng-maxlength="20" required/>
                     <div class="help-block" ng-messages="prosessForm.name.$error" ng-show="prosessForm.name.$touched">
                         <!-- show an error if name is too short -->
                         <p ng-message="minlength">Name is too short.</p>
@@ -27,7 +27,7 @@
                     <span class="form-label">Process Code:</span>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    <input type="text" name="code" id="code" ng-model="prosess.code"  ng-minlength="3" ng-maxlength="8" required/>
+                    <input type="text" name="code" id="code" ng-model="prosess.code"  ng-minlength="3" ng-maxlength="20" required/>
                     <div class="help-block" ng-messages="prosessForm.code.$error" ng-show="prosessForm.code.$touched">
                         <!-- show an error if name is too short -->
                         <p ng-message="minlength">Code is too short.</p>
