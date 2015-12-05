@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151205041443) do
+ActiveRecord::Schema.define(version: 20151205065958) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "code",       limit: 10
@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 20151205041443) do
 
   create_table "indices", force: :cascade do |t|
     t.string   "job_code"
-    t.string   "client_code"
     t.string   "realm_code"
     t.string   "cron"
     t.boolean  "critical"
