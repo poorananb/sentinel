@@ -80,12 +80,20 @@ Rails.application.routes.draw do
   delete 'roles' => 'roles#destroy'
   post 'roles/update'
   
+  get 'settings', to: 'settings#index', as: 'settings'
+  post 'settings' => 'settings#create'
+  put 'settings' => 'settings#update'
+  
   #get 'help'    => 'static_pages#help'
   #get 'about'   => 'static_pages#about'
   #get 'contact' => 'static_pages#contact'
   
   scope :api do
     resources :orgs, defaults: {format: 'json'}
+  end
+  
+  scope :api do
+    resources :settings, defaults: {format: 'json'}
   end
   
   scope :api do
@@ -151,6 +159,7 @@ Rails.application.routes.draw do
   resources :labels
   resources :images
   resources :milestones
+  resources :settings
   
   namespace :api do
     namespace :v1 do
