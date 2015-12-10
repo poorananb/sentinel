@@ -3,13 +3,24 @@ Rails.application.routes.draw do
 
   get 'home' => 'home#index'
   get 'brand' => 'orgs#orgs'
-  get 'jobs' => 'orgs#orgs'
   get 'clients' => 'clients#index'
 
   get 'orgs' => 'orgs#index'
   post 'orgs' => 'orgs#create'
   delete 'orgs' => 'orgs#destroy'
   put 'orgs' => 'orgs#update'
+  
+  get 'jobs' => 'jobs#index'
+  get 'createJob', to: 'jobs#new', as: 'createJob'
+  post 'jobs' => 'jobs#create'
+  delete 'jobs' => 'jobs#destroy'
+  put 'jobs' => 'jobs#update'
+  
+  get 'indices' => 'indices#index'
+  get 'createIndice', to: 'indices#new', as: 'createIndice'
+  post 'indices' => 'indices#create'
+  delete 'indices' => 'indices#destroy'
+  put 'indices' => 'indices#update'
   
   get 'stages' => 'stages#index'
   post 'stages' => 'stages#create'
@@ -69,12 +80,28 @@ Rails.application.routes.draw do
   delete 'roles' => 'roles#destroy'
   post 'roles/update'
   
+  get 'settings', to: 'settings#index', as: 'settings'
+  post 'settings' => 'settings#create'
+  put 'settings' => 'settings#update'
+  
   #get 'help'    => 'static_pages#help'
   #get 'about'   => 'static_pages#about'
   #get 'contact' => 'static_pages#contact'
   
   scope :api do
     resources :orgs, defaults: {format: 'json'}
+  end
+  
+  scope :api do
+    resources :settings, defaults: {format: 'json'}
+  end
+  
+  scope :api do
+    resources :jobs, defaults: {format: 'json'}
+  end
+  
+  scope :api do
+    resources :indices, defaults: {format: 'json'}
   end
   
   scope :api do
@@ -119,6 +146,8 @@ Rails.application.routes.draw do
   
   resources :users
   resources :orgs
+  resources :jobs
+  resources :indices
   resources :sessions
   resources :prosesses
   resources :communications
@@ -130,6 +159,7 @@ Rails.application.routes.draw do
   resources :labels
   resources :images
   resources :milestones
+  resources :settings
   
   namespace :api do
     namespace :v1 do

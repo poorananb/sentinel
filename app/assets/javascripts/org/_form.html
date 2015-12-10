@@ -9,7 +9,7 @@
                     <span class="form-label">Organization Name:</span>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    <input type="text" name="name" id="name" ng-model="org.name"  ng-minlength="3" ng-maxlength="8" required/>
+                    <input type="text" name="name" id="name" ng-model="org.name"  ng-minlength="6" ng-maxlength="20" required/>
                     <div class="help-block" ng-messages="orgForm.name.$error" ng-show="orgForm.name.$touched">
                         <!-- show an error if name is too short -->
                         <p ng-message="minlength">Name is too short.</p>
@@ -27,7 +27,7 @@
                     <span class="form-label">Organization Code:</span>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    <input type="text" name="code" id="code" ng-model="org.code"  ng-minlength="3" ng-maxlength="8" required/>
+                    <input type="text" name="code" id="code" ng-model="org.code"  ng-minlength="4" ng-maxlength="20" required/>
                     <div class="help-block" ng-messages="orgForm.code.$error" ng-show="orgForm.code.$touched">
                         <!-- show an error if name is too short -->
                         <p ng-message="minlength">Code is too short.</p>

@@ -9,7 +9,7 @@
                     <span class="form-label">Client Name:</span>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    <input type="text" name="name" id="name" ng-model="client.name"  ng-minlength="3" ng-maxlength="8" required/>
+                    <input type="text" name="name" id="name" ng-model="client.name"  ng-minlength="3" ng-maxlength="20" required/>
                     <div class="help-block" ng-messages="clientForm.name.$error" ng-show="clientForm.name.$touched">
                         <!-- show an error if name is too short -->
                         <p ng-message="minlength">Name is too short.</p>
@@ -27,7 +27,7 @@
                     <span class="form-label">Client Code:</span>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    <input type="text" name="code" id="code" ng-model="client.code"  ng-minlength="3" ng-maxlength="8" required/>
+                    <input type="text" name="code" id="code" ng-model="client.code"  ng-minlength="2" ng-maxlength="20" required/>
                     <div class="help-block" ng-messages="clientForm.code.$error" ng-show="clientForm.code.$touched">
                         <!-- show an error if name is too short -->
                         <p ng-message="minlength">Code is too short.</p>

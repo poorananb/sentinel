@@ -9,7 +9,7 @@
                     <span class="form-label">Realm Name:</span>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    <input type="text" name="name" id="name" ng-model="realm.name"  ng-minlength="3" ng-maxlength="8" required/>
+                    <input type="text" name="name" id="name" ng-model="realm.name"  ng-minlength="5" ng-maxlength="20" required/>
                     <div class="help-block" ng-messages="realmForm.name.$error" ng-show="realmForm.name.$touched">
                         <!-- show an error if name is too short -->
                         <p ng-message="minlength">Name is too short.</p>
@@ -27,7 +27,7 @@
                     <span class="form-label">Realm Code:</span>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    <input type="text" name="code" id="code" ng-model="realm.code"  ng-minlength="3" ng-maxlength="8" required/>
+                    <input type="text" name="code" id="code" ng-model="realm.code"  ng-minlength="2" ng-maxlength="20" required/>
                     <div class="help-block" ng-messages="realmForm.code.$error" ng-show="realmForm.code.$touched">
                         <!-- show an error if name is too short -->
                         <p ng-message="minlength">Code is too short.</p>

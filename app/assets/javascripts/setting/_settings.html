@@ -1,0 +1,60 @@
+<div ng-show="message.message != null">
+    <div ng-show="message.status == 'ok'">
+        <div class="success">{{message.message}}</div>
+    </div>
+    <div ng-show="message.status == 'error'">
+        <div class="error">{{message.message}}</div>
+    </div>
+</div> 
+
+<div class="form-container">
+    <form ng-submit="updateSettings()" id="settingForm">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <span class="form-title">Update Settings</span>        
+            </div>   
+            <div class="row wrap">
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Locale:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <select name="time_zone[]" id="time_zone" ng-model="setting.time_zone" ng-options="key as value for (key,value) in locales" multiple size=10>
+        	            </select>
+                        <div class="help-block" ng-messages="settingForm.time_zone.$error" ng-show="settingForm.time_zone.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">TimeZone is required.</p>
+                        </div>
+                    </div>  
+                </div>
+                
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">FreeText:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <select name="freetext[]" id="freetext" ng-model="setting.freetext" multiple size="10">
+                            <option value="Asia/Singapore">Asia/Singapore</option>
+                            <option value="Asia/Philiphines">Asia/Philiphines</option>
+                            <option value="Asia/Indonesia">Asia/Indonesia</option>
+                        </select>
+                        <div class="help-block" ng-messages="settingForm.freetext.$error" ng-show="settingForm.freetext.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Freetext is required.</p>
+                        </div>
+                    </div>  
+                </div>
+                
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">FreeText:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <input type="text" name="freetextinput" id="freetextinput" ng-model="setting.freetextinput" />
+                        <div class="help-block" ng-messages="settingForm.freetext.$error" ng-show="settingForm.freetext.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Freetext is required.</p>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    	<div class="cols-xs-12 button-pull-right">
+            <button type="submit" class="button">Update Setting</button> 
+        </div>
+    </form>
+</div>

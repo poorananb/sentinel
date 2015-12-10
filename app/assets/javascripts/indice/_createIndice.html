@@ -1,0 +1,10 @@
+<div ng-show="message.message != null">
+    <div ng-show="message.status == 'error' || message.status == 'exists'">
+        <div class="error">{{message.message}}</div>
+    </div>
+</div>
+<div>
+    <form ng-submit="addIndice()" name="indiceForm" novalidate>
+        <div ng-include="'indice/_form.html'"></div>
+    </form>
+</div>
