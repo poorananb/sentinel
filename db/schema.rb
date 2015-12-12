@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151206004053) do
+ActiveRecord::Schema.define(version: 20151212044530) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "code",       limit: 10
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20151206004053) do
     t.string   "job_code"
     t.string   "realm_code"
     t.string   "cron"
-    t.boolean  "critical"
+    t.string   "critical"
     t.string   "notify"
     t.string   "jobkey"
     t.integer  "run_length"

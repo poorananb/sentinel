@@ -9,7 +9,7 @@ class Index < ActiveRecord::Base
     validates :success_step, presence: true
     
     def self.buildCron(params)
-        @cron = params['cron_min'] + ' ' + params['cron_hour'] + ' ' + params['cron_day'] + ' ' + params['cron_week'] + ' ' + params['cron_month']
+        @cron = params['cron_min'] + ' ' + params['cron_hour'] + ' ' + params['cron_day'] + ' ' + params['cron_month'] + ' ' + params['cron_week']
         return @cron;
     end
 end

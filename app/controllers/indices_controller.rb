@@ -22,11 +22,9 @@ class IndicesController < ApplicationController
     respond_to do |format|
       indiceParams = indice_params;
       indiceParams[:jobkey] = indiceParams[:job_code].upcase + '-' + indiceParams[:realm_code].upcase
-      Rails.logger.debug("My password: #{indiceParams}")
 
       indiceParams[:cron] = Index.buildCron(params)
       @indice = Index.find_by_jobkey(indiceParams[:jobkey])
-      Rails.logger.debug("My password: #{@indice}")
       if(@indice)
         format.json do
             render :json => { 

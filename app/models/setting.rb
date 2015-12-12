@@ -28,4 +28,25 @@ class Setting < ActiveRecord::Base
         
         return false
     end
+    
+    def self.fetchAttribute(attribute)
+        settingObj = Setting.where(:key => attribute).first
+        if !settingObj.blank?
+            value = settingObj.value
+            return value
+        else
+            self.getDefaultValues(attribute)
+        end
+    end
+    
+    def self.getDefaultValues(attribute)
+        puts case attribute
+        when 'time_zone'
+            return Time.zone
+        end
+    end
+    
+    def self.getTimeZone
+       Rails.logger.debug("My password: #{'from application' + Time.zone.name}") 
+    end
 end

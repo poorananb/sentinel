@@ -8,7 +8,8 @@ class JobMailer < ActionMailer::Base
         @cron = index.cron
         
         cron_parser = CronParser.new(@cron)
-        next_comming_time = cron_parser.next(Time.now.in_time_zone("Asia/Singapore"))
+        time_zone = Setting.fetchAttribute('time_zone')
+        next_comming_time = cron_parser.next(Time.now.in_time_zone(Time.zone.name))
         
         Rails.logger.debug("My password: #{next_comming_time}")
     end
