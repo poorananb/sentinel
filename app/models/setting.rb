@@ -5,7 +5,15 @@ class Setting < ActiveRecord::Base
                 if(key!='format' && key != 'controller' && key !='action')
                     @existingSetting = Setting.find_by(key: key)
                     if(!@existingSetting.blank?)
-                        @existingSetting.update_attributes(key: key, value: value)
+                        option_values = {}
+                        if(value.is_a?(Array))
+                            value.each do |option_value|
+                                option_values[]= option_value
+                            end
+                            @existingSetting.update_attributes(key: key, value: option_values)
+                        else
+                            @existingSetting.update_attributes(key: key, value: value)
+                        end
                         @existingSetting.save
                     else
                         @setting = Setting.new(key: key, value: value)

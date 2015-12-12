@@ -10,7 +10,7 @@ class SettingsController < ApplicationController
       @response[row.key] = row.value
     end
     
-    respond_with @response
+    respond_with @response.to_json
   end
   
   def create
