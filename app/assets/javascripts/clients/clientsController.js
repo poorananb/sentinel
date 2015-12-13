@@ -3,7 +3,7 @@ angular.module('Sentinel.clientsController', [])
 {	
         $scope.main = {
             offset: 1,
-            limit: 1,
+            limit: 3,
             sort: 'name ASC',
             rowsArray: [
                 {id:1, label:'1 Per Page'},

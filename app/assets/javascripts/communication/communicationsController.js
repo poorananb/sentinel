@@ -1,7 +1,7 @@
 angular.module('Sentinel.communicationsController', [])
 .controller('CommunicationController', ['$scope', '$state', '$window', 'Communication', function($scope, $state, $window, Communication)
 
-{	
+/*{	
         $scope.main = {
             offset: 1,
             limit: 1,
@@ -64,8 +64,8 @@ angular.module('Sentinel.communicationsController', [])
 		};
 	}]
 
-)
-/*{		
+)*/
+{		
 		$scope.communications = Communication.query(); 
 		
 		$scope.deleteCommunication = function(communication) { 
@@ -77,8 +77,8 @@ angular.module('Sentinel.communicationsController', [])
 				}
 			});
 		};
-	}]*/
-
+	}]
+)
 .controller('CommunicationViewController', ['$scope', '$stateParams' ,'Communication', function($scope,$stateParams,Communication){
     $scope.communication=Communication.get({id:$stateParams.id});
 }])

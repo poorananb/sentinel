@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'client/index'
-
+    get 'dashboard' => 'home#index'
   get 'home' => 'home#index'
   get 'brand' => 'orgs#orgs'
   get 'jobs' => 'orgs#orgs'

@@ -11,7 +11,10 @@
   <![endif]-->
   <%= stylesheet_link_tag  '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css' %>
   <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'  %>
-  <%= stylesheet_link_tag  '//fonts.googleapis.com/css?family=Montserrat:400,700' %>  
+  <%= stylesheet_link_tag  '//fonts.googleapis.com/css?family=Montserrat:400,700' %> 
+  <%= stylesheet_link_tag  'angular-gridster.min.css' %>
+  <%= stylesheet_link_tag   'dashboardstyle.css' %>
+  <%= stylesheet_link_tag  'nv.d3.css' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'font-awesome', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag  '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js' %>
@@ -66,8 +69,15 @@
  <%= javascript_include_tag  '//cdnjs.cloudflare.com/ajax/libs/d3/3.5.0/d3.min.js' ,"charset" => "utf-8"%>
   <%= javascript_include_tag  '//cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/7.3.9/ng-file-upload.js'%>
   <%= javascript_include_tag  '//cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/7.3.9/ng-file-upload-shim.js'%>
+  <%= javascript_include_tag  'ui-bootstrap-tpls.min.js'%>
   <%= javascript_include_tag "radial-progress-chart.js" %>
+  <%= javascript_include_tag "d3.min.js" %>
+  <%= javascript_include_tag "angular-nvd3.js" %>
+  <%= javascript_include_tag "nv.d3.js" %>
+  <%= javascript_include_tag "angular-gridster.js" %>
+  <%= javascript_include_tag "lineChart.js" %>
+  <%= javascript_include_tag "cumulativeLineChart.js" %>
+  <%= javascript_include_tag "stackedAreaChart.js" %>
 </html>
-
 </body>
 </html>
