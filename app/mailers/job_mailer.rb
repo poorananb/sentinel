@@ -12,6 +12,5 @@ class JobMailer < ActionMailer::Base
         
         Rails.logger.debug("My password: #{next_comming_time}")
     end
-    #Time.now.in_time_zone("Asia/Singapore")
   end
 end
