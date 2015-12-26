@@ -122,8 +122,13 @@ angular.module('Sentinel.usersController', [])
             if(response.status == 'ok'){
                 //$('#logPlaceHolder').attr('href', '/logout').children('span').text('Log Out');
 				//$state.go('home'); //redirect to home
-				window.location='/home'
+				window.location='/home';
+				return false;
 			}
+            
+            $scope.loginForm.$setPristine();
+            $scope.loginForm.$setValidity();
+            $scope.loginForm.$setUntouched();
         });
     }
     

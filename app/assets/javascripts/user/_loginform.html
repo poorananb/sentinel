@@ -20,19 +20,19 @@
                 <p ng-message="required">Email is required.</p>
             </div> 	        
 	    </div>
-	    <div>
+	    <div ng-class="errorClass('password')">
 	        <input type="password" name="password" id="password" ng-model="session.password"  ng-minlength="6" ng-maxlength="15" placeholder="Password" required/>
-            <div class="help-block" ng-messages="loginForm.password.$error" ng-show="loginForm.password.$touched">
+            <div class="help-block" ng-messages="loginForm.password.$error" ng-show="loginForm.password.$dirty && loginForm.password.$invalid">
                 <!-- show an error if email is too short -->
-                <p ng-message="minlength">Password is too short.</p>
+                <p class="error" ng-show="loginForm.password.$error.minlength">Password is too short.</p>
             
                 <!-- show an error if email is too long -->
-                <p ng-message="maxlength">Password is too long.</p>
+                <p class="error" ng-show="loginForm.password.$error.maxlength">Password is too long.</p>
             
                 <!-- show an error if this isn't filled in -->
-                <p ng-message="required">Password is required.</p>
-            </div>  	        
-	    </div>
+                <p class="error" ng-show="loginForm.password.$error.required">Password is required.</p>
+            </div> 
+	    </div>{{loginForm}}
 	</div>
 	
 	<div class="remember"><input type="checkbox" name="remember_me" ng-model="session.remember_me" value="1">&nbsp; Remember Me</div>
