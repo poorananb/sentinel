@@ -11,6 +11,7 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( radial-progress-chart.js )
 Rails.application.config.assets.precompile += %w( ng-file-upload-all.js )
 Rails.application.config.assets.precompile += %w( font-awesome.css )
+Rails.application.config.assets.precompile += %w( common.js )
 
 @time_zone = Setting.fetchAttribute('time_zone')
 Time.zone = @time_zone
