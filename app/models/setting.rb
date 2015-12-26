@@ -43,6 +43,8 @@ class Setting < ActiveRecord::Base
         puts case attribute
         when 'time_zone'
             return Time.zone
+        when 'limitofrows'
+            return 10
         end
     end
     

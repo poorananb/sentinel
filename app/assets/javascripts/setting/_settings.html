@@ -27,7 +27,7 @@
                 </div>
                 
                 <!--<div>
-                    <div class="col-xs-12 col-sm-6"><span class="form-label">FreeText:</span></div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Limit of Entries:</span></div>
                     <div class="col-xs-12 col-sm-6">
                         <select name="freetext[]" id="freetext" ng-model="setting.freetext" multiple size="10">
                             <option value="Asia/Singapore">Asia/Singapore</option>
@@ -38,17 +38,17 @@
                             <p ng-message="required">Freetext is required.</p>
                         </div>
                     </div>  
-                </div>
+                </div>-->
                 
                 <div>
-                    <div class="col-xs-12 col-sm-6"><span class="form-label">FreeText:</span></div>
-                    <div class="col-xs-12 col-sm-6">
-                        <input type="text" name="freetextinput" id="freetextinput" ng-model="setting.freetextinput" />
-                        <div class="help-block" ng-messages="settingForm.freetext.$error" ng-show="settingForm.freetext.$touched">
-                            <p ng-message="required">Freetext is required.</p>
-                        </div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Limit Of Rows:</span></div>
+                    <div class="col-xs-12 col-sm-6"> 
+                        <input type="text" name="limitofrows" id="limitofrows" ng-model="setting.limitofrows" required/>
+                        <div class="help-block" ng-messages="settingForm.limitofrows.$error" ng-show="settingForm.limitofrows.$touched">
+                            <p ng-message="required">Limit is required.</p> 
+                        </div> 
                     </div>  
-                </div>-->
+                </div>
             </div>
         </div>
     	<div class="cols-xs-12 button-pull-right">

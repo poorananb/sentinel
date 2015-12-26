@@ -7,11 +7,20 @@ class OrgsController < ApplicationController
       Rails.logger.debug("My password: #{params}")
       @orgs = Org.order(params[:sort]).all
       @total_count = @orgs.count(:all)
-      @limit = params[:limit].to_i
+      @limit = (params[:limit]).to_i
+      if(@limit && @limit>0)
+        Rails.logger.debug("My password: #{params[:limit] + 'fffff'}")
+        @limit = @limit
+      else
+        @limit = Setting.fetchAttribute('limitofrows')
+        Rails.logger.debug("My password: #{@limit + 'gggggggg'}")
+      end
+      @limit = @limit.to_i
       @limited_orgs = @orgs.paginate(:page => params[:offset], :per_page => @limit)
-      @response = { :orgs => @limited_orgs, :count => @total_count }
+      
+      @totalPages = (@total_count/@limit).to_i
+      @response = { :orgs => @limited_orgs, :count => @total_count, :totalPages => @totalPages, :limit =>@limit }
     else
-      Rails.logger.debug("i am at else:")
       @response = Org.all
     end
     respond_with @response
