@@ -23,3 +23,7 @@ Rails.application.config.assets.precompile += %w( cumulativeLineChart.js )
 Rails.application.config.assets.precompile += %w( stackedAreaChart.js )
 Rails.application.config.assets.precompile += %w( angular-gridster.js )
 Rails.application.config.assets.precompile += %w( ui-bootstrap-tpls.min.js )
+Rails.application.config.assets.precompile += %w( common.js )
+
+@time_zone = Setting.fetchAttribute('time_zone')
+Time.zone = @time_zone

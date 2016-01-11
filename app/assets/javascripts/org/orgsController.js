@@ -2,12 +2,13 @@ angular.module('Sentinel.orgsController', [])
 .controller('OrgController', ['$scope', '$state', '$window', 'Org', function($scope, $state, $window, Org){	
         $scope.main = {
             offset: 1,
-            limit: 1,
+            limit: 0,
             sort: 'name ASC',
             rowsArray: [
-                {id:1, label:'1 Per Page'},
-                {id:2, label:'2 Per Page'},
-                {id:3, label:'3 Per Page'}
+                {id:10, label:'10 Per Page'},
+                {id:50, label:'50 Per Page'},
+                {id:100, label:'100 Per Page'},
+                {id:9999, label:'Show All'}
             ],
             sortArray: [
                 {id:'name ASC', label:'Name (A-Z)'},
@@ -27,9 +28,10 @@ angular.module('Sentinel.orgsController', [])
                 // total number of rows
                 
                 $scope.count = data.count;
+                $scope.main.limit = data.limit;
                 
                 // number of pages of orgs
-                $scope.pagesCount = data.count/$scope.main.limit;
+                $scope.pagesCount = data.totalPages;
                 
                 // build pages array
                 var pagesArray = [];
@@ -52,12 +54,13 @@ angular.module('Sentinel.orgsController', [])
 		
         $scope.loadPage(1);//fetch all orgs. Issues a GET to /api/orgs
 		
-		$scope.deleteOrg = function(org) { // Delete a org. Issues a DELETE to /api/org/:id
-			org.$delete(function(response) {
+		$scope.deleteOrg = function(id) { // Delete a org. Issues a DELETE to /api/org/:id
+			Org.delete({id: id}, function(response) {
 				$scope.message = response;
 				
 				if(response.status == 'ok'){
-					$state.go('orgs'); //redirect to home
+					//$state.go('orgs', {}); //redirect to orgs
+                    $scope.loadPage($scope.main.offset);
 				}
 			});
 		};

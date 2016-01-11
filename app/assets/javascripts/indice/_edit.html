@@ -1,0 +1,109 @@
+<div ng-show="message.message != null">
+    <div ng-show="message.status == 'ok'">
+        <div class="success">{{message.message}}</div>
+    </div>
+    <div ng-show="message.status == 'error'">
+        <div class="error">{{message.message}}</div>
+    </div>
+</div> 
+
+<div class="form-container">
+    <form ng-submit="updateIndice()" id="indiceForm">
+        <input type="hidden" name="id" ng-model="indice.id"/>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <span class="form-title">Edit Indice</span>        
+            </div>   
+            <div class="row wrap">
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Jobs Code:</span></div>
+                    <div class="col-xs-12 col-sm-6">{{indice.job_code}}
+                        <input type="hidden" name="job_code" ng-model="indice.job_code" value="{{indice.job_code}}" />
+                    </div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Realm Code:</span></div>
+                    <div class="col-xs-12 col-sm-6">{{indice.realm_code}}
+                        <input type="hidden" name="realm_code" ng-model="indice.realm_code" value="{{indice.realm_code}}"/>
+                    </div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Cron Timings:</span></div>
+                    <div class="col-xs-12 col-sm-6">{{indice.cron}}
+                        <input type="hidden" 
+                        name="cron"
+                        id="cron"
+                        ng-model="indice.cron"
+                        required/>
+                        <div class="help-block" ng-messages="indiceForm.cron.$error" ng-show="indiceForm.sequence.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Cron is required.</p>
+                        </div>
+                    </div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Criticality:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <select 
+                        name="critical" 
+                        id="critical"
+                        ng-model="indice.critical"
+                        required
+                        >
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                        <div class="help-block" ng-messages="indiceForm.critical.$error" ng-show="indiceForm.critical.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Criticality is required.</p>
+                        </div>
+                    </div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Notify:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <select 
+                        name="notify" 
+                        id="notify"
+                        ng-model="indice.notify"
+                        >
+                            <option value="1" >Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Appx Run Length:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <input type="text" 
+                        name="run_length"
+                        id="run_length"
+                        ng-model="indice.run_length"
+                        required/>
+                        <div class="help-block" ng-messages="indiceForm.run_length.$error" ng-show="indiceForm.run_length.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Appx Run Length is required.</p>
+                        </div>
+                    </div>  
+                </div>
+                <div>
+                    <div class="col-xs-12 col-sm-6"><span class="form-label">Success Step:</span></div>
+                    <div class="col-xs-12 col-sm-6">
+                        <input type="text" 
+                        name="success_step"
+                        id="success_step"
+                        ng-model="indice.success_step"
+                        required/>
+                        <div class="help-block" ng-messages="indiceForm.success_step.$error" ng-show="indiceForm.success_step.$touched">
+                            <!-- show an error if this isn't filled in -->
+                            <p ng-message="required">Success Step is required.</p>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    	<div class="cols-xs-12 button-pull-right">
+            <button type="submit" class="button">Update Indice</button> <a href="/indices" class="button">Back To List</a>
+        </div>
+    </form>
+</div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151004131457) do
+ActiveRecord::Schema.define(version: 20151212044530) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "code",       limit: 10
@@ -44,11 +44,36 @@ ActiveRecord::Schema.define(version: 20151004131457) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "indices", force: :cascade do |t|
+    t.string   "job_code"
+    t.string   "realm_code"
+    t.string   "cron"
+    t.string   "critical"
+    t.string   "notify"
+    t.string   "jobkey"
+    t.integer  "run_length"
+    t.string   "success_step"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string   "org_code"
+    t.string   "job_code"
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "client_code"
+  end
+
   create_table "labels", force: :cascade do |t|
     t.string   "org_code"
     t.string   "client_code"
     t.string   "key"
-    t.string   "label"
+    t.string   "label_name"
+    t.string   "realm_code"
+    t.string   "icon"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -106,6 +131,22 @@ ActiveRecord::Schema.define(version: 20151004131457) do
     t.string   "activities", default: "{}"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "runs", force: :cascade do |t|
+    t.string   "jobkey"
+    t.string   "runkey"
+    t.string   "stage"
+    t.string   "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.string   "key"
+    t.string   "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "stages", force: :cascade do |t|

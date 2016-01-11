@@ -1,5 +1,5 @@
 <div class="pagination" ng-if="count > 0">
-    <div class="number">
+    <div class="number" ng-if="count > main.limit">
         <ul>
         	<li ng-if="main.offset!=1"><a ng-click="loadPage(1)" href="">&laquo;&laquo;</a></li>
             <li ng-if="main.offset==1">&laquo;&laquo;</li>
@@ -11,7 +11,7 @@
                 <span ng-else-if="page == 1">
                     <a ng-click="loadPage(page)" href="">{{page}}</a>
                 </span>
-                <span ng-else="pagesCount >= page">
+                <span ng-else="pagesCount >= page"> 
                     <a ng-click="loadPage(page)" href="">{{page}}</a>
                 </span>
             </li>
@@ -24,7 +24,7 @@
         <div>
             Show:
             <select id="show" ng-model="show" ng-change="loadPerPage(show)">
-                <option ng-repeat="show in main.rowsArray" value="{{show.id}}" ng-selected="{{show.id == main.limit}}" ng-if="show.id <= count">{{show.label}}</option>
+                <option ng-repeat="show in main.rowsArray" value="{{show.id}}" ng-selected="{{show.id == main.limit}}">{{show.label}}</option>
             </select>
         </div>
         <div>
