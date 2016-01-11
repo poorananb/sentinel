@@ -125,7 +125,6 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
       }
     }
   }
-<<<<<<< HEAD
 ])
 .constant('CHARTS', {
         lineChart: { path: '/lineChart', title: 'Line Chart' },
@@ -133,6 +132,3 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
         stackedAreaChart: { path: '/stackedAreaChart', title: 'Stacked Area Chart'},        
     })
 ;
-=======
-]);
->>>>>>> 2e221d3ac3048bd5b2ec858eecc65b9baad3ce84
