@@ -48,11 +48,12 @@ angular.module('Sentinel.clientsController', [])
         $scope.loadPage(1);//fetch all clients. Issues a GET to /api/clients
 		
 		$scope.deleteClient = function(client) { // Delete a client. Issues a DELETE to /api/client/:id
-			client.$delete(function(response) {
+			Client.delete({id: client.id}, function(response) {
 				$scope.message = response;
 				
 				if(response.status == 'ok'){
-					$state.go('clients'); //redirect to home
+                    $scope.clients.splice($scope.clients.indexOf(client), 1);
+                    $state.go('clients'); //redirect to home
 				}
 			});
 		};
