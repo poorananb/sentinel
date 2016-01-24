@@ -1,15 +1,8 @@
 class ClientsController < ApplicationController
+
   def index
-     if(params[:sort])
-      @clients = Client.order(params[:sort]).all
-      @total_count = @clients.count(:all)
-      @limit = params[:limit].to_i
-      @limited_clients = @clients.paginate(:page => params[:offset], :per_page => @limit)
-      @response = { :clients => @limited_clients, :count => @total_count }
-    else
-      @response = Client.all
-    end
-    respond_with @response
+    @clients = Client.search(params)
+    render json: @clients
   end
 
   def new

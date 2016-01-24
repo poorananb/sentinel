@@ -1,4 +1,5 @@
 class Client < ActiveRecord::Base
+  extend Searchable
   belongs_to :org
 
   validates :name, presence: true

@@ -2,8 +2,8 @@ module Searchable
   def search(params)
     results = self.all
 
-    page = (params[:page] || 1).to_i
-    per_page = (params[:per_page] || 25).to_i
+    page = (params[:offset] || 1).to_i
+    per_page = (params[:limit] || 25).to_i
 
     if params[:sort]
       sort = params[:sort].split(' ')

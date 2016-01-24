@@ -21,16 +21,11 @@ angular.module('Sentinel.clientsController', [])
         $scope.loadPage = function(page){
             $scope.main.offset = page;
             Client.get({offset:$scope.main.offset, limit:$scope.main.limit, sort:$scope.main.sort}, function(data){
-		       
+
                 $scope.clients = data.clients;
-                
-                // total number of rows
-                
-                $scope.count = data.count;
-                
-            
-                $scope.pagesCount = data.count/$scope.main.limit;
-                
+                $scope.count = data.meta.total_count;
+                $scope.pagesCount = data.meta.total_pages;
+
                 // build pages array
                 var pagesArray = [];
                 for(var p = 1; p < $scope.pagesCount+1; p++){
