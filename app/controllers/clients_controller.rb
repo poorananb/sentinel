@@ -6,9 +6,6 @@ class ClientsController < ApplicationController
     render json: @clients
   end
 
-  def new
-  end
-
   def create
     @client = Client.new(client_params)
 
@@ -23,9 +20,11 @@ class ClientsController < ApplicationController
   end
 
   def show
+    render json: @client
   end
 
   def edit
+    render json: @client
   end
 
   def update

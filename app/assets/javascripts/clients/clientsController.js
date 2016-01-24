@@ -60,7 +60,7 @@ angular.module('Sentinel.clientsController', [])
 
 )
 .controller('ClientViewController', ['$scope', '$stateParams' ,'Client', function($scope,$stateParams,Client){
-    $scope.client=Client.get({id:$stateParams.id});
+    $scope.client= Client.get({id:$stateParams.id});
 }])
 .controller('ClientCreateController',['$scope', '$state', '$stateParams', 'Client','Org' ,function($scope,$state,$stateParams,Client,Org){
 
@@ -85,7 +85,7 @@ angular.module('Sentinel.clientsController', [])
         $scope.orgs = response.orgs
     });
 
-    $scope.updateClient=function(){
+    $scope.updateClient = function(){
         $scope.client.$update(function(response){
         	$scope.message = response;
         	
@@ -95,8 +95,10 @@ angular.module('Sentinel.clientsController', [])
         });
     };
 
-    $scope.loadClient=function(){
-        $scope.client=Client.get({id:$stateParams.id});
+    $scope.loadClient = function(){
+        Client.get({id:$stateParams.id}, function (response) {
+            $scope.client = response.client;
+        });
     };
 
     $scope.loadClient();

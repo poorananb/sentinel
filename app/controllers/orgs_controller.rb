@@ -6,9 +6,6 @@ class OrgsController < ApplicationController
     render json: @orgs
   end
 
-  def new
-  end
-
   def create
     @org = Org.new(org_params)
 
@@ -23,9 +20,11 @@ class OrgsController < ApplicationController
   end
 
   def show
+    render json: @org
   end
 
   def edit
+    render json: @org
   end
 
   def update
