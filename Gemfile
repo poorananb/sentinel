@@ -24,6 +24,7 @@ gem 'will_paginate', '~> 3.0.4'
 gem 'angular_rails_csrf'
 gem 'pundit'
 gem 'quiet_assets'
+gem 'active_model_serializers'
 
 group :development, :test do
   gem 'byebug'
