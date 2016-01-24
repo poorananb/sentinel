@@ -86,7 +86,7 @@ angular.module('Sentinel.clientsController', [])
     });
 
     $scope.updateClient = function(){
-        $scope.client.$update(function(response){
+        Client.update({id:$stateParams.id}, function(response){
         	$scope.message = response;
         	
             if(response.status == 'ok'){
