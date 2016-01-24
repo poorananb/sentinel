@@ -18,4 +18,3 @@
 //= require angular-rails-templates
 //= require app
 //= require_tree .
-//= require turbolinks
