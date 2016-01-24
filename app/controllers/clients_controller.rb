@@ -1,7 +1,4 @@
 class ClientsController < ApplicationController
-  before_filter :authenticate_user
-  respond_to :json, :html
-  
   def index
      if(params[:sort])
       @clients = Client.order(params[:sort]).all

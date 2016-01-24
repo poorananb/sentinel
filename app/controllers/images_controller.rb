@@ -3,7 +3,6 @@ class ImagesController < ApplicationController
   end
 
   def create
-    
     name = params[:file].original_filename
     only_name=   File.basename(name, ".*" )
     ext=File.extname(name)

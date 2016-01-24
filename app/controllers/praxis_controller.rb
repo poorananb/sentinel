@@ -1,7 +1,4 @@
 class PraxisController < ApplicationController
-  before_filter :authenticate_user
-  respond_to :json, :html
-  
   def index
     @praxis = Praxi.order(params[:sort]).all
     @total_count = @praxis.count(:all)

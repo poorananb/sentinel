@@ -1,4 +1,6 @@
-class SessionsController < ApplicationController 
+class SessionsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:create]
+
   layout 'login'
   def index
     @current_user ||= User.find_by(id: session[:user_id])

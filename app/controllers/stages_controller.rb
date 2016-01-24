@@ -1,7 +1,4 @@
 class StagesController < ApplicationController
-  before_filter :authenticate_user
-  respond_to :json, :html
-  
   def index
     if(params[:sort])
       @stages = Stage.order(params[:sort]).all

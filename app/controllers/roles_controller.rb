@@ -1,8 +1,4 @@
 class RolesController < ApplicationController
-  before_filter :authenticate_user
-  respond_to :json, :html
-  #after_filter :verify_authorized
-  
   def index
     if params[:sort]
     	  @roles = Role.order(params[:sort]).all

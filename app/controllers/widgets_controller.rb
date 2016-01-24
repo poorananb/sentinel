@@ -1,29 +1,20 @@
 class WidgetsController < ApplicationController
-  before_filter :authenticate_user
   before_action :set_widget, only: [:show, :edit, :update, :destroy]
 
-  # GET /widgets
-  # GET /widgets.json
   def index
     @widgets = Widget.all
   end
 
-  # GET /widgets/1
-  # GET /widgets/1.json
   def show
   end
 
-  # GET /widgets/new
   def new
     @widget = Widget.new
   end
 
-  # GET /widgets/1/edit
   def edit
   end
 
-  # POST /widgets
-  # POST /widgets.json
   def create
     @widget = Widget.new(widget_params)
 
@@ -38,8 +29,6 @@ class WidgetsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /widgets/1
-  # PATCH/PUT /widgets/1.json
   def update
     respond_to do |format|
       if @widget.update(widget_params)
@@ -52,8 +41,6 @@ class WidgetsController < ApplicationController
     end
   end
 
-  # DELETE /widgets/1
-  # DELETE /widgets/1.json
   def destroy
     @widget.destroy
     respond_to do |format|
@@ -63,12 +50,10 @@ class WidgetsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_widget
       @widget = Widget.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def widget_params
       params.require(:widget).permit(:name, :description, :stock)
     end

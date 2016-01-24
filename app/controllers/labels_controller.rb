@@ -1,8 +1,4 @@
 class LabelsController < ApplicationController
-  before_filter :authenticate_user
-
-  respond_to :json, :html
-  
     def index
      if(params[:sort])
       @labels = Label.order(params[:sort]).all

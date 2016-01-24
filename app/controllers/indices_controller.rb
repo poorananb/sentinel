@@ -1,7 +1,4 @@
 class IndicesController < ApplicationController
-  before_filter :authenticate_user
-  respond_to :json, :html
-  
   def index
     if(params[:sort])
       @indices = Index.order(params[:sort]).all
