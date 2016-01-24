@@ -44,8 +44,8 @@
                     <div class="col-xs-12 col-sm-6"><span class="form-label">Org Code:</span></div>
                     <div class="col-xs-12 col-sm-6">
                     
-                     <select name="org_code" ng-model="client.org_code" id="org_code" required>
-                        <option ng-repeat="org in orgs" value="{{org.code}}">{{org.name}}</option>
+                     <select name="org_code" ng-model="client.org_id" id="org_id" required>
+                        <option ng-repeat="org in orgs" value="{{org.id}}">{{org.name}}</option>
                     </select>
                         
                         <div class="help-block" ng-messages="clientForm.org_code.$error" ng-show="clientForm.org_code.$touched">

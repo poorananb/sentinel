@@ -3,7 +3,6 @@ class OrgsController < ApplicationController
 
   def index
     @orgs = Org.search(params)
-
     render json: @orgs
   end
 

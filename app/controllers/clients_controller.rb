@@ -1,4 +1,5 @@
 class ClientsController < ApplicationController
+  before_action :set_client, only: [:show, :edit, :update, :destroy]
 
   def index
     @clients = Client.search(params)
@@ -8,77 +9,54 @@ class ClientsController < ApplicationController
   def new
   end
 
-  def create 
-    respond_to do |format|
-      if Client.create(client_params)
-        format.json do
-          render :json => { 
-             :status => :ok, 
-             :message => "Client was successfully updated.!"
-          }.to_json
-        end  
-      else
-        format.json do 
-          render :json => {
-            :message => @client.errors, 
-            :status => :error #unprocessable_entity 
-          }.to_json
+  def create
+    @client = Client.new(client_params)
+
+    result =
+        if @client.save
+          {message: 'Client was successfully created!', status: :ok}
+        else
+          {message: @client.errors, status: :error}
         end
-      end 
-    end
+
+    render json: result.to_json
   end
 
   def show
-    respond_with Client.find(params[:id])
   end
 
   def edit
-    respond_with Client.find(params[:id])
   end
+
   def update
-    @client = Client.find(params[:id])
-    respond_to do |format|
-      if @client.update(client_params)
-        format.json do
-          render :json => { 
-             :status => :ok, 
-             :message => "Client was successfully updated.!"
-          }.to_json
-        end  
-      else
-        format.json do 
-          render :json => {
-            :message => @client.errors, 
-            :status => :error #unprocessable_entity 
-          }.to_json
+    result =
+        if @client.update(client_params)
+          {status: :ok, message: 'Client was successfully updated!'}
+        else
+          {status: :error, message: @client.errors}
         end
-      end 
-    end
+
+    render json: result.to_json
   end
 
   def destroy
-    @client = Client.find(params[:id])
-    respond_to do |format|
-      if @client.destroy
-        format.json do
-          render :json => { 
-             :status => :ok, 
-             :message => "Client was successfully deleted.!"
-          }.to_json
-        end  
-      else
-        format.json do 
-          render :json => {
-            :message => @client.errors, 
-            :status => :error #unprocessable_entity 
-          }.to_json
+    result =
+        if @client.destroy
+          {status: :ok, message: 'Client was successfully deleted!'}
+        else
+          {status: :ok, message: @client.errors}
         end
-      end 
-    end
+
+    render json: result.to_json
+  end
+
+  private
+
+  def set_client
+    @client = Client.find(params[:id])
   end
   
-  private
   def client_params
-    params.require(:client).permit(:name, :code,:org_code) if params[:client]
+    params.require(:client).permit(:name, :code,:org_id)
   end
 end

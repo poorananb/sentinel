@@ -64,8 +64,12 @@ angular.module('Sentinel.clientsController', [])
 }])
 .controller('ClientCreateController',['$scope', '$state', '$stateParams', 'Client','Org' ,function($scope,$state,$stateParams,Client,Org){
 
-    $scope.client=new Client();
-	$scope.orgs = Org.query();
+    $scope.client = new Client();
+
+    Org.query({}, function (response) {
+        $scope.orgs = response.orgs
+    });
+
     $scope.addClient=function(){
         $scope.client.$save(function(response){
             $scope.message = response;
@@ -77,7 +81,10 @@ angular.module('Sentinel.clientsController', [])
     }
 
 }]).controller('ClientEditController',['$scope', '$state', '$stateParams', 'Client', 'Org',function($scope,$state,$stateParams,Client,Org){
-    $scope.orgs = Org.query();
+    Org.query({}, function (response) {
+        $scope.orgs = response.orgs
+    });
+
     $scope.updateClient=function(){
         $scope.client.$update(function(response){
         	$scope.message = response;
