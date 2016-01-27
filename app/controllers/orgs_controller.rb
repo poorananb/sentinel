@@ -50,6 +50,7 @@ class OrgsController < ApplicationController
   end
 
   private
+
   def set_org
     @org = Org.find(params[:id])
   end

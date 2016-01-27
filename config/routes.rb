@@ -21,6 +21,10 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'login', to: 'sessions#index', as: 'login'
+  get 'sessions', to: 'sessions#create', as: 'logon'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+
   get "/*path" => redirect("/?goto=%{path}")
   root to: 'home#index'
 end
