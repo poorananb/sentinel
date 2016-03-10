@@ -259,3 +259,5 @@ svg.icon {display: inline-block;width: 22px;height: 22px;fill: #404040;position:
 svg.icon:hover {fill:#000;}
 .activityCheckbox {width:100px;}
 .activityCheckbox input {width:14px !important; height:14px !important; position: relative; top: 3px;}
+
+.pace-progress{display:none;}
