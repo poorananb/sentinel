@@ -54,7 +54,7 @@ angular.module('Sentinel')
           row: 0,
           sizeY: 1,
           sizeX: 2,
-          name: "Line Chart Widget",
+          name: "Shipment",
           type: 'lineChart',
           chart: {
             options: generator.lineChart.options(),
@@ -66,7 +66,7 @@ angular.module('Sentinel')
           row: 0,
           sizeY: 1,
           sizeX: 2,
-          name: "Stacked Area Chart Widget",
+          name: "Orders",
           type: 'stackedAreaChart',
           chart: {
             options: generator.stackedAreaChart.options(),
@@ -74,18 +74,31 @@ angular.module('Sentinel')
             api: {}
           }
         }, {
-          col: 1,
+          col: 0,
           row: 1,
           sizeY: 1,
-          sizeX: 1,
-          name: "Pie Chart Widget",
+          sizeX: 2,
+          name: "Returns",
           type: 'pieChart',
           chart: {
             options: generator.pieChart.options(),
             data: generator.pieChart.data(),
             api: {}
+          }, 
+        }, {
+          col: 2,
+          row: 2,
+          sizeY: 1,
+          sizeX: 2,
+          name: "Refunds",
+          type: 'lineChart',
+          chart: {
+            options: generator.lineChart.options(),
+            data: generator.lineChart.data(),
+            api: {}
           }
-        }]
+        }
+        ]
       };
 
       // widget events
@@ -232,10 +245,10 @@ angular.module('Sentinel')
               y: function(d){ return d.y; },
               useInteractiveGuideline: true,
               xAxis: {
-                axisLabel: 'Time (ms)'
+                axisLabel: 'Time (hrs)'
               },
               yAxis: {
-                axisLabel: 'Voltage (v)',
+                axisLabel: 'Quantity (q)',
                 tickFormat: function(d){
                   return d3.format('.02f')(d);
                 },
