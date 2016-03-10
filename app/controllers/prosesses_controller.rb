@@ -1,7 +1,4 @@
 class ProsessesController < ApplicationController
-  before_filter :authenticate_user
-  respond_to :json, :html
-  
   def index
     if(params[:sort])
       @prosesses = Prosess.order(params[:sort]).all

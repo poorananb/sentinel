@@ -2,7 +2,7 @@ angular.module('Sentinel.orgsController', [])
 .controller('OrgController', ['$scope', '$state', '$window', 'Org', function($scope, $state, $window, Org){	
         $scope.main = {
             offset: 1,
-            limit: 0,
+            limit: 3,
             sort: 'name ASC',
             rowsArray: [
                 {id:10, label:'10 Per Page'},
@@ -21,17 +21,12 @@ angular.module('Sentinel.orgsController', [])
         $scope.loadPage = function(page){
             $scope.main.offset = page;
             Org.get({offset:$scope.main.offset, limit:$scope.main.limit, sort:$scope.main.sort}, function(data){
-		        //var orgs = JSON.parse(data);
-		        // users from your api
+
                 $scope.orgs = data.orgs;
                 
                 // total number of rows
-                
-                $scope.count = data.count;
-                $scope.main.limit = data.limit;
-                
-                // number of pages of orgs
-                $scope.pagesCount = data.totalPages;
+                $scope.count = data.meta.total_count;
+                $scope.pagesCount = data.meta.total_pages;
                 
                 // build pages array
                 var pagesArray = [];

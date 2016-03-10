@@ -65,7 +65,15 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
 	.state('showRole', {url: '/roles/:id',templateUrl: 'role/_show.html',controller: 'RoleViewController'})
 	.state('editRole', {url: '/roles/{id}/edit',templateUrl: 'role/_edit.html',controller: 'RoleEditController'});
 	
-	$urlRouterProvider.otherwise('home');
+	//$urlRouterProvider.otherwise('home');
+
+    $urlRouterProvider.otherwise(function ($injector, $location) {
+        if($location.$$search.goto){
+            $location.url('/' + $location.$$search.goto);
+        }else{
+            $location.url('/home');
+        }
+    });
 	
 	$locationProvider.html5Mode(true);
 }])

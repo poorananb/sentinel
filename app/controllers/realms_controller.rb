@@ -1,16 +1,4 @@
 class RealmsController < ApplicationController
-  before_filter :authenticate_user
-  respond_to :json, :html
-  
-  #after_filter :verify_authorized
-  
-  # def index
-  #   realm = Realm. new
-  #   authorise(realm)
-  #   @realms = Realm.all
-  #   respond_with @realms
-  # end
-  
    def index
     if(params[:sort])
       @realms = Realm.order(params[:sort]).all

@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user
   after_action :verify_authorized
-  respond_to :json, :html
-  
+
   def index
 	  @users = User.order(params[:sort]).all
 	  authorize User

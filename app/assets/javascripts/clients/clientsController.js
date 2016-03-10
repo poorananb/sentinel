@@ -21,16 +21,11 @@ angular.module('Sentinel.clientsController', [])
         $scope.loadPage = function(page){
             $scope.main.offset = page;
             Client.get({offset:$scope.main.offset, limit:$scope.main.limit, sort:$scope.main.sort}, function(data){
-		       
+
                 $scope.clients = data.clients;
-                
-                // total number of rows
-                
-                $scope.count = data.count;
-                
-            
-                $scope.pagesCount = data.count/$scope.main.limit;
-                
+                $scope.count = data.meta.total_count;
+                $scope.pagesCount = data.meta.total_pages;
+
                 // build pages array
                 var pagesArray = [];
                 for(var p = 1; p < $scope.pagesCount+1; p++){
@@ -53,11 +48,12 @@ angular.module('Sentinel.clientsController', [])
         $scope.loadPage(1);//fetch all clients. Issues a GET to /api/clients
 		
 		$scope.deleteClient = function(client) { // Delete a client. Issues a DELETE to /api/client/:id
-			client.$delete(function(response) {
+			Client.delete({id: client.id}, function(response) {
 				$scope.message = response;
 				
 				if(response.status == 'ok'){
-					$state.go('clients'); //redirect to home
+                    $scope.clients.splice($scope.clients.indexOf(client), 1);
+                    $state.go('clients'); //redirect to home
 				}
 			});
 		};
@@ -65,12 +61,16 @@ angular.module('Sentinel.clientsController', [])
 
 )
 .controller('ClientViewController', ['$scope', '$stateParams' ,'Client', function($scope,$stateParams,Client){
-    $scope.client=Client.get({id:$stateParams.id});
+    $scope.client= Client.get({id:$stateParams.id});
 }])
 .controller('ClientCreateController',['$scope', '$state', '$stateParams', 'Client','Org' ,function($scope,$state,$stateParams,Client,Org){
 
-    $scope.client=new Client();
-	$scope.orgs = Org.query();
+    $scope.client = new Client();
+
+    Org.query({}, function (response) {
+        $scope.orgs = response.orgs
+    });
+
     $scope.addClient=function(){
         $scope.client.$save(function(response){
             $scope.message = response;
@@ -82,9 +82,12 @@ angular.module('Sentinel.clientsController', [])
     }
 
 }]).controller('ClientEditController',['$scope', '$state', '$stateParams', 'Client', 'Org',function($scope,$state,$stateParams,Client,Org){
-    $scope.orgs = Org.query();
-    $scope.updateClient=function(){
-        $scope.client.$update(function(response){
+    Org.query({}, function (response) {
+        $scope.orgs = response.orgs
+    });
+
+    $scope.updateClient = function(){
+        Client.update({id:$stateParams.id}, function(response){
         	$scope.message = response;
         	
             if(response.status == 'ok'){
@@ -93,8 +96,10 @@ angular.module('Sentinel.clientsController', [])
         });
     };
 
-    $scope.loadClient=function(){
-        $scope.client=Client.get({id:$stateParams.id});
+    $scope.loadClient = function(){
+        Client.get({id:$stateParams.id}, function (response) {
+            $scope.client = response.client;
+        });
     };
 
     $scope.loadClient();

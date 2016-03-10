@@ -1,7 +1,4 @@
 class SettingsController < ApplicationController
-  before_filter :authenticate_user
-  respond_to :json, :html
-  
   def index
     @response = {}
     @settings = Setting.all

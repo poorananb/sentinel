@@ -1,7 +1,4 @@
 class JobsController < ApplicationController
-  before_filter :authenticate_user
-  respond_to :json, :html
-  
   def index
     if(params[:sort])
       @jobs = Job.order(params[:sort]).all

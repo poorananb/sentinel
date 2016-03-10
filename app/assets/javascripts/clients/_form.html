@@ -1,8 +1,8 @@
 <div class="form-container">
     <div class="row">
         <div class="col-xs-12 col-sm-12">
-            <span class="form-title">Clients</span>        
-        </div>   
+            <span class="form-title">Clients</span>
+        </div>
         <div class="row wrap">
             <div ng-class="{ 'has-error': clientForm.name.$touched && clientForm.name.$invalid }">
                 <div class="col-xs-12 col-sm-6">
@@ -13,14 +13,14 @@
                     <div class="help-block" ng-messages="clientForm.name.$error" ng-show="clientForm.name.$touched">
                         <!-- show an error if name is too short -->
                         <p ng-message="minlength">Name is too short.</p>
-                    
+
                         <!-- show an error if name is too long -->
                         <p ng-message="maxlength">Name is too long.</p>
-                    
+
                         <!-- show an error if this isn't filled in -->
                         <p ng-message="required">Your name is required.</p>
-                    </div>                    
-                </div>  
+                    </div>
+                </div>
             </div>
             <div ng-class="{ 'has-error': clientForm.code.$touched && clientForm.code.$invalid }">
                 <div class="col-xs-12 col-sm-6">
@@ -31,28 +31,28 @@
                     <div class="help-block" ng-messages="clientForm.code.$error" ng-show="clientForm.code.$touched">
                         <!-- show an error if name is too short -->
                         <p ng-message="minlength">Code is too short.</p>
-                    
+
                         <!-- show an error if name is too long -->
                         <p ng-message="maxlength">Code is too long.</p>
-                    
+
                         <!-- show an error if this isn't filled in -->
                         <p ng-message="required">Your code is required.</p>
-                    </div>                    
-                </div> 
+                    </div>
+                </div>
                       <div>
                 <div ng-class="{ 'has-error': clientForm.org_code.$touched && clientForm.org_code.$invalid }">
                     <div class="col-xs-12 col-sm-6"><span class="form-label">Org Code:</span></div>
                     <div class="col-xs-12 col-sm-6">
-                    
-                     <select name="org_code" ng-model="client.org_code" id="org_code" required>
-                        <option ng-repeat="org in orgs" value="{{org.code}}">{{org.name}}</option>
+
+                     <select name="org_code" ng-model="client.org_id" id="org_id" required>
+                        <option ng-repeat="org in orgs" value="{{org.id}}">{{org.name}}</option>
                     </select>
-                        
+
                         <div class="help-block" ng-messages="clientForm.org_code.$error" ng-show="clientForm.org_code.$touched">
                             <!-- show an error if this isn't filled in -->
                             <p ng-message="required">Organization code is required.</p>
-                        </div>                   
-                    </div>  
+                        </div>
+                    </div>
                 </div>
             </div>
             </div>
